@@ -17,6 +17,8 @@ Matt Pocock 曾是開源狀態管理工具 XState 的核心團隊成員，也擔
 📖 13 篇導讀，一個總目錄，看到哪篇算哪篇。
 🔗 https://lushinshang.github.io/mattpocock_yt/
 
+![半自動化內容生產 Pipeline 示意圖](assets/pipeline-overview.png)
+
 ---
 
 把 Matt Pocock YouTube 頻道上「AI 輔助程式開發工作流」主題的影片，轉成繁體中文台灣用語的深度導讀網站。每支影片都會產出一篇獨立的深度導讀 HTML（含 AI 生成資訊圖），並用一個總目錄頁 `index.html` 串起來。
