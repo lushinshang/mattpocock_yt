@@ -1,0 +1,1748 @@
+1
+00:00:00,000 --> 00:00:03,880
+Hello friends. First video in a while,
+
+2
+00:00:01,720 --> 00:00:07,240
+and that is because I've been working on
+
+3
+00:00:03,880 --> 00:00:08,960
+version 1.1 of my skills repo. It has an
+
+4
+00:00:07,240 --> 00:00:11,520
+astonishing amount of stuff in there.
+
+5
+00:00:08,960 --> 00:00:13,280
+There is an entire new approach to
+
+6
+00:00:11,520 --> 00:00:14,600
+grilling, which probably deserves its
+
+7
+00:00:13,280 --> 00:00:17,680
+own video, but I'll try and squeeze it
+
+8
+00:00:14,600 --> 00:00:20,360
+in here. There is a bunch of new changes
+
+9
+00:00:17,680 --> 00:00:22,880
+to existing skills, including a rename
+
+10
+00:00:20,360 --> 00:00:24,760
+of two main flow skills. There is just
+
+11
+00:00:22,880 --> 00:00:26,040
+really way too much for me to summarize
+
+12
+00:00:24,760 --> 00:00:27,560
+in this intro, so you're just going to
+
+13
+00:00:26,040 --> 00:00:29,280
+have to watch the video to find out. We
+
+14
+00:00:27,560 --> 00:00:31,960
+can see the PR is literally ready to
+
+15
+00:00:29,280 --> 00:00:33,520
+merge now. So, why not? Let's actually
+
+16
+00:00:31,960 --> 00:00:37,120
+freaking merge this thing. And just like
+
+17
+00:00:33,520 --> 00:00:38,400
+that, we have our version 1.1 ready to
+
+18
+00:00:37,120 --> 00:00:40,600
+go. Let's start with the two that are
+
+19
+00:00:38,400 --> 00:00:42,480
+probably going to be most annoying for
+
+20
+00:00:40,600 --> 00:00:44,960
+you, and the most like, why did he do
+
+21
+00:00:42,480 --> 00:00:47,480
+this? And there is a very specific
+
+22
+00:00:44,960 --> 00:00:49,840
+reason that I did it, which is that two
+
+23
+00:00:47,480 --> 00:00:53,120
+skills have been renamed. For instance,
+
+24
+00:00:49,840 --> 00:00:55,400
+two PRD has now been renamed to two
+
+25
+00:00:53,120 --> 00:00:59,600
+spec. And if we go up one level, then we
+
+26
+00:00:55,400 --> 00:01:01,360
+go to two issues has been renamed to two
+
+27
+00:00:59,600 --> 00:01:03,320
+tickets. The reason I've done this is
+
+28
+00:01:01,360 --> 00:01:04,920
+that this has just been bugging me for a
+
+29
+00:01:03,320 --> 00:01:07,720
+long time. The thing that we were
+
+30
+00:01:04,920 --> 00:01:10,480
+creating in two PRD wasn't actually a
+
+31
+00:01:07,720 --> 00:01:13,040
+PRD. It was a spec. A product
+
+32
+00:01:10,480 --> 00:01:15,120
+requirements document kind of describes
+
+33
+00:01:13,040 --> 00:01:17,760
+more things about the actual product
+
+34
+00:01:15,120 --> 00:01:20,160
+itself, whereas we were allowing things
+
+35
+00:01:17,760 --> 00:01:22,680
+to leak into the PRD that weren't
+
+36
+00:01:20,160 --> 00:01:25,080
+necessarily PRDs. So, for a long time
+
+37
+00:01:22,680 --> 00:01:26,240
+I've wanted to rename it to two spec,
+
+38
+00:01:25,080 --> 00:01:27,960
+cuz that's what we were creating. We
+
+39
+00:01:26,240 --> 00:01:30,480
+were just creating a specification.
+
+40
+00:01:27,960 --> 00:01:32,680
+Specification is a much broader term
+
+41
+00:01:30,480 --> 00:01:33,960
+that actually entails what we were
+
+42
+00:01:32,680 --> 00:01:35,720
+building.
+
+43
+00:01:33,960 --> 00:01:37,840
+for a thing we want to build. That can
+
+44
+00:01:35,720 --> 00:01:39,120
+be technical, it can be non-technical,
+
+45
+00:01:37,840 --> 00:01:40,400
+and it can blend the two. It doesn't
+
+46
+00:01:39,120 --> 00:01:42,120
+really matter. When it came to two
+
+47
+00:01:40,400 --> 00:01:44,200
+issues, two issues always felt like it
+
+48
+00:01:42,120 --> 00:01:47,080
+was biased towards GitHub and linear
+
+49
+00:01:44,200 --> 00:01:49,800
+that use issues, but really we want this
+
+50
+00:01:47,080 --> 00:01:51,400
+to be tickets. You have a spec, and then
+
+51
+00:01:49,800 --> 00:01:53,440
+underneath the spec you have the tickets
+
+52
+00:01:51,400 --> 00:01:55,320
+that are the journey that you
+
+53
+00:01:53,440 --> 00:01:57,000
+take to actually enact the spec and
+
+54
+00:01:55,320 --> 00:01:58,880
+create it. This has been annoying me for
+
+55
+00:01:57,000 --> 00:02:00,680
+a long time, and finally it no longer
+
+56
+00:01:58,880 --> 00:02:02,840
+annoys me. It brings me joy. Now, one
+
+57
+00:02:00,680 --> 00:02:04,760
+irritating thing about this rename is
+
+58
+00:02:02,840 --> 00:02:06,760
+that you will need to probably delete
+
+59
+00:02:04,760 --> 00:02:09,200
+those skills and re-add them. This means
+
+60
+00:02:06,760 --> 00:02:11,000
+you'll need to run NPX skills add Map Po
+
+61
+00:02:09,200 --> 00:02:13,080
+ skills. I'm pretty sure that this
+
+62
+00:02:11,000 --> 00:02:16,120
+skills installer won't pick up the
+
+63
+00:02:13,080 --> 00:02:17,959
+rename, so it won't try to update to PRD
+
+64
+00:02:16,120 --> 00:02:19,280
+to turn it into to spec. You get what I
+
+65
+00:02:17,959 --> 00:02:21,480
+mean. And so, running this command is
+
+66
+00:02:19,280 --> 00:02:22,959
+the safest way to grab all of these new
+
+67
+00:02:21,480 --> 00:02:24,400
+skills cuz you get to just pick and
+
+68
+00:02:22,959 --> 00:02:25,560
+choose which ones you want. And once
+
+69
+00:02:24,400 --> 00:02:27,600
+you've done that, you should probably go
+
+70
+00:02:25,560 --> 00:02:30,280
+through a pass through your skills
+
+71
+00:02:27,600 --> 00:02:31,840
+folder and just check that no bad ones
+
+72
+00:02:30,280 --> 00:02:33,840
+are still in there. So, you want to make
+
+73
+00:02:31,840 --> 00:02:35,680
+sure that you're intentionally grabbing
+
+74
+00:02:33,840 --> 00:02:37,640
+all the right skills. The next change is
+
+75
+00:02:35,680 --> 00:02:39,280
+that I've fixed a couple of bugs that
+
+76
+00:02:37,640 --> 00:02:41,400
+people were having with grill me and
+
+77
+00:02:39,280 --> 00:02:43,600
+grill with docs. Both of them rely on
+
+78
+00:02:41,400 --> 00:02:46,280
+this kind of central reference grilling
+
+79
+00:02:43,600 --> 00:02:48,800
+skill that kind of show shows the LLM
+
+80
+00:02:46,280 --> 00:02:50,600
+how to grill a person. I've sharpened up
+
+81
+00:02:48,800 --> 00:02:53,160
+this line here saying asking multiple
+
+82
+00:02:50,600 --> 00:02:55,720
+questions at once is bewildering. Even
+
+83
+00:02:53,160 --> 00:02:57,840
+with this direction to ask questions one
+
+84
+00:02:55,720 --> 00:02:59,200
+at a time, it was still occasionally
+
+85
+00:02:57,840 --> 00:03:01,120
+just going
+
+86
+00:02:59,200 --> 00:03:04,440
+to have multiple questions at once. So,
+
+87
+00:03:01,120 --> 00:03:05,959
+I've told it why we don't want multiple
+
+88
+00:03:04,440 --> 00:03:07,760
+questions at once. We've also added a
+
+89
+00:03:05,959 --> 00:03:09,720
+confirmation gate on the end. Do not
+
+90
+00:03:07,760 --> 00:03:11,440
+enact the plan until I confirm we've
+
+91
+00:03:09,720 --> 00:03:12,480
+reached a shared understanding. Lots of
+
+92
+00:03:11,440 --> 00:03:14,239
+people on different models were
+
+93
+00:03:12,480 --> 00:03:16,120
+reporting that the grilling session
+
+94
+00:03:14,239 --> 00:03:18,000
+would just end and then it would just go
+
+95
+00:03:16,120 --> 00:03:19,680
+straight into implementation. So, this
+
+96
+00:03:18,000 --> 00:03:22,600
+is just an extra little gate there.
+
+97
+00:03:19,680 --> 00:03:25,560
+Finally, on some situations, it would
+
+98
+00:03:22,600 --> 00:03:27,400
+just grill itself, which is very, very
+
+99
+00:03:25,560 --> 00:03:29,480
+odd. Not something I've noticed or seen
+
+100
+00:03:27,400 --> 00:03:31,280
+in my personal thing, but I I can only
+
+101
+00:03:29,480 --> 00:03:33,840
+get a small subset of how these skills
+
+102
+00:03:31,280 --> 00:03:35,920
+are actually used. So, I've basically
+
+103
+00:03:33,840 --> 00:03:38,160
+tried to use a couple of leading words
+
+104
+00:03:35,920 --> 00:03:40,480
+to indicate the difference between facts
+
+105
+00:03:38,160 --> 00:03:42,640
+and decisions. So, sometimes it was
+
+106
+00:03:40,480 --> 00:03:44,239
+using the previous phrasing here by just
+
+107
+00:03:42,640 --> 00:03:45,720
+exploring the code base and grilling
+
+108
+00:03:44,239 --> 00:03:48,120
+itself. This was especially happening
+
+109
+00:03:45,720 --> 00:03:50,480
+with Fable, actually. And so, I've
+
+110
+00:03:48,120 --> 00:03:53,160
+decided to make a distinction between
+
+111
+00:03:50,480 --> 00:03:55,120
+facts, so facts that are things you find
+
+112
+00:03:53,160 --> 00:03:57,880
+yourself by exploring the code base, and
+
+113
+00:03:55,120 --> 00:03:59,480
+decisions. So, decisions are needed to
+
+114
+00:03:57,880 --> 00:04:01,080
+be made by the user. So, just a couple
+
+115
+00:03:59,480 --> 00:04:02,720
+of sentences, added a couple of things
+
+116
+00:04:01,080 --> 00:04:04,200
+changed around, and this has made it a
+
+117
+00:04:02,720 --> 00:04:06,200
+lot more consistent. Definitely getting
+
+118
+00:04:04,200 --> 00:04:07,520
+a lot fewer complaints about those weird
+
+119
+00:04:06,200 --> 00:04:09,320
+issues happening. The next thing to say
+
+120
+00:04:07,520 --> 00:04:12,520
+is that I've added a couple of skills
+
+121
+00:04:09,320 --> 00:04:14,959
+that really just take the process that
+
+122
+00:04:12,520 --> 00:04:16,160
+was primarily a planning process, didn't
+
+123
+00:04:14,959 --> 00:04:18,400
+really hold your hand into
+
+124
+00:04:16,160 --> 00:04:20,560
+implementation, and turn it into a
+
+125
+00:04:18,400 --> 00:04:22,040
+proper software development life cycle.
+
+126
+00:04:20,560 --> 00:04:23,600
+So, many folks ask me, "What is the
+
+127
+00:04:22,040 --> 00:04:26,120
+flow? What is the main flow you're
+
+128
+00:04:23,600 --> 00:04:28,120
+supposed to use with the skills?" And
+
+129
+00:04:26,120 --> 00:04:29,800
+first of all, I mean, this is it. We
+
+130
+00:04:28,120 --> 00:04:32,040
+have number one, you're supposed to
+
+131
+00:04:29,800 --> 00:04:34,640
+instead of using plan mode, you get an
+
+132
+00:04:32,040 --> 00:04:37,360
+agent to grill you. And it uses these
+
+133
+00:04:34,640 --> 00:04:39,120
+couple of docs to add a glossary, to
+
+134
+00:04:37,360 --> 00:04:40,840
+kind of understand you better as you go
+
+135
+00:04:39,120 --> 00:04:42,640
+along, and also add architectural
+
+136
+00:04:40,840 --> 00:04:44,840
+decision records so you can capture the
+
+137
+00:04:42,640 --> 00:04:47,000
+non-obvious stuff. The stuff that goes
+
+138
+00:04:44,840 --> 00:04:49,760
+in the growth for docs then goes into a
+
+139
+00:04:47,000 --> 00:04:52,160
+spec, as we saw before. That spec kind
+
+140
+00:04:49,760 --> 00:04:55,000
+of defines the destination, where you're
+
+141
+00:04:52,160 --> 00:04:57,240
+going. Then, you turn that spec into
+
+142
+00:04:55,000 --> 00:04:59,040
+individual tickets so you can spread the
+
+143
+00:04:57,240 --> 00:05:01,160
+development of it out over multiple
+
+144
+00:04:59,040 --> 00:05:03,520
+agent sessions. That's the purpose of to
+
+145
+00:05:01,160 --> 00:05:06,080
+tickets. You then implement each one of
+
+146
+00:05:03,520 --> 00:05:08,000
+those tickets with a implement skill.
+
+147
+00:05:06,080 --> 00:05:09,760
+And the implement skill is very, very
+
+148
+00:05:08,000 --> 00:05:11,360
+simple. It just looks like this.
+
+149
+00:05:09,760 --> 00:05:14,280
+Implement the work described by the user
+
+150
+00:05:11,360 --> 00:05:16,480
+in the spec or tickets. Use TDD where
+
+151
+00:05:14,280 --> 00:05:18,480
+possible at pre-agreed seams. That's a
+
+152
+00:05:16,480 --> 00:05:20,000
+nice one. And run type checking
+
+153
+00:05:18,480 --> 00:05:22,000
+regularly, single test files regularly,
+
+154
+00:05:20,000 --> 00:05:24,160
+and full test suite once at the end.
+
+155
+00:05:22,000 --> 00:05:25,720
+Once done, use code review to review the
+
+156
+00:05:24,160 --> 00:05:27,480
+work, and then commit your work to the
+
+157
+00:05:25,720 --> 00:05:29,480
+current branch. I almost didn't make a
+
+158
+00:05:27,480 --> 00:05:31,560
+skill for this because it's really
+
+159
+00:05:29,480 --> 00:05:34,120
+simple, right? It's just mostly relying
+
+160
+00:05:31,560 --> 00:05:35,600
+on the agent's priors, on its, you know,
+
+161
+00:05:34,120 --> 00:05:38,360
+on the harness, kind of teaching it what
+
+162
+00:05:35,600 --> 00:05:40,160
+to do. And I didn't honestly think we
+
+163
+00:05:38,360 --> 00:05:41,640
+needed a skill here, but folks kept
+
+164
+00:05:40,160 --> 00:05:43,600
+asking me, "What's the flow? What's the
+
+165
+00:05:41,640 --> 00:05:45,120
+flow here?" And so, I figured just an
+
+166
+00:05:43,600 --> 00:05:46,880
+implement skill, make it nice and
+
+167
+00:05:45,120 --> 00:05:48,920
+simple, right? At each stage of the
+
+168
+00:05:46,880 --> 00:05:50,960
+process, call this skill. So, that means
+
+169
+00:05:48,920 --> 00:05:53,200
+implement earns its place here because
+
+170
+00:05:50,960 --> 00:05:54,720
+you know, okay, once we got two tickets,
+
+171
+00:05:53,200 --> 00:05:56,240
+then we just got to implement each
+
+172
+00:05:54,720 --> 00:05:59,480
+ticket in a separate coding session.
+
+173
+00:05:56,240 --> 00:06:01,360
+Implement then itself calls code review.
+
+174
+00:05:59,480 --> 00:06:04,080
+And code review, I graduated this out of
+
+175
+00:06:01,360 --> 00:06:06,240
+in progress on version one. So, it's
+
+176
+00:06:04,080 --> 00:06:08,080
+been around for a little bit, but I have
+
+177
+00:06:06,240 --> 00:06:09,560
+made some updates to it in this version
+
+178
+00:06:08,080 --> 00:06:12,960
+two. The theory of the code review skill
+
+179
+00:06:09,560 --> 00:06:14,960
+is that it reviews code on two axes. So,
+
+180
+00:06:12,960 --> 00:06:16,840
+it does a sub agent for each one of
+
+181
+00:06:14,960 --> 00:06:19,080
+these. The first one is the standards
+
+182
+00:06:16,840 --> 00:06:21,560
+axis. Does the code conform to this
+
+183
+00:06:19,080 --> 00:06:24,160
+repo's documented coding standards? So,
+
+184
+00:06:21,560 --> 00:06:26,160
+if you've got a coding standards.md file
+
+185
+00:06:24,160 --> 00:06:28,560
+somewhere in your repo, then it will
+
+186
+00:06:26,160 --> 00:06:30,080
+read that and check against those. I
+
+187
+00:06:28,560 --> 00:06:33,000
+generally think that coding standards
+
+188
+00:06:30,080 --> 00:06:34,280
+belong outside of your agents.md file.
+
+189
+00:06:33,000 --> 00:06:36,640
+They're supposed to be somewhere
+
+190
+00:06:34,280 --> 00:06:39,040
+separate, and the code review point is
+
+191
+00:06:36,640 --> 00:06:40,320
+where they're most useful. And then,
+
+192
+00:06:39,040 --> 00:06:42,200
+once you've done the standards, you then
+
+193
+00:06:40,320 --> 00:06:44,000
+go on to the spec. Does the code
+
+194
+00:06:42,200 --> 00:06:46,320
+faithfully implement the originating
+
+195
+00:06:44,000 --> 00:06:48,800
+issue or PR or spec? They both run as
+
+196
+00:06:46,320 --> 00:06:51,160
+parallel sub agents, and it does a
+
+197
+00:06:48,800 --> 00:06:53,080
+process here where it walks through each
+
+198
+00:06:51,160 --> 00:06:54,600
+part. Now, the thing that's cool and new
+
+199
+00:06:53,080 --> 00:06:56,640
+about this skill is that I've been
+
+200
+00:06:54,600 --> 00:06:59,280
+reading Martin Fowler's refactoring
+
+201
+00:06:56,640 --> 00:07:01,520
+again. And what I decided to do is
+
+202
+00:06:59,280 --> 00:07:04,840
+Martin Fowler names a bunch of different
+
+203
+00:07:01,520 --> 00:07:06,720
+smells that the agent can identify in
+
+204
+00:07:04,840 --> 00:07:09,760
+bad code. Refactoring is such an old
+
+205
+00:07:06,720 --> 00:07:11,720
+book, such a well-cited book, that these
+
+206
+00:07:09,760 --> 00:07:13,600
+uh kind of smells are deep in the
+
+207
+00:07:11,720 --> 00:07:15,280
+agent's priors. And so, all you need to
+
+208
+00:07:13,600 --> 00:07:17,080
+do is kind of invoke the idea Okay,
+
+209
+00:07:15,280 --> 00:07:18,760
+mysterious name or duplicated code or
+
+210
+00:07:17,080 --> 00:07:20,600
+feature envy, data clumps, primitive
+
+211
+00:07:18,760 --> 00:07:22,600
+obsession, repeated switches, divergent
+
+212
+00:07:20,600 --> 00:07:24,640
+change, speculative generality, message
+
+213
+00:07:22,600 --> 00:07:26,800
+chains. You see what I mean? Like, these
+
+214
+00:07:24,640 --> 00:07:28,560
+are all deep in the agent's kind of
+
+215
+00:07:26,800 --> 00:07:30,960
+knowledge base, and all we got to do is
+
+216
+00:07:28,560 --> 00:07:33,800
+just really describe them in a sentence.
+
+217
+00:07:30,960 --> 00:07:35,800
+And what I found is that leads the word
+
+218
+00:07:33,800 --> 00:07:37,919
+or leads the agent to repeat that word
+
+219
+00:07:35,800 --> 00:07:40,080
+back to you and say, "Yes, I found some
+
+220
+00:07:37,919 --> 00:07:42,160
+message chains. I need to remove them. I
+
+221
+00:07:40,080 --> 00:07:43,600
+found a middle man situation. I need to
+
+222
+00:07:42,160 --> 00:07:45,680
+uh fix that." So, I tested this for a
+
+223
+00:07:43,600 --> 00:07:47,880
+couple of weeks and it was outrageously
+
+224
+00:07:45,680 --> 00:07:49,480
+useful. It was really, really nice at
+
+225
+00:07:47,880 --> 00:07:51,600
+improving the quality of my code and
+
+226
+00:07:49,480 --> 00:07:53,680
+it's really cheap to add here, just kind
+
+227
+00:07:51,600 --> 00:07:55,960
+of like 10 lines. But, let's go and talk
+
+228
+00:07:53,680 --> 00:07:58,480
+about the one that I'm really, really
+
+229
+00:07:55,960 --> 00:08:01,360
+excited about, which is a whole new
+
+230
+00:07:58,480 --> 00:08:04,520
+change to the way that we kick off and
+
+231
+00:08:01,360 --> 00:08:07,320
+shape specs. So, the pre-spec bit. In
+
+232
+00:08:04,520 --> 00:08:09,600
+other words, it goes here where it may,
+
+233
+00:08:07,320 --> 00:08:11,960
+in some situations, replace Grill with
+
+234
+00:08:09,600 --> 00:08:14,080
+Docs. And it's called Wayfinder. I will
+
+235
+00:08:11,960 --> 00:08:16,560
+make an entire post uh entire video
+
+236
+00:08:14,080 --> 00:08:18,320
+about Wayfinder, but uh suffice to say
+
+237
+00:08:16,560 --> 00:08:20,400
+is that I would love for you, in
+
+238
+00:08:18,320 --> 00:08:22,640
+situations where you're thinking about
+
+239
+00:08:20,400 --> 00:08:24,760
+using Grill with Docs, instead to
+
+240
+00:08:22,640 --> 00:08:26,760
+default to Wayfinder instead. What
+
+241
+00:08:24,760 --> 00:08:29,320
+Wayfinder does is it's designed for
+
+242
+00:08:26,760 --> 00:08:32,080
+situations where you have a ton of stuff
+
+243
+00:08:29,320 --> 00:08:33,880
+that you want to plan, but and too big
+
+244
+00:08:32,080 --> 00:08:35,360
+for one agent session. In other words,
+
+245
+00:08:33,880 --> 00:08:37,280
+you're going to blow out of the smart
+
+246
+00:08:35,360 --> 00:08:39,080
+zone of the agent or you might even blow
+
+247
+00:08:37,280 --> 00:08:41,280
+out of the context window of the agent.
+
+248
+00:08:39,080 --> 00:08:42,560
+You need to split it into multiple parts
+
+249
+00:08:41,280 --> 00:08:44,680
+in order to figure out where you're
+
+250
+00:08:42,560 --> 00:08:46,240
+going. A loose idea has arrived, too big
+
+251
+00:08:44,680 --> 00:08:47,680
+for one agent session and wrapped in
+
+252
+00:08:46,240 --> 00:08:49,760
+fog. The way from here to the
+
+253
+00:08:47,680 --> 00:08:52,480
+destination isn't visible yet. This
+
+254
+00:08:49,760 --> 00:08:54,240
+skill charts the way as a shared map on
+
+255
+00:08:52,480 --> 00:08:56,040
+the repo's issue tracker, then works its
+
+256
+00:08:54,240 --> 00:08:58,560
+tickets one at a time until the route is
+
+257
+00:08:56,040 --> 00:09:00,000
+clear. These maps are saved in GitHub
+
+258
+00:08:58,560 --> 00:09:02,040
+issues. For instance, this is one on the
+
+259
+00:09:00,000 --> 00:09:04,960
+Sandcastle repo where we're doing a
+
+260
+00:09:02,040 --> 00:09:07,360
+spike to think about maybe pulling in
+
+261
+00:09:04,960 --> 00:09:09,440
+the AI SDK as a dependency, a big, big
+
+262
+00:09:07,360 --> 00:09:12,160
+change. And so, you can see there are no
+
+263
+00:09:09,440 --> 00:09:14,000
+decisions that have um been made so far
+
+264
+00:09:12,160 --> 00:09:16,720
+and all of the decisions that need to be
+
+265
+00:09:14,000 --> 00:09:19,600
+made are saved in sub-issues. And these
+
+266
+00:09:16,720 --> 00:09:21,400
+sub-issues have blocking relationships.
+
+267
+00:09:19,600 --> 00:09:24,120
+So, we can see that no decision can be
+
+268
+00:09:21,400 --> 00:09:25,760
+made here before we make this key
+
+269
+00:09:24,120 --> 00:09:28,920
+decision at the start. Each one of these
+
+270
+00:09:25,760 --> 00:09:30,400
+decisions is scoped to be the size of an
+
+271
+00:09:28,920 --> 00:09:32,360
+agent session. And we can see that
+
+272
+00:09:30,400 --> 00:09:34,160
+they're labeled as different types here.
+
+273
+00:09:32,360 --> 00:09:36,720
+So, for instance, this one is labeled as
+
+274
+00:09:34,160 --> 00:09:39,280
+a research task. So, this is really an
+
+275
+00:09:36,720 --> 00:09:41,600
+AFK task for the agent to go off, do
+
+276
+00:09:39,280 --> 00:09:43,520
+some research, and then come back. This
+
+277
+00:09:41,600 --> 00:09:45,680
+one I think is a research as well. This
+
+278
+00:09:43,520 --> 00:09:48,280
+one is a research task, and this one is
+
+279
+00:09:45,680 --> 00:09:50,240
+a grilling task. So, this one needs a
+
+280
+00:09:48,280 --> 00:09:52,200
+grilling session to be done here. I
+
+281
+00:09:50,240 --> 00:09:54,160
+think these are all grillers. We can see
+
+282
+00:09:52,200 --> 00:09:55,680
+these defined in the ticket types down
+
+283
+00:09:54,160 --> 00:09:58,720
+here. So, we have research, we have
+
+284
+00:09:55,680 --> 00:10:00,800
+grilling, we also have prototype as
+
+285
+00:09:58,720 --> 00:10:03,080
+well. So, this is something I've been
+
+286
+00:10:00,800 --> 00:10:05,320
+really advocating for recently is doing
+
+287
+00:10:03,080 --> 00:10:07,360
+more prototyping before you get to a
+
+288
+00:10:05,320 --> 00:10:08,960
+spec. The idea is you raise the fidelity
+
+289
+00:10:07,360 --> 00:10:11,120
+of the discussion by making a cheap,
+
+290
+00:10:08,960 --> 00:10:13,440
+rough, concrete artifact to react to. An
+
+291
+00:10:11,120 --> 00:10:15,240
+outline, rough tech stub, UI logic code
+
+292
+00:10:13,440 --> 00:10:17,320
+via the prototype skill. We'll get to
+
+293
+00:10:15,240 --> 00:10:19,480
+that in a minute. Links to the prototype
+
+294
+00:10:17,320 --> 00:10:21,240
+as an asset. And it says use when how
+
+295
+00:10:19,480 --> 00:10:24,400
+should it look or how should it behave
+
+296
+00:10:21,240 --> 00:10:25,880
+is a key question. And this is essential
+
+297
+00:10:24,400 --> 00:10:27,800
+for almost anything that touches
+
+298
+00:10:25,880 --> 00:10:29,960
+front-end code. So, I would definitely
+
+299
+00:10:27,800 --> 00:10:31,400
+be recommending using Wayfinder for
+
+300
+00:10:29,960 --> 00:10:34,120
+anything that touches the front-end. The
+
+301
+00:10:31,400 --> 00:10:36,600
+final one here is just tasks. So, config
+
+302
+00:10:34,120 --> 00:10:38,560
+that needs to be set up, um provisioning
+
+303
+00:10:36,600 --> 00:10:40,560
+access, you know, moving data into the
+
+304
+00:10:38,560 --> 00:10:42,080
+shape, you know, all the sort of boring
+
+305
+00:10:40,560 --> 00:10:44,600
+stuff that doesn't need a grilling
+
+306
+00:10:42,080 --> 00:10:46,920
+decision and can't really be automated
+
+307
+00:10:44,600 --> 00:10:48,960
+by AI. What you end up with is after all
+
+308
+00:10:46,920 --> 00:10:51,640
+of these tickets are closed, all of that
+
+309
+00:10:48,960 --> 00:10:53,720
+information gets saved onto the map with
+
+310
+00:10:51,640 --> 00:10:55,640
+the original tickets as kind of primary
+
+311
+00:10:53,720 --> 00:10:58,080
+sources for what was captured. And you
+
+312
+00:10:55,640 --> 00:11:00,000
+can then take this map and just turn it
+
+313
+00:10:58,080 --> 00:11:01,839
+into a spec in the regular way. What I
+
+314
+00:11:00,000 --> 00:11:04,040
+found that instead of having the kind of
+
+315
+00:11:01,839 --> 00:11:06,120
+anxiety of managing my session with
+
+316
+00:11:04,040 --> 00:11:07,680
+grill with docs having to hand off,
+
+317
+00:11:06,120 --> 00:11:09,720
+worry about the smart zone. With
+
+318
+00:11:07,680 --> 00:11:12,120
+Wayfinder, it's kind of all managed for
+
+319
+00:11:09,720 --> 00:11:14,160
+me. I just get to close a session, open
+
+320
+00:11:12,120 --> 00:11:16,000
+up the next Wayfinder ticket. It's all
+
+321
+00:11:14,160 --> 00:11:17,920
+saved in GitHub, so it's collaborative.
+
+322
+00:11:16,000 --> 00:11:19,120
+You can share it across your team. And
+
+323
+00:11:17,920 --> 00:11:21,160
+once the map is done, once it's
+
+324
+00:11:19,120 --> 00:11:22,200
+complete, you just go to to spec, and
+
+325
+00:11:21,160 --> 00:11:24,560
+you're good to go. To support the
+
+326
+00:11:22,200 --> 00:11:27,360
+Wayfinder skill, we have a new research
+
+327
+00:11:24,560 --> 00:11:29,240
+skill, which is very small, very handy
+
+328
+00:11:27,360 --> 00:11:31,839
+for when you just need to do a research
+
+329
+00:11:29,240 --> 00:11:33,840
+session, or it kind of influences the
+
+330
+00:11:31,839 --> 00:11:35,520
+model in researching in the right way as
+
+331
+00:11:33,840 --> 00:11:36,920
+well, or at least the way that I like.
+
+332
+00:11:35,520 --> 00:11:38,360
+Spins up a background agent to do the
+
+333
+00:11:36,920 --> 00:11:40,080
+research so you keep working while it
+
+334
+00:11:38,360 --> 00:11:41,760
+reads. Investigate the question against
+
+335
+00:11:40,080 --> 00:11:43,880
+primary sources, write the findings to a
+
+336
+00:11:41,760 --> 00:11:45,720
+simple markdown file, and save it where
+
+337
+00:11:43,880 --> 00:11:47,000
+the repo already keeps such notes match
+
+338
+00:11:45,720 --> 00:11:48,680
+the existing convention. So this is
+
+339
+00:11:47,000 --> 00:11:50,000
+useful too if you need to do any
+
+340
+00:11:48,680 --> 00:11:51,880
+research, you can just invoke the
+
+341
+00:11:50,000 --> 00:11:53,120
+research skill and you're good to go.
+
+342
+00:11:51,880 --> 00:11:55,800
+The next one, of course, is the
+
+343
+00:11:53,120 --> 00:11:56,960
+prototype, which I've kind of shown off
+
+344
+00:11:55,800 --> 00:11:58,880
+a little bit before. I don't think I've
+
+345
+00:11:56,960 --> 00:12:01,000
+done a full video on it. This is now
+
+346
+00:11:58,880 --> 00:12:03,040
+modeling, folks, so that Wayfinder can
+
+347
+00:12:01,000 --> 00:12:05,960
+invoke it itself, and it essentially
+
+348
+00:12:03,040 --> 00:12:08,680
+gives you a choice between logic or
+
+349
+00:12:05,960 --> 00:12:11,960
+state. So it's either a logic prototype
+
+350
+00:12:08,680 --> 00:12:13,080
+or a UI prototype, and they react quite
+
+351
+00:12:11,960 --> 00:12:14,640
+differently. The final change is
+
+352
+00:12:13,080 --> 00:12:16,720
+something that people have been asking
+
+353
+00:12:14,640 --> 00:12:18,120
+for for a while, and I finally decided
+
+354
+00:12:16,720 --> 00:12:20,160
+to pull the trigger on it, which is
+
+355
+00:12:18,120 --> 00:12:22,440
+before in my TDD skill, it would
+
+356
+00:12:20,160 --> 00:12:24,080
+recommend a set of steps for you to
+
+357
+00:12:22,440 --> 00:12:26,520
+follow, and that was a little bit
+
+358
+00:12:24,080 --> 00:12:28,960
+awkward sometimes. The steps were like,
+
+359
+00:12:26,520 --> 00:12:31,280
+it would confirm what tests it wanted to
+
+360
+00:12:28,960 --> 00:12:33,000
+write with you, and then you would, you
+
+361
+00:12:31,280 --> 00:12:36,320
+know, walk it through, walk it through,
+
+362
+00:12:33,000 --> 00:12:38,800
+and it didn't fit with most people's
+
+363
+00:12:36,320 --> 00:12:41,360
+idea of how TDD should work, which is
+
+364
+00:12:38,800 --> 00:12:43,839
+you should be able to pass an AFK agent
+
+365
+00:12:41,360 --> 00:12:46,200
+the TDD skill, and it should just work.
+
+366
+00:12:43,839 --> 00:12:48,839
+And so this TDD skill is now reference
+
+367
+00:12:46,200 --> 00:12:51,120
+material only. So it doesn't specify any
+
+368
+00:12:48,839 --> 00:12:52,839
+particular steps apart from just the
+
+369
+00:12:51,120 --> 00:12:55,120
+order in which you should write tests
+
+370
+00:12:52,839 --> 00:12:56,880
+in, so to do red green refactor. So it's
+
+371
+00:12:55,120 --> 00:12:59,480
+just says red before green, one slice at
+
+372
+00:12:56,880 --> 00:13:02,480
+a time, and it also splits away
+
+373
+00:12:59,480 --> 00:13:04,760
+refactoring as as not part of the loop.
+
+374
+00:13:02,480 --> 00:13:07,680
+So it's no longer a red green refactor
+
+375
+00:13:04,760 --> 00:13:10,080
+loop, it's more just red green. I tend
+
+376
+00:13:07,680 --> 00:13:12,920
+to think that putting the refactoring in
+
+377
+00:13:10,080 --> 00:13:14,320
+the code review part is a lot more
+
+378
+00:13:12,920 --> 00:13:17,200
+productive because then you don't
+
+379
+00:13:14,320 --> 00:13:19,400
+overload the implementation. So that is
+
+380
+00:13:17,200 --> 00:13:22,400
+all of the changes that have come in on
+
+381
+00:13:19,400 --> 00:13:24,040
+the skills. It is a lot of changes, and
+
+382
+00:13:22,400 --> 00:13:25,600
+if you're nervous about missing any of
+
+383
+00:13:24,040 --> 00:13:28,560
+the updates, then I recommend that you
+
+384
+00:13:25,600 --> 00:13:30,440
+clear out all of your skills and do NPX
+
+385
+00:13:28,560 --> 00:13:31,960
+skills update and grab all of the new
+
+386
+00:13:30,440 --> 00:13:33,280
+ones. If you've made updates to your
+
+387
+00:13:31,960 --> 00:13:35,160
+skills in the meantime, then you can
+
+388
+00:13:33,280 --> 00:13:36,960
+just point your clanker at my repo and
+
+389
+00:13:35,160 --> 00:13:38,560
+just say pull down all of the good new
+
+390
+00:13:36,960 --> 00:13:40,320
+stuff, especially pointing at the
+
+391
+00:13:38,560 --> 00:13:42,000
+release notes. The thing I think this
+
+392
+00:13:40,320 --> 00:13:43,760
+release will be remembered for is to
+
+393
+00:13:42,000 --> 00:13:45,480
+spec and to tickets changing because
+
+394
+00:13:43,760 --> 00:13:47,160
+that is just a little bit of friction,
+
+395
+00:13:45,480 --> 00:13:50,000
+but I think good friction cuz it names
+
+396
+00:13:47,160 --> 00:13:51,840
+it properly. And I hope to be the start
+
+397
+00:13:50,000 --> 00:13:53,160
+of you getting obsessed with Wayfinder.
+
+398
+00:13:51,840 --> 00:13:55,560
+I'm using Wayfinder for literally
+
+399
+00:13:53,160 --> 00:13:57,480
+everything, even non-coding stuff. I've
+
+400
+00:13:55,560 --> 00:13:59,320
+actually been planning my next course
+
+401
+00:13:57,480 --> 00:14:01,280
+with Wayfinder and it's really, really
+
+402
+00:13:59,320 --> 00:14:03,600
+good. In fact, why don't I just show you
+
+403
+00:14:01,280 --> 00:14:05,600
+that course now? This is the AI coding
+
+404
+00:14:03,600 --> 00:14:07,120
+crash course. This is going to be
+
+405
+00:14:05,600 --> 00:14:09,360
+different from the cohorts that I
+
+406
+00:14:07,120 --> 00:14:11,400
+usually run. It's going to be much, much
+
+407
+00:14:09,360 --> 00:14:13,600
+cheaper and it's going to be self-paced
+
+408
+00:14:11,400 --> 00:14:14,960
+so you can purchase it anytime. You get
+
+409
+00:14:13,600 --> 00:14:16,320
+help from the Discord kind of in the
+
+410
+00:14:14,960 --> 00:14:18,720
+usual way, but it's not going to be
+
+411
+00:14:16,320 --> 00:14:21,640
+gated like a normal cohort. It is going
+
+412
+00:14:18,720 --> 00:14:23,960
+to be the perfect intro for anyone who's
+
+413
+00:14:21,640 --> 00:14:26,080
+looking to get into AI coding, whether
+
+414
+00:14:23,960 --> 00:14:27,720
+you are a developer or whether you are
+
+415
+00:14:26,080 --> 00:14:29,360
+not a developer. So, for senior
+
+416
+00:14:27,720 --> 00:14:31,280
+engineers, it's going to be a conversion
+
+417
+00:14:29,360 --> 00:14:33,040
+course. For folks who are new to
+
+418
+00:14:31,280 --> 00:14:34,920
+development, it's going to be the way
+
+419
+00:14:33,040 --> 00:14:36,680
+that you can actually get productive
+
+420
+00:14:34,920 --> 00:14:38,480
+using these crazy new tools. I've not
+
+421
+00:14:36,680 --> 00:14:40,680
+announced a price yet. I am going to
+
+422
+00:14:38,480 --> 00:14:42,680
+just be adding sign-ups in here and
+
+423
+00:14:40,680 --> 00:14:44,560
+it'll be available once I finish filming
+
+424
+00:14:42,680 --> 00:14:46,400
+it, maybe in about
+
+425
+00:14:44,560 --> 00:14:47,720
+August time, I think. But folks, thank
+
+426
+00:14:46,400 --> 00:14:49,080
+you so much for watching. It's always a
+
+427
+00:14:47,720 --> 00:14:51,960
+pleasure sharing these skills updates
+
+428
+00:14:49,080 --> 00:14:54,160
+with you. It is really cool to see the
+
+429
+00:14:51,960 --> 00:14:55,560
+usage just absolutely grow and grow.
+
+430
+00:14:54,160 --> 00:14:57,839
+Everyone tells me I shouldn't show the
+
+431
+00:14:55,560 --> 00:15:00,480
+star counts, but it's up to like 160K
+
+432
+00:14:57,839 --> 00:15:03,320
+stars now. Uh 7 million downloads on
+
+433
+00:15:00,480 --> 00:15:04,720
+skills.sh. It is just bonkers. So, thank
+
+434
+00:15:03,320 --> 00:15:07,520
+you so much for enjoying the skills. I
+
+435
+00:15:04,720 --> 00:15:09,520
+hope they are helping you ship more and
+
+436
+00:15:07,520 --> 00:15:12,120
+ship more productively and I'll see you
+
+437
+00:15:09,520 --> 00:15:12,120
+very soon.
+

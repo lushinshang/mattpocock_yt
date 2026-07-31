@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當 AI 開始「盤問」你：為什麼多數人用錯了這套對齊技巧｜Matt Pocock AI 工作流深度導讀</title>
+<meta name="description" content="為什麼多數人用錯了 Grill Me 這套盤問對齊技巧。">
+<style>
+:root{color-scheme: light dark;}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#f9f7f4; color:#1a1a1a;
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  letter-spacing:0;
+  line-height:1.68;
+  font-size:16.5px;
+}
+@media (prefers-color-scheme: dark){
+  body{ background:#181614; color:#e8e4de; }
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+header.hero{padding:56px 24px 32px;}
+.series-tag{
+  max-width:720px;margin:0 auto 14px;
+  font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+  color:#a8763e; font-weight:600;
+}
+@media (prefers-color-scheme: dark){ .series-tag{ color:#d9a566; } }
+h1{
+  max-width:720px;margin:0 auto; text-align:left;
+  font-size:clamp(2.1rem, 4vw, 3.1rem);
+  line-height:1.28; font-weight:800; text-wrap:balance;
+  color:#171310;
+}
+@media (prefers-color-scheme: dark){ h1{ color:#f3efe8; } }
+nav.toc{
+  position:sticky; top:0; z-index:50;
+  background:rgba(249,247,244,0.92); backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  padding:0;
+}
+@media (prefers-color-scheme: dark){
+  nav.toc{ background:rgba(24,22,20,0.92); border-bottom:1px solid rgba(255,255,255,0.08); }
+}
+nav.toc .toc-inner{
+  max-width:1120px;margin:0 auto;padding:0 24px;
+  display:flex; gap:6px; overflow-x:auto;
+  height:56px; align-items:center;
+  scrollbar-width:thin;
+}
+nav.toc a{
+  flex:0 0 auto; white-space:nowrap;
+  font-size:13.5px; color:#5a5248; text-decoration:none;
+  padding:8px 12px; border-radius:999px;
+  transition:background 0.15s, color 0.15s;
+}
+nav.toc a:hover{ background:rgba(168,118,62,0.12); color:#a8763e; }
+@media (prefers-color-scheme: dark){
+  nav.toc a{ color:#bdb6ab; }
+  nav.toc a:hover{ background:rgba(217,165,102,0.16); color:#d9a566; }
+}
+article{max-width:720px;margin:0 auto;padding:40px 24px 24px;}
+article p{margin:0 0 22px; font-size:16.5px; line-height:1.7;}
+article h2{
+  font-size:clamp(1.4rem,2.6vw,1.9rem); font-weight:800;
+  margin:52px 0 20px; line-height:1.35; text-wrap:balance;
+  color:#171310; scroll-margin-top:72px;
+}
+@media (prefers-color-scheme: dark){ article h2{ color:#f3efe8; } }
+article strong{ color:#171310; }
+@media (prefers-color-scheme: dark){ article strong{ color:#f3efe8; } }
+figure.summary-figure{margin:32px 0; padding:0 24px;}
+figure.summary-figure img{
+  width:100%; max-width:640px; display:block; margin:0 auto;
+  border-radius:12px; aspect-ratio:16/9; object-fit:cover;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08); cursor:zoom-in;
+}
+@media (max-width:640px){
+  figure.summary-figure img{aspect-ratio:9/16; max-width:360px;}
+}
+figure.section-figure{
+  margin:36px auto; max-width:860px;
+}
+figure.section-figure img{
+  width:100%; display:block; border-radius:12px;
+  aspect-ratio:16/9; object-fit:cover;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08); cursor:zoom-in;
+}
+@media (max-width:640px){
+  figure.section-figure.has-mobile img{ aspect-ratio:9/16; }
+}
+figure.section-figure figcaption{
+  font-size:13.5px; line-height:1.55; color:#7a7266;
+  margin-top:10px; text-align:center;
+}
+@media (prefers-color-scheme: dark){ figure.section-figure figcaption{ color:#a39c8f; } }
+.lightbox{
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(26,26,26,0.88);
+  align-items:center; justify-content:center; padding:24px;
+  cursor:zoom-out;
+}
+.lightbox.is-open{display:flex;}
+.lightbox img{
+  max-width:96vw; max-height:92vh; width:auto; height:auto;
+  border-radius:8px; box-shadow:0 12px 48px rgba(0,0,0,0.4);
+}
+.lightbox .lightbox-hint{position:absolute; top:20px; right:24px; color:rgba(255,255,255,0.75); font-size:14px;}
+footer.colophon{
+  max-width:720px; margin:0 auto; padding:24px 24px 64px;
+  font-size:13.5px; color:#9a9284; border-top:1px solid rgba(0,0,0,0.08); margin-top:32px;
+}
+@media (prefers-color-scheme: dark){
+  footer.colophon{ color:#8b8478; border-top:1px solid rgba(255,255,255,0.08); }
+}
+@media (max-width:640px){
+  header.hero{padding:40px 20px 24px;}
+  article{padding:28px 20px 16px;}
+  article h2{margin:40px 0 16px;}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="series-tag">Matt Pocock AI 工作流深度導讀</div>
+  <h1>當 AI 開始「盤問」你：為什麼多數人用錯了這套對齊技巧</h1>
+</header>
+<nav class="toc"><div class="toc-inner"><a href="#s1">問題有兩種畫質</a><a href="#s2">範圍一旦貪心</a><a href="#s3">這是對話</a><a href="#s4">你在對話裡建立的</a><a href="#s5">規劃靠的是模型腦子裡本來就…</a><a href="#s6">一次開兩場對話</a></div></nav>
+<article>
+<p>有人跟 Matt Pocock 抱怨：「我叫 Codex 用你的 Grill Me skill，結果它問了我 200 個問題。」聽到這句話，他的反應不是得意，而是皺眉。</p>
+<p>這句抱怨本身就洩露了一個誤解。Grill Me 這套 skill 的設計初衷，從來不是讓 AI 對你連環逼供，而是讓雙方在動工前先對齊認知——透過一來一往的提問，把腦中模糊的想法逼成具體的決策。這套機制之所以會失控成 200 題大轟炸，問題往往不在 AI，而在使用的人：對方到底懂不懂規劃、懂不懂拿捏問題的範圍。skill 本身寫得並不複雜，它假設的是使用者已經具備工程判斷力，只是把這個判斷力用結構化的方式榨出來。換句話說，這是一個放大鏡，而不是一顆大腦——你原本多會規劃，用了它之後就多會規劃；你原本沒有規劃直覺，它也不會替你長出來。</p>
+<p>這也是為什麼會有這篇整理：與其列出九個具體錯誤，不如先搞懂幾個判斷失誤背後共通的思考角度，否則就算記住九條規則，遇到第十種情境還是會踩坑。</p>
+<h2 id="s1">問題有兩種畫質，你不能用同一種方式回答</h2>
+<figure class="section-figure has-mobile">
+        <picture>
+          <source media="(max-width: 640px)" srcset="images/grill-skills-alignment/section_1-mobile.png">
+          <img src="images/grill-skills-alignment/section_1.png" alt="判斷問題該用問的還是該用做的" loading="lazy">
+        </picture>
+        <figcaption>低保真問題留在對話裡問答，高保真問題該跳出去做原型。</figcaption>
+      </figure>
+<p>第一個角度來自 Ryan Singer 的《Shape Up》裡的一組概念：問題有高保真與低保真之分。低保真問題，一句話就能問完、答完——這個路由要放在哪個網址下？這種問題不需要看到任何實際畫面，純粹是資訊交換，適合在一問一答的對話裡解決。</p>
+<p>高保真問題完全是另一回事。這個表單該拆成好幾頁，還是塞成一頁長長的表單？這種問題問的其實是「感覺」——而感覺這種東西，沒辦法用文字描述出來，你只能親眼看到、親手用過才知道答案。硬要在純文字對話裡把這種問題「問清楚」，只會逼出一堆自己也說不準的猜測式回答，最後做出來的東西還是不對。</p>
+<p>所以第一個常見的失誤，就是把不該用問答解決的問題硬塞進問答裡。正確做法是判斷這個問題「可不可以被盤問」——可以，就留在對話裡繼續問；不行，就先跳出去，做一個簡單的原型讓自己實際看一眼，看完之後再把學到的東西帶回原本的對話，繼續沒問完的低保真問題。這一來一回，原型階段跟盤問階段互相接力，而不是硬逼一個階段做完所有事。</p>
+<h2 id="s2">範圍一旦貪心，你會同時撞上兩道牆</h2>
+<p>第二個角度是範圍（scope）的大小。很多人做規劃時容易犯的錯，是想把接下來好幾天、甚至好幾週的工作一次盤問清楚。這裡藏著兩個代價。</p>
+<p>第一個代價跟上面提到的保真度有關：範圍拉得越大，裡面藏著的高保真問題就越多，而這些問題你光靠對話根本問不出真正的答案，只能等你實際做到那一步才會現形。與其在紙上談兵地把未來幾週的每一步都硬猜出來，不如先把眼前這一小塊做扎實、做出你真心信任的成果，再往下一塊延伸——踩在已經驗證過的地基上前進，永遠比憑空往未來規劃來得穩。</p>
+<p>第二個代價更現實：模型是有記憶負擔的。以現在主流的前沿模型來說，大約 12 萬 token 上下是一個分水嶺，超過這條線，模型的注意力會被拉得越來越薄，判斷力隨之下滑——你可能會發現自己開場時上下文window還很乾淨，結果越聊越長，問題都還沒問完一半，模型已經開始給出奇怪的答案。這時候只能被迫中斷、交接、或壓縮對話，而這一切原本都能避免：提前把大範圍拆成幾塊小範圍，一塊一塊分別盤問，才能一直待在模型清醒的區間裡工作。</p>
+<h2 id="s3">這是對話，不是面試</h2>
+<p>第三個角度，是你在對話裡的姿態：被動還是主動。很多人把 Grill Me 的體驗想像成被審訊——AI 問，你答，問到哪算哪。這種心態下，失控幾乎是必然的：AI 很容易把範圍越問越大，把問題問到過於瑣碎，你只是坐在原地被動接招。</p>
+<p>但反過來也有另一種失誤，就是主動過了頭——明明遇到的是那種需要親眼看一眼才有答案的問題，卻硬是不肯放手交給原型，一直在對話裡糾纏細節，遲遲不肯進入真正動手的階段。</p>
+<p>這兩種失誤的分界線，其實就是要記得一件事：這是一場對話，不是一場面試。AI 負責拋問題，但方向盤該握在你手上——什麼時候該收斂範圍、什麼時候該喊停進入實作，是你的責任，不是它的責任。</p>
+<h2 id="s4">你在對話裡建立的，是資產，不是垃圾</h2>
+<p>接下來這個失誤，聽起來很基本，卻真實發生過：有人花了整場對話盤問出一份扎實的設計決策，對話視窗裡累積了十萬個 token 級別的思考結晶，然後——直接把視窗關掉，開一個全新的空白對話，重新叫 AI 生成規格文件。</p>
+<p>這個舉動的荒謬之處在於：那個舊視窗裡裝的不是雜訊，是你剛剛親手做出的每一個判斷、每一次取捨。如果手上還有餘裕，最理想的狀況是直接在原本的對話裡接著寫程式，把決策無縫轉成程式碼。如果真的必須中斷或換人接手，正確做法是把這些決策整理成一份交接文件，而不是讓它們隨著視窗關閉一起蒸發。歸根結底，這其實是一種對「上下文管理」的意識問題——你清空對話、壓縮對話、交接對話的每一個決定，背後都該有明確的理由，而不是圖方便隨手一按。</p>
+<h2 id="s5">規劃靠的是模型腦子裡本來就有的東西，寫程式靠的是你餵給它的東西</h2>
+<figure class="section-figure">
+        <img src="images/grill-skills-alignment/section_2.png" alt="情境知識與參數知識的分工" loading="lazy">
+        <figcaption>規劃階段依賴參數知識用最聰明的模型，寫程式階段情境知識為主。</figcaption>
+      </figure>
+<p>再來是一個容易被忽略、卻很關鍵的區分：模型的知識其實來自兩個完全不同的來源。一種是「情境知識」——你當下餵給它的檔案內容、你打的字、它自己查資料查回來的結果，這些都是外部餵進去的。另一種是「參數知識」——它在訓練過程中內化、儲存在自己權重裡的理解，相對不那麼可靠，卻正是盤問階段真正依賴的東西。</p>
+<p>想一想：盤問的目的，是要 AI 主動丟出你根本沒想到的問題和建議。如果這些角度你早就想過，你老早就會把它寫進提示詞裡，變成情境知識了。正因為你沒想到，才需要靠模型「見多識廣」的內在理解幫你補上盲點——而這種內在理解，恰好只有參數量夠大、訓練夠扎實的頂級模型才靠得住。這也解釋了一個反直覺的結論：規劃階段該用最貴、最聰明的模型，但真正動手寫程式的階段，反而可以放心用便宜一點的模型——因為到了那一步，你手上已經有詳細的實作計畫、相關程式碼也都餵進去了，倚賴的幾乎全是情境知識，參數知識派不上太大用場。</p>
+<h2 id="s6">一次開兩場對話，吞吐量直接翻倍</h2>
+<p>最後一個容易被忽略的技巧，說穿了很簡單，卻很少人真的做：同時開兩場盤問對話，輪流切換。做法是這樣的——回答完一個對話的問題，趁它在思考下一步時，切到另一個對話回答它的問題，再切回來。這聽起來像是分心、切換脈絡，但實際體驗更接近同時盯著兩個訊息串聊天，並不真的燒腦。通常兩場是舒服的上限，如果其中一場是需要長時間跑資料查證的任務，狀態好的時候可以撐到三場——但這已經是進階選手的玩法了。</p>
+<p>這幾個角度合起來，其實指向同一件事：這套盤問機制不是自動駕駛，它是一面鏡子，照出你原本規劃能力的邊界在哪裡。用得好的人，靠的從來不是這套 skill 本身多聰明，而是自己對問題的保真度、範圍的大小、對話的節奏、上下文的價值、模型的選擇，都有清楚的判斷——這些判斷力練得越熟，能同時撐起的並行對話也就越多。</p>
+</article>
+<footer class="colophon">深度導讀・Matt Pocock AI 工作流深度導讀系列</footer>
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-hint">點擊或按 Esc 關閉</span>
+  <img src="" alt="">
+</div>
+<script>
+  (function(){
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImg = lightbox.querySelector("img");
+    function openLightbox(img){
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("is-open");
+    }
+    function closeLightbox(){ lightbox.classList.remove("is-open"); lightboxImg.src = ""; }
+    document.querySelectorAll("figure.summary-figure img, figure.section-figure img").forEach(function(img){
+      img.addEventListener("click", function(){ openLightbox(img); });
+    });
+    lightbox.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeLightbox(); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1640 @@
+1
+00:00:00,000 --> 00:00:03,960
+My Grill Me skills and Grill with Docs
+
+2
+00:00:01,720 --> 00:00:05,840
+have been out there for a while now, and
+
+3
+00:00:03,960 --> 00:00:08,360
+people all around the world are using
+
+4
+00:00:05,840 --> 00:00:10,000
+them as a replacement for plan mode in
+
+5
+00:00:08,360 --> 00:00:12,120
+agents. However, I sometimes hear from
+
+6
+00:00:10,000 --> 00:00:15,200
+people using them, like Codex just ask
+
+7
+00:00:12,120 --> 00:00:17,840
+me 200 questions, this issue here. And I
+
+8
+00:00:15,200 --> 00:00:19,840
+kind of wince a little bit. The idea of
+
+9
+00:00:17,840 --> 00:00:22,040
+these skills is that they relentlessly
+
+10
+00:00:19,840 --> 00:00:23,920
+question you, is that they continually
+
+11
+00:00:22,040 --> 00:00:25,400
+ask you questions until you reach a
+
+12
+00:00:23,920 --> 00:00:27,320
+shared understanding about something.
+
+13
+00:00:25,400 --> 00:00:29,320
+And what that does is it relies on the
+
+14
+00:00:27,320 --> 00:00:31,120
+skill of the person answering the
+
+15
+00:00:29,320 --> 00:00:33,000
+questions. The person answering the
+
+16
+00:00:31,120 --> 00:00:35,120
+questions, in other words, you using the
+
+17
+00:00:33,000 --> 00:00:36,760
+Grill Me skill, need to be good at
+
+18
+00:00:35,120 --> 00:00:39,320
+planning. You need to understand things
+
+19
+00:00:36,760 --> 00:00:41,360
+like scope. You need to have a sense of
+
+20
+00:00:39,320 --> 00:00:44,000
+what questions require what level of
+
+21
+00:00:41,360 --> 00:00:45,560
+fidelity to answer. And this is why I
+
+22
+00:00:44,000 --> 00:00:48,040
+want to make this video. I want to make
+
+23
+00:00:45,560 --> 00:00:49,600
+you really good at using these skills,
+
+24
+00:00:48,040 --> 00:00:51,120
+because these skills themselves are
+
+25
+00:00:49,600 --> 00:00:53,880
+really not super long, and they're
+
+26
+00:00:51,120 --> 00:00:55,880
+designed to aid you as an engineer, not
+
+27
+00:00:53,880 --> 00:00:57,960
+replace you as an engineer. So, I've got
+
+28
+00:00:55,880 --> 00:01:00,120
+a list of nine things that people get
+
+29
+00:00:57,960 --> 00:01:01,880
+wrong with these skills. But before we
+
+30
+00:01:00,120 --> 00:01:04,400
+do that, we're going to look at a few
+
+31
+00:01:01,880 --> 00:01:05,920
+lenses for how to understand those
+
+32
+00:01:04,400 --> 00:01:07,200
+failure modes, because if we don't
+
+33
+00:01:05,920 --> 00:01:08,520
+understand them in the correct way,
+
+34
+00:01:07,200 --> 00:01:09,720
+we're not going to be able to change
+
+35
+00:01:08,520 --> 00:01:11,160
+them. Now, if you like the way I teach
+
+36
+00:01:09,720 --> 00:01:12,880
+and you like the thing I'm teaching
+
+37
+00:01:11,160 --> 00:01:14,920
+about, then you are going to really
+
+38
+00:01:12,880 --> 00:01:17,200
+enjoy my AI coding for real engineers
+
+39
+00:01:14,920 --> 00:01:21,040
+cohort, which the next one starts on
+
+40
+00:01:17,200 --> 00:01:24,080
+June 1st. It has only 1 day and 11 hours
+
+41
+00:01:21,040 --> 00:01:25,200
+left for 30% off. So, definitely
+
+42
+00:01:24,080 --> 00:01:26,720
+you want to get on that. Hopefully, I
+
+43
+00:01:25,200 --> 00:01:28,360
+can post this video today, so you have
+
+44
+00:01:26,720 --> 00:01:29,760
+time to actually purchase it. So, let's
+
+45
+00:01:28,360 --> 00:01:31,240
+get started. The first thing to consider
+
+46
+00:01:29,760 --> 00:01:32,960
+here is that when we go into a grilling
+
+47
+00:01:31,240 --> 00:01:35,680
+session, what we're really trying to do
+
+48
+00:01:32,960 --> 00:01:37,600
+is answer questions. There are probably
+
+49
+00:01:35,680 --> 00:01:39,240
+some things that we don't know about the
+
+50
+00:01:37,600 --> 00:01:41,080
+thing that we're going to build. Now,
+
+51
+00:01:39,240 --> 00:01:44,080
+these questions come at different levels
+
+52
+00:01:41,080 --> 00:01:45,560
+of fidelity that are required to answer.
+
+53
+00:01:44,080 --> 00:01:48,080
+I'm taking this language from Ryan
+
+54
+00:01:45,560 --> 00:01:50,160
+Singer's amazing book Shape Up. High
+
+55
+00:01:48,080 --> 00:01:52,680
+fidelity questions are questions where
+
+56
+00:01:50,160 --> 00:01:55,400
+you need a really zoomed in, really
+
+57
+00:01:52,680 --> 00:01:58,080
+detailed, high fidelity image in order
+
+58
+00:01:55,400 --> 00:02:00,280
+to understand it. And that might mean,
+
+59
+00:01:58,080 --> 00:02:02,840
+for instance, how will this piece of UI
+
+60
+00:02:00,280 --> 00:02:04,560
+feel when we're using it? Should we
+
+61
+00:02:02,840 --> 00:02:06,080
+split all of these form fields into
+
+62
+00:02:04,560 --> 00:02:08,280
+multiple different pages, or should we
+
+63
+00:02:06,080 --> 00:02:10,320
+have one enormous form where we fill
+
+64
+00:02:08,280 --> 00:02:13,480
+them in? The only real way you're going
+
+65
+00:02:10,320 --> 00:02:15,760
+to get kind of understanding of that is
+
+66
+00:02:13,480 --> 00:02:17,560
+a high-fidelity prototype, or actually
+
+67
+00:02:15,760 --> 00:02:19,200
+building the whole thing. Whereas,
+
+68
+00:02:17,560 --> 00:02:21,800
+low-fidelity questions are questions
+
+69
+00:02:19,200 --> 00:02:24,120
+that you don't need a high-fidelity kind
+
+70
+00:02:21,800 --> 00:02:26,360
+of prototype or image to answer. Things
+
+71
+00:02:24,120 --> 00:02:28,440
+like, what should what URL should this
+
+72
+00:02:26,360 --> 00:02:30,360
+route live on, or things like that. You
+
+73
+00:02:28,440 --> 00:02:31,959
+really just need to answer the question.
+
+74
+00:02:30,360 --> 00:02:34,560
+And the first failure mode I see with
+
+75
+00:02:31,959 --> 00:02:36,680
+the Grill Me skills is trying to answer
+
+76
+00:02:34,560 --> 00:02:38,160
+high-fidelity questions during a
+
+77
+00:02:36,680 --> 00:02:40,200
+grilling session. In other words, there
+
+78
+00:02:38,160 --> 00:02:41,959
+are questions that are grillable, in
+
+79
+00:02:40,200 --> 00:02:43,800
+other words, answerable in a grilling
+
+80
+00:02:41,959 --> 00:02:45,800
+session, and questions that are
+
+81
+00:02:43,800 --> 00:02:47,360
+ungrillable, questions that are not
+
+82
+00:02:45,800 --> 00:02:49,120
+answerable in a grilling session. So,
+
+83
+00:02:47,360 --> 00:02:50,959
+then, what do you do when you encounter
+
+84
+00:02:49,120 --> 00:02:53,880
+an ungrillable question? When the
+
+85
+00:02:50,959 --> 00:02:55,920
+question is about feel, when you need to
+
+86
+00:02:53,880 --> 00:02:57,800
+actually see something higher fidelity
+
+87
+00:02:55,920 --> 00:02:59,800
+in order to answer it. Well, the thing I
+
+88
+00:02:57,800 --> 00:03:02,560
+tend to do is I tend to have a
+
+89
+00:02:59,800 --> 00:03:04,320
+prototyping handoff. So, let's imagine
+
+90
+00:03:02,560 --> 00:03:06,560
+that in my first session here in the
+
+91
+00:03:04,320 --> 00:03:08,480
+blue, I've done some grilling, and I
+
+92
+00:03:06,560 --> 00:03:10,280
+reach an ungrillable question, a
+
+93
+00:03:08,480 --> 00:03:13,360
+question that I need to see in a higher
+
+94
+00:03:10,280 --> 00:03:15,840
+fidelity. What I do is I use the handoff
+
+95
+00:03:13,360 --> 00:03:18,200
+skill, which I will link to below, to
+
+96
+00:03:15,840 --> 00:03:20,440
+handoff to a prototyping session, where
+
+97
+00:03:18,200 --> 00:03:22,239
+I will then spend another session kind
+
+98
+00:03:20,440 --> 00:03:24,480
+of just prototyping on that question,
+
+99
+00:03:22,239 --> 00:03:26,760
+seeing it in a higher fidelity. And
+
+100
+00:03:24,480 --> 00:03:28,600
+then, whatever I learn from that, I will
+
+101
+00:03:26,760 --> 00:03:30,880
+handoff back to the original grilling
+
+102
+00:03:28,600 --> 00:03:32,680
+session, so that I can continue with the
+
+103
+00:03:30,880 --> 00:03:34,280
+grillable questions. So, that's what a
+
+104
+00:03:32,680 --> 00:03:36,640
+lot of my sessions look like, where you
+
+105
+00:03:34,280 --> 00:03:38,880
+have a grill with docs, you then handoff
+
+106
+00:03:36,640 --> 00:03:41,000
+to a prototype session, and you handoff
+
+107
+00:03:38,880 --> 00:03:43,080
+back to the original grill with doc
+
+108
+00:03:41,000 --> 00:03:44,680
+session. That's how I answer those more
+
+109
+00:03:43,080 --> 00:03:46,360
+higher fidelity questions. The next
+
+110
+00:03:44,680 --> 00:03:49,519
+concept we need to understand here is
+
+111
+00:03:46,360 --> 00:03:51,320
+scope, how large a thing you are
+
+112
+00:03:49,519 --> 00:03:53,400
+grilling. If the thing you're grilling
+
+113
+00:03:51,320 --> 00:03:55,400
+is too big, then you're going to end up
+
+114
+00:03:53,400 --> 00:03:56,720
+hitting two problems. First of all, if
+
+115
+00:03:55,400 --> 00:03:58,440
+the scope is too large, then you're
+
+116
+00:03:56,720 --> 00:04:00,440
+probably going to have high fidelity
+
+117
+00:03:58,440 --> 00:04:03,440
+questions that are kind of hidden in
+
+118
+00:04:00,440 --> 00:04:05,760
+there that is quite hard to answer
+
+119
+00:04:03,440 --> 00:04:08,120
+without actually seeing the full thing.
+
+120
+00:04:05,760 --> 00:04:09,920
+It's always easier to build off of
+
+121
+00:04:08,120 --> 00:04:11,959
+something that you know works and that
+
+122
+00:04:09,920 --> 00:04:14,720
+you've done a good job on rather than
+
+123
+00:04:11,959 --> 00:04:16,680
+trying to endlessly plan scope out into
+
+124
+00:04:14,720 --> 00:04:18,920
+the future. This is what a lot of people
+
+125
+00:04:16,680 --> 00:04:22,280
+hit when they try to schedule, you know,
+
+126
+00:04:18,920 --> 00:04:24,760
+days and days of tasks for their work on
+
+127
+00:04:22,280 --> 00:04:27,040
+is that they end up with crap because
+
+128
+00:04:24,760 --> 00:04:29,040
+they aren't building on a foundation
+
+129
+00:04:27,040 --> 00:04:31,560
+that they are aligned with. In other
+
+130
+00:04:29,040 --> 00:04:33,880
+words, they've tried to sort of push out
+
+131
+00:04:31,560 --> 00:04:35,320
+too far into the future without building
+
+132
+00:04:33,880 --> 00:04:37,720
+on something solid. There's also a
+
+133
+00:04:35,320 --> 00:04:40,120
+practical constraints here. If you end
+
+134
+00:04:37,720 --> 00:04:42,040
+up grilling on too larger thing, you're
+
+135
+00:04:40,120 --> 00:04:43,520
+going to end up hitting the dumb zone of
+
+136
+00:04:42,040 --> 00:04:44,800
+the model. Sure, you might start your
+
+137
+00:04:43,520 --> 00:04:46,600
+grilling session with a, you know,
+
+138
+00:04:44,800 --> 00:04:48,600
+nearly empty context window, but as you
+
+139
+00:04:46,600 --> 00:04:50,320
+keep going and going and going, okay,
+
+140
+00:04:48,600 --> 00:04:52,000
+you've hardly got to the thing that
+
+141
+00:04:50,320 --> 00:04:53,560
+you're, you know, not even answer half
+
+142
+00:04:52,000 --> 00:04:55,960
+the questions yet and we're still
+
+143
+00:04:53,560 --> 00:04:57,800
+hitting the dumb zone up here, at which
+
+144
+00:04:55,960 --> 00:04:59,600
+point you might need to hand off or
+
+145
+00:04:57,800 --> 00:05:01,000
+compact or do something a little bit
+
+146
+00:04:59,600 --> 00:05:03,000
+awkward, all of which could have been
+
+147
+00:05:01,000 --> 00:05:05,160
+avoided if you just picked a smaller
+
+148
+00:05:03,000 --> 00:05:07,240
+scope to start with and then you'll be
+
+149
+00:05:05,160 --> 00:05:08,520
+able to comfortably grill within the
+
+150
+00:05:07,240 --> 00:05:11,720
+smart zone. For those who don't know,
+
+151
+00:05:08,520 --> 00:05:13,080
+about 120k is where I estimate most
+
+152
+00:05:11,720 --> 00:05:15,000
+state-of-the-art models, that's where
+
+153
+00:05:13,080 --> 00:05:16,640
+their dumb zone begins. And so you've
+
+154
+00:05:15,000 --> 00:05:18,200
+got to keep a really keen eye on your
+
+155
+00:05:16,640 --> 00:05:20,080
+context window in order to make sure you
+
+156
+00:05:18,200 --> 00:05:22,160
+don't push past that because the model
+
+157
+00:05:20,080 --> 00:05:24,080
+will start getting too strained kind of
+
+158
+00:05:22,160 --> 00:05:25,720
+in its attention relationships and start
+
+159
+00:05:24,080 --> 00:05:27,640
+making stupider decisions. What this
+
+160
+00:05:25,720 --> 00:05:29,600
+basically means is if you start out with
+
+161
+00:05:27,640 --> 00:05:31,440
+a large scope like this, which is
+
+162
+00:05:29,600 --> 00:05:33,160
+probably too big for the agent to
+
+163
+00:05:31,440 --> 00:05:35,240
+handle, instead it might be better to
+
+164
+00:05:33,160 --> 00:05:37,480
+ahead of time ask the agent to break
+
+165
+00:05:35,240 --> 00:05:39,520
+down this scope into smaller scopes,
+
+166
+00:05:37,480 --> 00:05:41,200
+which you can then grill on individually
+
+167
+00:05:39,520 --> 00:05:43,560
+and answer all of those questions. The
+
+168
+00:05:41,200 --> 00:05:45,440
+next lens I want you to look at here is
+
+169
+00:05:43,560 --> 00:05:48,640
+whether you're being passive or whether
+
+170
+00:05:45,440 --> 00:05:50,640
+you're being active with the agent and
+
+171
+00:05:48,640 --> 00:05:52,080
+specifically in your grilling sessions.
+
+172
+00:05:50,640 --> 00:05:54,120
+Many of these huge grilling sessions
+
+173
+00:05:52,080 --> 00:05:56,200
+that I see people having, I worry that
+
+174
+00:05:54,120 --> 00:05:58,080
+they're being too passive with the
+
+175
+00:05:56,200 --> 00:06:00,200
+agent. When I'm doing grilling, I'm
+
+176
+00:05:58,080 --> 00:06:02,040
+always quite active, always trying to
+
+177
+00:06:00,200 --> 00:06:04,560
+lead the conversation. And remember,
+
+178
+00:06:02,040 --> 00:06:06,680
+it's a conversation, not an interview.
+
+179
+00:06:04,560 --> 00:06:08,720
+The agent is asking you these questions,
+
+180
+00:06:06,680 --> 00:06:10,200
+but you know, it is your job to figure
+
+181
+00:06:08,720 --> 00:06:12,600
+out where you're going and figure out
+
+182
+00:06:10,200 --> 00:06:14,120
+the scope and keep things on track. And
+
+183
+00:06:12,600 --> 00:06:16,160
+so, if you're being too passive, then
+
+184
+00:06:14,120 --> 00:06:18,040
+it's very easy for the agent to just do
+
+185
+00:06:16,160 --> 00:06:21,520
+stupid things with the interview, like
+
+186
+00:06:18,040 --> 00:06:23,480
+ask you 540 questions, explode the
+
+187
+00:06:21,520 --> 00:06:25,720
+scope, ask questions about stuff that
+
+188
+00:06:23,480 --> 00:06:27,600
+are way too low fidelity. You have to
+
+189
+00:06:25,720 --> 00:06:30,360
+take an active hand. But it's also
+
+190
+00:06:27,600 --> 00:06:32,720
+possible to be too active, to just keep
+
+191
+00:06:30,360 --> 00:06:34,800
+grilling on something that is just too
+
+192
+00:06:32,720 --> 00:06:36,680
+low fidelity when you need to actually
+
+193
+00:06:34,800 --> 00:06:38,200
+build something to see the thing in
+
+194
+00:06:36,680 --> 00:06:40,040
+action. And so, there are two failure
+
+195
+00:06:38,200 --> 00:06:42,000
+modes hidden here, being too passive, in
+
+196
+00:06:40,040 --> 00:06:44,760
+other words, sitting back too much, and
+
+197
+00:06:42,000 --> 00:06:47,200
+actually being a bit too pigheaded, and
+
+198
+00:06:44,760 --> 00:06:48,400
+not getting to code fast enough. So,
+
+199
+00:06:47,200 --> 00:06:50,280
+it's important to consider when you're
+
+200
+00:06:48,400 --> 00:06:52,120
+using these skills where you fall on
+
+201
+00:06:50,280 --> 00:06:53,760
+this axis, whether you're too passive or
+
+202
+00:06:52,120 --> 00:06:55,360
+whether you're actually just a bit too
+
+203
+00:06:53,760 --> 00:06:57,560
+pushy and active. Another failure mode
+
+204
+00:06:55,360 --> 00:06:59,320
+here is that people don't value the
+
+205
+00:06:57,560 --> 00:07:01,000
+thing that they're creating during the
+
+206
+00:06:59,320 --> 00:07:02,360
+grilling session, which is that when
+
+207
+00:07:01,000 --> 00:07:04,880
+you're answering these questions, when
+
+208
+00:07:02,360 --> 00:07:07,120
+you're growing this context window with
+
+209
+00:07:04,880 --> 00:07:09,120
+really valuable, you know, answers that
+
+210
+00:07:07,120 --> 00:07:11,520
+you've given, design decisions that
+
+211
+00:07:09,120 --> 00:07:13,320
+you've taken, this little blue bit of
+
+212
+00:07:11,520 --> 00:07:15,480
+context window here is incredibly
+
+213
+00:07:13,320 --> 00:07:16,800
+valuable. Now, usually your goal here is
+
+214
+00:07:15,480 --> 00:07:18,520
+that if you've got enough budget left,
+
+215
+00:07:16,800 --> 00:07:19,919
+then you can immediately start going
+
+216
+00:07:18,520 --> 00:07:21,440
+ahead and implementing. In other words,
+
+217
+00:07:19,919 --> 00:07:23,040
+you plan for a little while and then you
+
+218
+00:07:21,440 --> 00:07:24,400
+go, "Okay, let's just implement this. We
+
+219
+00:07:23,040 --> 00:07:26,400
+don't need to hand off. We've got enough
+
+220
+00:07:24,400 --> 00:07:27,800
+space left in the context window to just
+
+221
+00:07:26,400 --> 00:07:29,320
+implement it based on the design
+
+222
+00:07:27,800 --> 00:07:30,640
+decisions I've already taken." However,
+
+223
+00:07:29,320 --> 00:07:33,040
+if you're already at the point where you
+
+224
+00:07:30,640 --> 00:07:35,040
+need to, you know, quit out of this, you
+
+225
+00:07:33,040 --> 00:07:37,880
+need to basically hand off, then it's
+
+226
+00:07:35,040 --> 00:07:40,040
+probably time to make a PRD. My two PRD
+
+227
+00:07:37,880 --> 00:07:41,720
+skill is a nice way of creating a
+
+228
+00:07:40,040 --> 00:07:43,880
+handoff document that's kind of more
+
+229
+00:07:41,720 --> 00:07:45,720
+tailored to engineering, which can be
+
+230
+00:07:43,880 --> 00:07:47,640
+useful on a multi-session or just a
+
+231
+00:07:45,720 --> 00:07:48,880
+single session. But one crazy thing I've
+
+232
+00:07:47,640 --> 00:07:52,080
+seen people getting wrong is they
+
+233
+00:07:48,880 --> 00:07:54,120
+actually clear the context first, and
+
+234
+00:07:52,080 --> 00:07:56,240
+they create a new context window, and
+
+235
+00:07:54,120 --> 00:07:57,880
+just run two PRD in there. This is
+
+236
+00:07:56,240 --> 00:08:00,000
+totally crazy to me. What are you doing?
+
+237
+00:07:57,880 --> 00:08:01,960
+You've created this incredible session
+
+238
+00:08:00,000 --> 00:08:04,520
+here where you've got this, you know,
+
+239
+00:08:01,960 --> 00:08:05,880
+100,000 tokens of really good design
+
+240
+00:08:04,520 --> 00:08:07,640
+decisions, and you're just going to
+
+241
+00:08:05,880 --> 00:08:09,360
+chuck it away? Every grilling session,
+
+242
+00:08:07,640 --> 00:08:11,760
+every decision that you make in that
+
+243
+00:08:09,360 --> 00:08:14,040
+session is so valuable. You know, that
+
+244
+00:08:11,760 --> 00:08:16,240
+should be recorded somewhere, and either
+
+245
+00:08:14,040 --> 00:08:17,680
+turned into code or put into like a
+
+246
+00:08:16,240 --> 00:08:20,080
+handoff document that you can kind of
+
+247
+00:08:17,680 --> 00:08:21,800
+refer to later. It is really important
+
+248
+00:08:20,080 --> 00:08:23,200
+that you don't just chuck away the stuff
+
+249
+00:08:21,800 --> 00:08:24,760
+inside the grilling session. I think
+
+250
+00:08:23,200 --> 00:08:26,640
+probably this is a just a skill issue.
+
+251
+00:08:24,760 --> 00:08:28,840
+People need to be a lot more aware of
+
+252
+00:08:26,640 --> 00:08:30,440
+context management, about kind of the
+
+253
+00:08:28,840 --> 00:08:32,840
+decisions they're making in terms of
+
+254
+00:08:30,440 --> 00:08:34,280
+clearing, compacting, handing off. So
+
+255
+00:08:32,840 --> 00:08:36,719
+yeah, that was a crazy one for me. Make
+
+256
+00:08:34,280 --> 00:08:38,479
+sure you preserve the decisions that
+
+257
+00:08:36,719 --> 00:08:40,640
+you've made in your grilling session,
+
+258
+00:08:38,479 --> 00:08:41,800
+and create some kind of handoff artifact
+
+259
+00:08:40,640 --> 00:08:44,480
+about them. Another thing people get
+
+260
+00:08:41,800 --> 00:08:46,520
+wrong is that they use too dumb a model
+
+261
+00:08:44,480 --> 00:08:47,839
+for grilling. Understanding which
+
+262
+00:08:46,520 --> 00:08:49,040
+questions are low fidelity,
+
+263
+00:08:47,839 --> 00:08:51,120
+understanding which questions are high
+
+264
+00:08:49,040 --> 00:08:53,520
+fidelity, figuring out what the right
+
+265
+00:08:51,120 --> 00:08:55,520
+questions to ask to prompt you to make a
+
+266
+00:08:53,520 --> 00:08:57,720
+stronger design, that is something you
+
+267
+00:08:55,520 --> 00:08:59,880
+need a good model for. If we think about
+
+268
+00:08:57,720 --> 00:09:02,240
+where models draw their knowledge from,
+
+269
+00:08:59,880 --> 00:09:03,880
+there are kind of two sources. The first
+
+270
+00:09:02,240 --> 00:09:05,600
+one is their contextual knowledge, the
+
+271
+00:09:03,880 --> 00:09:07,680
+stuff that you have passed them
+
+272
+00:09:05,600 --> 00:09:09,400
+specifically in their context. This
+
+273
+00:09:07,680 --> 00:09:11,360
+might be from reading files or from user
+
+274
+00:09:09,400 --> 00:09:13,080
+prompts or from research they do by, you
+
+275
+00:09:11,360 --> 00:09:14,520
+know, calling tools and bringing the
+
+276
+00:09:13,080 --> 00:09:15,920
+tool results back. But there's also
+
+277
+00:09:14,520 --> 00:09:17,880
+their parametric knowledge, the things
+
+278
+00:09:15,920 --> 00:09:20,040
+that they were trained to see and
+
+279
+00:09:17,880 --> 00:09:22,680
+understand. This is much less reliable,
+
+280
+00:09:20,040 --> 00:09:25,320
+but it is kind of what we're relying on
+
+281
+00:09:22,680 --> 00:09:28,400
+here. We're relying on the model's
+
+282
+00:09:25,320 --> 00:09:30,960
+innate understanding of systems and
+
+283
+00:09:28,400 --> 00:09:32,520
+applications to prompt us with good
+
+284
+00:09:30,960 --> 00:09:34,520
+ideas of things we might not have
+
+285
+00:09:32,520 --> 00:09:35,920
+considered yet. Because if we had
+
+286
+00:09:34,520 --> 00:09:37,920
+considered them, then we'd have passed
+
+287
+00:09:35,920 --> 00:09:40,240
+them in as contextual knowledge, but
+
+288
+00:09:37,920 --> 00:09:42,560
+we're relying on its kind of innate
+
+289
+00:09:40,240 --> 00:09:44,600
+understanding in order to provide us
+
+290
+00:09:42,560 --> 00:09:46,120
+with off-the-wall suggestions, strange
+
+291
+00:09:44,600 --> 00:09:48,480
+ideas. Now, when you're relying on
+
+292
+00:09:46,120 --> 00:09:50,960
+parametric knowledge like this, you need
+
+293
+00:09:48,480 --> 00:09:52,640
+a model with lots of parameters, and
+
+294
+00:09:50,960 --> 00:09:54,800
+that is usually what the big frontier
+
+295
+00:09:52,640 --> 00:09:56,320
+models have. And not only that, but
+
+296
+00:09:54,800 --> 00:09:58,920
+they're also, you know, top-of-the-line
+
+297
+00:09:56,320 --> 00:10:00,880
+trained. They are also just more capable
+
+298
+00:09:58,920 --> 00:10:03,000
+than smaller models. And so, using too
+
+299
+00:10:00,880 --> 00:10:05,080
+dumb a model is a really common failing
+
+300
+00:10:03,000 --> 00:10:06,800
+mode I see during grilling because we're
+
+301
+00:10:05,080 --> 00:10:07,960
+so reliant on parametric knowledge. What
+
+302
+00:10:06,800 --> 00:10:10,400
+most people don't know is you can
+
+303
+00:10:07,960 --> 00:10:12,080
+actually use a kind of dumber model for
+
+304
+00:10:10,400 --> 00:10:13,640
+implementation because most of the
+
+305
+00:10:12,080 --> 00:10:15,200
+information you're passing there is
+
+306
+00:10:13,640 --> 00:10:16,600
+contextual. You know, by the time you
+
+307
+00:10:15,200 --> 00:10:18,360
+get to implementation, you've usually
+
+308
+00:10:16,600 --> 00:10:20,120
+got a detailed implementation plan.
+
+309
+00:10:18,360 --> 00:10:21,800
+You're passing in the relevant files in
+
+310
+00:10:20,120 --> 00:10:23,520
+the codebase, so it's got some things to
+
+311
+00:10:21,800 --> 00:10:25,000
+copy. You know, not a lot of that is
+
+312
+00:10:23,520 --> 00:10:26,840
+parametric. It's mostly contextual.
+
+313
+00:10:25,000 --> 00:10:28,520
+Finally, and this is a dead simple one,
+
+314
+00:10:26,840 --> 00:10:29,840
+but so many people don't do this. You
+
+315
+00:10:28,520 --> 00:10:31,360
+should grill multiple sessions in
+
+316
+00:10:29,840 --> 00:10:33,480
+parallel. Usually, the way it works is
+
+317
+00:10:31,360 --> 00:10:35,080
+I'm grilling one session, and then I,
+
+318
+00:10:33,480 --> 00:10:36,800
+you know, type something to it, or
+
+319
+00:10:35,080 --> 00:10:38,400
+usually I'm dictating to it. I answer
+
+320
+00:10:36,800 --> 00:10:40,240
+its question, and then I go over into
+
+321
+00:10:38,400 --> 00:10:42,080
+the other other session that's usually
+
+322
+00:10:40,240 --> 00:10:43,720
+finished by that point. I answer its
+
+323
+00:10:42,080 --> 00:10:45,120
+question, and then I go back to the
+
+324
+00:10:43,720 --> 00:10:47,400
+original session. And I just bounce
+
+325
+00:10:45,120 --> 00:10:48,920
+around like this. People say this is,
+
+326
+00:10:47,400 --> 00:10:51,000
+you know, context switching, but really
+
+327
+00:10:48,920 --> 00:10:52,920
+it's just managing two separate Slack
+
+328
+00:10:51,000 --> 00:10:54,960
+threads at the same time. You know, it's
+
+329
+00:10:52,920 --> 00:10:57,280
+really not that hard. And sure, you're
+
+330
+00:10:54,960 --> 00:10:59,160
+making a lot of high-level decisions
+
+331
+00:10:57,280 --> 00:11:01,000
+here, but this is really the only way I
+
+332
+00:10:59,160 --> 00:11:03,080
+found of increasing throughput and
+
+333
+00:11:01,000 --> 00:11:05,200
+getting more planning done in less time.
+
+334
+00:11:03,080 --> 00:11:06,320
+Usually, I max out at two sessions here
+
+335
+00:11:05,200 --> 00:11:07,960
+unless one of them is doing a
+
+336
+00:11:06,320 --> 00:11:10,440
+particularly long-running task like some
+
+337
+00:11:07,960 --> 00:11:12,120
+research, in which case I will try three
+
+338
+00:11:10,440 --> 00:11:13,880
+uh if I'm feeling spicy and feeling high
+
+339
+00:11:12,120 --> 00:11:15,560
+energy, but mostly two is my limit. But
+
+340
+00:11:13,880 --> 00:11:17,560
+either way, I'm doubling my throughput,
+
+341
+00:11:15,560 --> 00:11:18,920
+and it feels pretty nice to do, and you
+
+342
+00:11:17,560 --> 00:11:20,360
+should definitely be doing this if you
+
+343
+00:11:18,920 --> 00:11:21,680
+have the mental capacity for it. I also
+
+344
+00:11:20,360 --> 00:11:23,600
+think that grilling is something that
+
+345
+00:11:21,680 --> 00:11:25,120
+you do get better at, and as you get
+
+346
+00:11:23,600 --> 00:11:26,680
+better at it, you can add more
+
+347
+00:11:25,120 --> 00:11:27,760
+throughput and more parallelism. So,
+
+348
+00:11:26,680 --> 00:11:29,280
+let's summarize all the things we
+
+349
+00:11:27,760 --> 00:11:31,560
+learned. We learned that grilling is
+
+350
+00:11:29,280 --> 00:11:33,840
+primarily about questions. We have
+
+351
+00:11:31,560 --> 00:11:36,160
+low-fidelity questions and high-fidelity
+
+352
+00:11:33,840 --> 00:11:37,720
+questions. Low-fidelity can be answered
+
+353
+00:11:36,160 --> 00:11:39,680
+just by a question and answer. In other
+
+354
+00:11:37,720 --> 00:11:41,720
+words, it's a grillable question. But,
+
+355
+00:11:39,680 --> 00:11:44,000
+high-fidelity ones are ungrillable. You
+
+356
+00:11:41,720 --> 00:11:45,960
+may need to go into a prototype mode by
+
+357
+00:11:44,000 --> 00:11:48,320
+using handoff to handoff to a
+
+358
+00:11:45,960 --> 00:11:50,600
+prototyping session to just figure out
+
+359
+00:11:48,320 --> 00:11:52,200
+that question or maybe that question and
+
+360
+00:11:50,600 --> 00:11:53,880
+a bunch of others and then go back to
+
+361
+00:11:52,200 --> 00:11:55,360
+the original grilling to continue.
+
+362
+00:11:53,880 --> 00:11:57,760
+Figuring out the correct scope of the
+
+363
+00:11:55,360 --> 00:12:00,480
+work is essential. If you try to grill
+
+364
+00:11:57,760 --> 00:12:02,000
+too much, then you will end up just kind
+
+365
+00:12:00,480 --> 00:12:04,240
+of blowing through your contacts window,
+
+366
+00:12:02,000 --> 00:12:05,400
+burning your own stamina, and you won't
+
+367
+00:12:04,240 --> 00:12:07,280
+have anything to show for it. If you're
+
+368
+00:12:05,400 --> 00:12:08,520
+too passive in your grilling sessions,
+
+369
+00:12:07,280 --> 00:12:10,360
+then you're just going to sit there
+
+370
+00:12:08,520 --> 00:12:11,880
+while the computer just says, you know,
+
+371
+00:12:10,360 --> 00:12:13,840
+bombards you with more and more
+
+372
+00:12:11,880 --> 00:12:15,680
+questions. But, if you're too active,
+
+373
+00:12:13,840 --> 00:12:18,280
+then you might end up just grilling
+
+374
+00:12:15,680 --> 00:12:19,880
+endlessly on low-fidelity questions when
+
+375
+00:12:18,280 --> 00:12:21,520
+what you really need is just to get to
+
+376
+00:12:19,880 --> 00:12:23,640
+code. You need a smart model so that you
+
+377
+00:12:21,520 --> 00:12:26,880
+can rely on its parametric information
+
+378
+00:12:23,640 --> 00:12:28,560
+to give you better suggestions and give
+
+379
+00:12:26,880 --> 00:12:30,120
+you better questions to answer. And
+
+380
+00:12:28,560 --> 00:12:32,360
+finally, I would recommend grilling two
+
+381
+00:12:30,120 --> 00:12:33,720
+sessions at once. Once you've mastered
+
+382
+00:12:32,360 --> 00:12:35,320
+these basics and you understand what
+
+383
+00:12:33,720 --> 00:12:36,760
+each session is doing, you should be
+
+384
+00:12:35,320 --> 00:12:38,440
+able to flip between them really nicely.
+
+385
+00:12:36,760 --> 00:12:40,080
+And probably, you could even go up to
+
+386
+00:12:38,440 --> 00:12:41,400
+four if you have a more plastic brain
+
+387
+00:12:40,080 --> 00:12:43,240
+than I do. Overall, thanks for watching,
+
+388
+00:12:41,400 --> 00:12:45,880
+pals. And if you enjoyed this, then
+
+389
+00:12:43,240 --> 00:12:48,720
+you'll really enjoy my AI coding cohort
+
+390
+00:12:45,880 --> 00:12:50,960
+for real engineers, which is whoa, 1 day
+
+391
+00:12:48,720 --> 00:12:52,720
+10 hours left to get it at a discount.
+
+392
+00:12:50,960 --> 00:12:55,000
+You get a bunch of video content and
+
+393
+00:12:52,720 --> 00:12:57,080
+interactive exercises organized in a way
+
+394
+00:12:55,000 --> 00:12:59,520
+for maximum speed and maximum efficiency
+
+395
+00:12:57,080 --> 00:13:01,000
+of learning. You get me to answer your
+
+396
+00:12:59,520 --> 00:13:02,920
+questions in office hours and in the
+
+397
+00:13:01,000 --> 00:13:04,480
+Discord chat. You know, it's great. By
+
+398
+00:13:02,920 --> 00:13:06,400
+the way, if you dug this video, my
+
+399
+00:13:04,480 --> 00:13:08,200
+YouTube is exploding recently, so thank
+
+400
+00:13:06,400 --> 00:13:10,560
+you all for that. I massively appreciate
+
+401
+00:13:08,200 --> 00:13:12,080
+it. I really enjoy making these videos.
+
+402
+00:13:10,560 --> 00:13:14,920
+I'm loving making the skills. I think
+
+403
+00:13:12,080 --> 00:13:16,640
+we're up to we just beat Gary Tan's G
+
+404
+00:13:14,920 --> 00:13:18,560
+stack in terms of number of stars, which
+
+405
+00:13:16,640 --> 00:13:20,120
+is wild to me. And if you have an idea
+
+406
+00:13:18,560 --> 00:13:22,600
+for a video you want me to make next,
+
+407
+00:13:20,120 --> 00:13:25,200
+then let me know about it cuz I thrive
+
+408
+00:13:22,600 --> 00:13:26,680
+off your suggestions and your ideas. So,
+
+409
+00:13:25,200 --> 00:13:29,200
+thanks for watching, and I will see you
+
+410
+00:13:26,680 --> 00:13:29,200
+very soon.
+

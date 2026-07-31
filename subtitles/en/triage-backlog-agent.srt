@@ -1,0 +1,1208 @@
+1
+00:00:00,000 --> 00:00:03,880
+The problem with most skill based setups
+
+2
+00:00:02,040 --> 00:00:05,720
+is that they are great for solo
+
+3
+00:00:03,880 --> 00:00:08,480
+developers, but they're not so great
+
+4
+00:00:05,720 --> 00:00:10,160
+when you get into teams. With teams, or
+
+5
+00:00:08,480 --> 00:00:11,960
+when you're working on other people's
+
+6
+00:00:10,160 --> 00:00:14,680
+stuff, or building ideas for other
+
+7
+00:00:11,960 --> 00:00:16,720
+people, you will often need to triage
+
+8
+00:00:14,680 --> 00:00:19,280
+other people's ideas to figure out if
+
+9
+00:00:16,720 --> 00:00:21,240
+they're good or not, to even figure out
+
+10
+00:00:19,280 --> 00:00:22,880
+if they're worth building, to figure out
+
+11
+00:00:21,240 --> 00:00:24,760
+if it's a bug report, to see if you need
+
+12
+00:00:22,880 --> 00:00:26,240
+to reproduce it, all that stuff. And
+
+13
+00:00:24,760 --> 00:00:27,920
+this is very familiar to anyone who's
+
+14
+00:00:26,240 --> 00:00:31,200
+been building anything of reasonable
+
+15
+00:00:27,920 --> 00:00:33,360
+size for a while. And so, I have built a
+
+16
+00:00:31,200 --> 00:00:35,840
+skill for that. This skill is called
+
+17
+00:00:33,360 --> 00:00:38,480
+triage, and I run triage on every single
+
+18
+00:00:35,840 --> 00:00:40,160
+open source repo that I run. It's great
+
+19
+00:00:38,480 --> 00:00:42,360
+for working through GitHub issues, you
+
+20
+00:00:40,160 --> 00:00:45,080
+can plug it into Jira, you can plug it
+
+21
+00:00:42,360 --> 00:00:47,000
+into any backlog to essentially flesh
+
+22
+00:00:45,080 --> 00:00:48,880
+out that backlog and turn it into
+
+23
+00:00:47,000 --> 00:00:52,240
+actionable tasks that can be picked up
+
+24
+00:00:48,880 --> 00:00:54,160
+by an agent, or to reject it, or to do
+
+25
+00:00:52,240 --> 00:00:56,600
+all sorts of various things with it. The
+
+26
+00:00:54,160 --> 00:00:59,840
+thing that drives this is that it has a
+
+27
+00:00:56,600 --> 00:01:02,600
+essentially a state machine encoded into
+
+28
+00:00:59,840 --> 00:01:04,600
+labels. So, you have two category roles
+
+29
+00:01:02,600 --> 00:01:07,320
+currently, this may change in future. We
+
+30
+00:01:04,600 --> 00:01:09,520
+have a bug role and an enhancement role,
+
+31
+00:01:07,320 --> 00:01:11,080
+which is very, you know, that's well
+
+32
+00:01:09,520 --> 00:01:13,600
+known to anyone who's done any work with
+
+33
+00:01:11,080 --> 00:01:14,960
+triage. And then, you have five state
+
+34
+00:01:13,600 --> 00:01:16,680
+roles, and these are kind of up for
+
+35
+00:01:14,960 --> 00:01:18,040
+grabs as well, like this is um something
+
+36
+00:01:16,680 --> 00:01:19,520
+that I probably will expand on in the
+
+37
+00:01:18,040 --> 00:01:20,360
+future, but for now this is working for
+
+38
+00:01:19,520 --> 00:01:21,560
+me.
+
+39
+00:01:20,360 --> 00:01:24,280
+Each of these five state roles
+
+40
+00:01:21,560 --> 00:01:26,640
+corresponds to a state that the ticket
+
+41
+00:01:24,280 --> 00:01:28,400
+can be in. So, the ticket might be needs
+
+42
+00:01:26,640 --> 00:01:30,120
+triage, in other words, it needs a
+
+43
+00:01:28,400 --> 00:01:31,960
+maintainer to look at it. You know, it's
+
+44
+00:01:30,120 --> 00:01:33,920
+a paused the maintainer has actually
+
+45
+00:01:31,960 --> 00:01:36,040
+done that work. It might be that it
+
+46
+00:01:33,920 --> 00:01:38,440
+needs info, waiting on the reporter for
+
+47
+00:01:36,040 --> 00:01:39,960
+more information. It might be ready for
+
+48
+00:01:38,440 --> 00:01:42,320
+an agent to pick up, in other words,
+
+49
+00:01:39,960 --> 00:01:44,800
+it's fully specified, ready for an AFK
+
+50
+00:01:42,320 --> 00:01:47,520
+agent to go and slam through the task.
+
+51
+00:01:44,800 --> 00:01:50,000
+Or it might need a human to look at it
+
+52
+00:01:47,520 --> 00:01:52,120
+now and to actually implement it.
+
+53
+00:01:50,000 --> 00:01:53,840
+Or we do a won't fix, where it just will
+
+54
+00:01:52,120 --> 00:01:55,520
+not be actioned. This is a state machine
+
+55
+00:01:53,840 --> 00:01:57,960
+because every single triaged issue
+
+56
+00:01:55,520 --> 00:02:00,000
+should carry exactly one category role
+
+57
+00:01:57,960 --> 00:02:02,440
+and one state role. In other words, you
+
+58
+00:02:00,000 --> 00:02:04,520
+can't have it be ready for human and
+
+59
+00:02:02,440 --> 00:02:06,240
+needs triage at the same time. This is a
+
+60
+00:02:04,520 --> 00:02:07,600
+good old state machine, and that's
+
+61
+00:02:06,240 --> 00:02:09,600
+familiar to anyone who's followed my
+
+62
+00:02:07,600 --> 00:02:11,560
+career, you'll know I would love state
+
+63
+00:02:09,600 --> 00:02:12,840
+machines. So, the way you use triage is
+
+64
+00:02:11,560 --> 00:02:15,080
+you can use it in a bunch of different
+
+65
+00:02:12,840 --> 00:02:17,240
+ways. You can either use it to triage a
+
+66
+00:02:15,080 --> 00:02:19,120
+specific issue, you can triage the
+
+67
+00:02:17,240 --> 00:02:21,040
+entire backlog and say show me anything
+
+68
+00:02:19,120 --> 00:02:22,800
+that needs my attention now. You can
+
+69
+00:02:21,040 --> 00:02:24,480
+say, "Okay, let's move this one to ready
+
+70
+00:02:22,800 --> 00:02:26,600
+for agent." And by the way, ready for
+
+71
+00:02:24,480 --> 00:02:28,120
+agent is a nice one because in order to
+
+72
+00:02:26,600 --> 00:02:30,760
+move something to ready for agent, you
+
+73
+00:02:28,120 --> 00:02:32,840
+need to write a brief for the agent
+
+74
+00:02:30,760 --> 00:02:36,280
+that's going to pick it up. And we have
+
+75
+00:02:32,840 --> 00:02:38,480
+inside here a agent brief template,
+
+76
+00:02:36,280 --> 00:02:39,720
+which allows you to kind of write this
+
+77
+00:02:38,480 --> 00:02:40,959
+ticket really nicely. So, you're
+
+78
+00:02:39,720 --> 00:02:43,080
+probably thinking, "Okay, I get the
+
+79
+00:02:40,959 --> 00:02:45,280
+basics of this. Show me this in action."
+
+80
+00:02:43,080 --> 00:02:47,440
+Turns out we have a bunch of issues that
+
+81
+00:02:45,280 --> 00:02:48,560
+need triage in Sandcastle. So, that's
+
+82
+00:02:47,440 --> 00:02:50,680
+what I'm going to do. I'm going to show
+
+83
+00:02:48,560 --> 00:02:52,560
+you how to use this skill by triaging my
+
+84
+00:02:50,680 --> 00:02:54,480
+own repo. You can see there's a bunch of
+
+85
+00:02:52,560 --> 00:02:55,880
+stuff that's already in here. Some of
+
+86
+00:02:54,480 --> 00:02:59,080
+the stuff that's ready for agent that's
+
+87
+00:02:55,880 --> 00:03:00,600
+been put into a PR already, some that
+
+88
+00:02:59,080 --> 00:03:02,680
+kind of needs triage that I need to look
+
+89
+00:03:00,600 --> 00:03:04,519
+at again, some that's totally unlabeled,
+
+90
+00:03:02,680 --> 00:03:07,640
+some marked as won't fix. So, I'm going
+
+91
+00:03:04,519 --> 00:03:09,560
+to open up a new Claude session inside
+
+92
+00:03:07,640 --> 00:03:11,840
+my repo, and I'm going to say triage,
+
+93
+00:03:09,560 --> 00:03:13,880
+and then I'll say, "Just give me all of
+
+94
+00:03:11,840 --> 00:03:15,680
+the open issues." Or rather, just the
+
+95
+00:03:13,880 --> 00:03:17,560
+ones that I haven't triaged yet. So,
+
+96
+00:03:15,680 --> 00:03:19,440
+let's ping this off and see what
+
+97
+00:03:17,560 --> 00:03:21,400
+happens. It should go and explore the
+
+98
+00:03:19,440 --> 00:03:23,400
+repo. It should pick up that I'm using
+
+99
+00:03:21,400 --> 00:03:24,720
+GitHub issues, and yep, look at it go.
+
+100
+00:03:23,400 --> 00:03:27,440
+Okay, it can see there are nine
+
+101
+00:03:24,720 --> 00:03:29,680
+untriaged open issues. I would like it
+
+102
+00:03:27,440 --> 00:03:32,600
+to Could you just walk through each of
+
+103
+00:03:29,680 --> 00:03:34,640
+these and add the basic labels to them?
+
+104
+00:03:32,600 --> 00:03:35,440
+Just doing initial triage for me so that
+
+105
+00:03:34,640 --> 00:03:36,640
+I don't need to make that many
+
+106
+00:03:35,440 --> 00:03:40,120
+decisions. One thing you're probably
+
+107
+00:03:36,640 --> 00:03:43,400
+thinking is how does the agent know what
+
+108
+00:03:40,120 --> 00:03:45,440
+can be actioned and what's even like a
+
+109
+00:03:43,400 --> 00:03:48,000
+good candidate to be actioned? Well,
+
+110
+00:03:45,440 --> 00:03:50,360
+inside the repo I have a dot out of
+
+111
+00:03:48,000 --> 00:03:51,920
+scope directory right at the top here,
+
+112
+00:03:50,360 --> 00:03:54,400
+which is a few things that I've already
+
+113
+00:03:51,920 --> 00:03:55,840
+triaged with the skill that marks it.
+
+114
+00:03:54,400 --> 00:03:57,400
+Basically, anything that I say, "Okay,
+
+115
+00:03:55,840 --> 00:03:59,800
+we're not going to do this." It
+
+116
+00:03:57,400 --> 00:04:02,320
+basically says, "Okay, you're going to
+
+117
+00:03:59,800 --> 00:04:03,880
+mark this feature as out of scope for
+
+118
+00:04:02,320 --> 00:04:05,040
+the future." So, for instance,
+
+119
+00:04:03,880 --> 00:04:06,200
+Sandcastle does not provide an
+
+120
+00:04:05,040 --> 00:04:07,800
+abstraction layer for composing
+
+121
+00:04:06,200 --> 00:04:09,160
+Dockerfiles or managing base images
+
+122
+00:04:07,800 --> 00:04:10,760
+programmatically. This is essentially
+
+123
+00:04:09,160 --> 00:04:12,880
+like an architectural decision record,
+
+124
+00:04:10,760 --> 00:04:14,880
+but specifically for features that we're
+
+125
+00:04:12,880 --> 00:04:17,359
+not going to implement. So, this means
+
+126
+00:04:14,880 --> 00:04:20,320
+that the agent, when it's looking at
+
+127
+00:04:17,359 --> 00:04:22,560
+issues, especially enhancement issues,
+
+128
+00:04:20,320 --> 00:04:24,200
+is essentially looking at the ADRs that
+
+129
+00:04:22,560 --> 00:04:26,360
+I've created at these out of scope
+
+130
+00:04:24,200 --> 00:04:27,960
+references and going, "Okay, I can just
+
+131
+00:04:26,360 --> 00:04:29,400
+close this straight away because this is
+
+132
+00:04:27,960 --> 00:04:31,160
+an enhancement that we're not going to
+
+133
+00:04:29,400 --> 00:04:33,160
+commit to." Okay, it's gone ahead now
+
+134
+00:04:31,160 --> 00:04:36,200
+and it's labeled a bunch of these. So,
+
+135
+00:04:33,160 --> 00:04:38,400
+it's labeled all of these as bugs and
+
+136
+00:04:36,200 --> 00:04:40,640
+all of these as enhancement and mark
+
+137
+00:04:38,400 --> 00:04:42,520
+them all as needs triage. Let's just
+
+138
+00:04:40,640 --> 00:04:43,800
+work down from the bugs first since
+
+139
+00:04:42,520 --> 00:04:45,120
+those are going to be, I think, a little
+
+140
+00:04:43,800 --> 00:04:48,440
+easier to grok.
+
+141
+00:04:45,120 --> 00:04:50,800
+Could you start with 477 for me? Let's
+
+142
+00:04:48,440 --> 00:04:52,520
+fire this off and see what happens. All
+
+143
+00:04:50,800 --> 00:04:54,560
+right, so it's come back with saying,
+
+144
+00:04:52,520 --> 00:04:55,919
+"Okay, a recommendation, it is a bug."
+
+145
+00:04:54,560 --> 00:04:57,640
+And it's recommending that I move it to
+
+146
+00:04:55,919 --> 00:05:00,160
+ready for agent. It's already had
+
+147
+00:04:57,640 --> 00:05:02,560
+substantial triage notes pinpointing the
+
+148
+00:05:00,160 --> 00:05:05,840
+exact root cause, reproduced with a
+
+149
+00:05:02,560 --> 00:05:07,480
+stack trace, etc., etc. However, I think
+
+150
+00:05:05,840 --> 00:05:09,440
+I want it to actually reproduce it
+
+151
+00:05:07,480 --> 00:05:12,520
+itself. It's being a little bit too
+
+152
+00:05:09,440 --> 00:05:13,480
+credulous about the
+
+153
+00:05:12,520 --> 00:05:15,320
+you know, about the stuff that it's
+
+154
+00:05:13,480 --> 00:05:17,680
+received from the person who's tried
+
+155
+00:05:15,320 --> 00:05:20,200
+this. So, I would like it to use another
+
+156
+00:05:17,680 --> 00:05:22,960
+skill of mine to say, "Diagnose this
+
+157
+00:05:20,200 --> 00:05:24,320
+yourself." going to make it walk through
+
+158
+00:05:22,960 --> 00:05:26,480
+essentially
+
+159
+00:05:24,320 --> 00:05:27,720
+reproducing the bug and trying to fix
+
+160
+00:05:26,480 --> 00:05:29,640
+the bug. So, we're actually going to do
+
+161
+00:05:27,720 --> 00:05:31,360
+this from within this same session. Now,
+
+162
+00:05:29,640 --> 00:05:33,320
+of course, whenever I'm doing anything,
+
+163
+00:05:31,360 --> 00:05:34,800
+anything with the LLM, I'm thinking
+
+164
+00:05:33,320 --> 00:05:36,520
+about my context usage, which is in the
+
+165
+00:05:34,800 --> 00:05:39,080
+bottom left here. I've sort of have a
+
+166
+00:05:36,520 --> 00:05:41,600
+budget of 100K for this session. We're
+
+167
+00:05:39,080 --> 00:05:43,760
+at 46.5K, that seems fine to me. We've
+
+168
+00:05:41,600 --> 00:05:45,800
+certainly got enough context to diagnose
+
+169
+00:05:43,760 --> 00:05:48,240
+this and fix this. I I a feeling this
+
+170
+00:05:45,800 --> 00:05:49,280
+error is just a small error, so that's
+
+171
+00:05:48,240 --> 00:05:50,840
+what's at the back of my mind all the
+
+172
+00:05:49,280 --> 00:05:52,720
+time. What's nice about the triage too
+
+173
+00:05:50,840 --> 00:05:55,840
+is that, you know, we've already marked
+
+174
+00:05:52,720 --> 00:05:58,080
+everything as it needs to, essentially,
+
+175
+00:05:55,840 --> 00:05:59,400
+so it's already labeled correctly. In a
+
+176
+00:05:58,080 --> 00:06:01,040
+future triage session, I would just go
+
+177
+00:05:59,400 --> 00:06:02,440
+back to the issues and I would just say,
+
+178
+00:06:01,040 --> 00:06:04,880
+"Okay, let's do this issue now." It's
+
+179
+00:06:02,440 --> 00:06:07,160
+funny how much of AI and how much of
+
+180
+00:06:04,880 --> 00:06:08,760
+managing AFK agents is essentially queue
+
+181
+00:06:07,160 --> 00:06:11,040
+management. This is what we're doing
+
+182
+00:06:08,760 --> 00:06:13,040
+here. We're just sort of pruning a queue
+
+183
+00:06:11,040 --> 00:06:15,080
+and acting as a translation layer
+
+184
+00:06:13,040 --> 00:06:16,920
+between the humans creating these
+
+185
+00:06:15,080 --> 00:06:18,440
+tickets and the AI that's going to
+
+186
+00:06:16,920 --> 00:06:20,800
+implement them. The way that my plan
+
+187
+00:06:18,440 --> 00:06:23,160
+prompt works for Sandcastle, which is my
+
+188
+00:06:20,800 --> 00:06:25,760
+AFK agent kind of software factory
+
+189
+00:06:23,160 --> 00:06:27,880
+thing, is it looks for the label ready
+
+190
+00:06:25,760 --> 00:06:29,560
+for agent and it only touches ones that
+
+191
+00:06:27,880 --> 00:06:31,840
+have been explicitly marked ready for
+
+192
+00:06:29,560 --> 00:06:34,400
+agent. Okay, it looks like it has found
+
+193
+00:06:31,840 --> 00:06:36,400
+the issue, so diagnosis confirmed. So,
+
+194
+00:06:34,400 --> 00:06:39,520
+the issue is is that a couple of
+
+195
+00:06:36,400 --> 00:06:42,480
+variables contain a literal task ID and
+
+196
+00:06:39,520 --> 00:06:44,840
+this particular syntax here, if it's not
+
+197
+00:06:42,480 --> 00:06:46,720
+passed in by the user, actually results
+
+198
+00:06:44,840 --> 00:06:49,000
+in an error. So, what it's saying is we
+
+199
+00:06:46,720 --> 00:06:51,760
+need to replace these task IDs with an
+
+200
+00:06:49,000 --> 00:06:53,919
+ID, so this kind of pattern here, and
+
+201
+00:06:51,760 --> 00:06:56,600
+that non kind of double curly brace
+
+202
+00:06:53,919 --> 00:06:57,880
+placeholder will actually not cause an
+
+203
+00:06:56,600 --> 00:06:59,800
+error, so that'll be fine. We can see
+
+204
+00:06:57,880 --> 00:07:01,520
+it's also added an idea of a feedback
+
+205
+00:06:59,800 --> 00:07:02,680
+loop here. So, a unit test scaffolding
+
+206
+00:07:01,520 --> 00:07:04,520
+simple loop and asserting that the
+
+207
+00:07:02,680 --> 00:07:07,640
+resulting prompt dot md
+
+208
+00:07:04,520 --> 00:07:10,120
+contains no unresolved task ID. That
+
+209
+00:07:07,640 --> 00:07:11,800
+looks great and it seems to be just
+
+210
+00:07:10,120 --> 00:07:14,120
+busting on with it without asking, which
+
+211
+00:07:11,800 --> 00:07:15,760
+is is fine in this case. We can see that
+
+212
+00:07:14,120 --> 00:07:18,160
+the diagnose skill actually uses a
+
+213
+00:07:15,760 --> 00:07:20,160
+similar setup to my TDD skill, where it
+
+214
+00:07:18,160 --> 00:07:22,120
+gets it to create the regression test
+
+215
+00:07:20,160 --> 00:07:23,919
+first, create the feedback loop first,
+
+216
+00:07:22,120 --> 00:07:25,320
+and then fix it within that feedback
+
+217
+00:07:23,919 --> 00:07:27,040
+loop. So, it's looking good. It's
+
+218
+00:07:25,320 --> 00:07:29,280
+created the full suite and the type
+
+219
+00:07:27,040 --> 00:07:31,240
+check and it looks like it's just ready
+
+220
+00:07:29,280 --> 00:07:33,040
+to go. So, this is another nice feature
+
+221
+00:07:31,240 --> 00:07:34,720
+of triage, which is once you've pulled
+
+222
+00:07:33,040 --> 00:07:37,040
+in the issue and understand it and
+
+223
+00:07:34,720 --> 00:07:38,560
+diagnosed it, you can just fix it there
+
+224
+00:07:37,040 --> 00:07:40,160
+and then if you want to. One thing I
+
+225
+00:07:38,560 --> 00:07:41,600
+often like to do is when I'm doing these
+
+226
+00:07:40,160 --> 00:07:43,840
+is actually have a two sessions running
+
+227
+00:07:41,600 --> 00:07:46,840
+at once. Is have one session over here
+
+228
+00:07:43,840 --> 00:07:48,360
+where I'm fixing a or triaging one issue
+
+229
+00:07:46,840 --> 00:07:49,920
+and then one session over on the left
+
+230
+00:07:48,360 --> 00:07:51,960
+here where I might actually be using
+
+231
+00:07:49,920 --> 00:07:53,880
+main to fix the issue. Okay, it's giving
+
+232
+00:07:51,960 --> 00:07:55,320
+me some kind of command request here.
+
+233
+00:07:53,880 --> 00:07:57,080
+I'm just going to say yes and then I'm
+
+234
+00:07:55,320 --> 00:07:59,080
+going to bump it into auto mode. All
+
+235
+00:07:57,080 --> 00:08:02,160
+right, so looking pretty good. It's
+
+236
+00:07:59,080 --> 00:08:05,000
+added a change set. It's added a fix
+
+237
+00:08:02,160 --> 00:08:07,360
+here. I'm going to get it to push this
+
+238
+00:08:05,000 --> 00:08:08,560
+to main and close the original issue.
+
+239
+00:08:07,360 --> 00:08:11,080
+One thing I could do is I could get it
+
+240
+00:08:08,560 --> 00:08:12,880
+to create a PR and then the PR would
+
+241
+00:08:11,080 --> 00:08:14,840
+reference the issue originally so that
+
+242
+00:08:12,880 --> 00:08:16,360
+when I closed or
+
+243
+00:08:14,840 --> 00:08:17,760
+when I merge the PR it would close the
+
+244
+00:08:16,360 --> 00:08:19,520
+issue. That's how I usually like to
+
+245
+00:08:17,760 --> 00:08:21,480
+work. But let's just push this to main.
+
+246
+00:08:19,520 --> 00:08:23,240
+I actually kind of did a bit of vetting
+
+247
+00:08:21,480 --> 00:08:25,480
+on this beforehand. I actually know what
+
+248
+00:08:23,240 --> 00:08:27,200
+the fix is and this is the fix. So a bit
+
+249
+00:08:25,480 --> 00:08:30,240
+of movie magic for you. So that is the
+
+250
+00:08:27,200 --> 00:08:33,280
+triage skill. It's essentially a way of
+
+251
+00:08:30,240 --> 00:08:38,360
+you and the AI working together to turn
+
+252
+00:08:33,280 --> 00:08:40,440
+messy human ideas into actual real tasks
+
+253
+00:08:38,360 --> 00:08:41,760
+that the agent can pick up and work on.
+
+254
+00:08:40,440 --> 00:08:44,400
+And this is specifically designed for
+
+255
+00:08:41,760 --> 00:08:46,040
+AFK agents. So you, in order to get your
+
+256
+00:08:44,400 --> 00:08:48,320
+agent working properly, you need a
+
+257
+00:08:46,040 --> 00:08:50,839
+backlog of tasks that it can pick up
+
+258
+00:08:48,320 --> 00:08:52,240
+over time. And having specific labels
+
+259
+00:08:50,839 --> 00:08:54,320
+for each of those means that the agent
+
+260
+00:08:52,240 --> 00:08:57,040
+is not going to stumble around on crap
+
+261
+00:08:54,320 --> 00:08:59,800
+tasks that aren't ready for it yet. And
+
+262
+00:08:57,040 --> 00:09:01,280
+the ready for agent kind of signal is a
+
+263
+00:08:59,800 --> 00:09:03,120
+really cool one because you just get to
+
+264
+00:09:01,280 --> 00:09:05,120
+see your backlog fill up with these
+
+265
+00:09:03,120 --> 00:09:06,760
+little marks that you know will be
+
+266
+00:09:05,120 --> 00:09:08,880
+implemented. Very cool. This also
+
+267
+00:09:06,760 --> 00:09:11,360
+matches well with my existing skills.
+
+268
+00:09:08,880 --> 00:09:12,640
+For instance, we can create PRDs here.
+
+269
+00:09:11,360 --> 00:09:14,520
+For instance, this is one about work
+
+270
+00:09:12,640 --> 00:09:16,839
+tree locking to prevent concurrent agent
+
+271
+00:09:14,520 --> 00:09:18,440
+access. This is a PRD and I've marked it
+
+272
+00:09:16,839 --> 00:09:20,520
+as ready for agent. So the agent will
+
+273
+00:09:18,440 --> 00:09:22,520
+see this, will pick it up. You can also
+
+274
+00:09:20,520 --> 00:09:24,960
+do this for tickets as well. So tickets
+
+275
+00:09:22,520 --> 00:09:27,000
+based on PRDs. This has the parent of
+
+276
+00:09:24,960 --> 00:09:28,160
+the PRD that we just saw and it's also
+
+277
+00:09:27,000 --> 00:09:30,080
+ready for agent. So that's going to be
+
+278
+00:09:28,160 --> 00:09:31,240
+seen by the AI picking this up. If you
+
+279
+00:09:30,080 --> 00:09:34,640
+dig this then you should check out the
+
+280
+00:09:31,240 --> 00:09:36,440
+skills page on AI Hero below here. I'm
+
+281
+00:09:34,640 --> 00:09:38,560
+adding all of the change logs onto this
+
+282
+00:09:36,440 --> 00:09:40,200
+page which are video change logs and
+
+283
+00:09:38,560 --> 00:09:41,880
+article change logs, so you can keep up
+
+284
+00:09:40,200 --> 00:09:43,240
+to date with what's happening. And you
+
+285
+00:09:41,880 --> 00:09:45,520
+can sign up to this newsletter, so you
+
+286
+00:09:43,240 --> 00:09:47,400
+get all my latest and greatest skill
+
+287
+00:09:45,520 --> 00:09:48,960
+updates, as well as tips on getting the
+
+288
+00:09:47,400 --> 00:09:50,920
+most out of agents. You may have also
+
+289
+00:09:48,960 --> 00:09:53,240
+noticed that this video is in a slightly
+
+290
+00:09:50,920 --> 00:09:55,080
+different style from my usual videos.
+
+291
+00:09:53,240 --> 00:09:57,160
+It's a little less cutty. I'm
+
+292
+00:09:55,080 --> 00:09:59,400
+experimenting with like a different
+
+293
+00:09:57,160 --> 00:10:01,560
+silence detection algorithm, and I'm
+
+294
+00:09:59,400 --> 00:10:03,360
+interested to know what you think. I
+
+295
+00:10:01,560 --> 00:10:05,320
+hope these sort of slightly longer takes
+
+296
+00:10:03,360 --> 00:10:07,680
+have a slightly more relaxed feel, a
+
+297
+00:10:05,320 --> 00:10:09,800
+little bit less relentless, and you get
+
+298
+00:10:07,680 --> 00:10:12,120
+a sense for my kind of natural speaking
+
+299
+00:10:09,800 --> 00:10:13,600
+cadence, sort of separate from YouTube.
+
+300
+00:10:12,120 --> 00:10:15,000
+So, if you dig this, let me know.
+
+301
+00:10:13,600 --> 00:10:18,040
+Anyway, thanks for watching, and I'll
+
+302
+00:10:15,000 --> 00:10:18,040
+see you very soon.
+

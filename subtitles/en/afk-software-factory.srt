@@ -1,0 +1,1392 @@
+1
+00:00:00,000 --> 00:00:04,040
+One of my goals for the last 6 months
+
+2
+00:00:01,520 --> 00:00:06,480
+have been trying to get my agents, my
+
+3
+00:00:04,040 --> 00:00:08,240
+coding agents to run totally AFK. These
+
+4
+00:00:06,480 --> 00:00:10,000
+AFK agents have been picking up backlog
+
+5
+00:00:08,240 --> 00:00:11,840
+tasks, have been implementing features
+
+6
+00:00:10,000 --> 00:00:13,800
+for me, have been doing QA, and
+
+7
+00:00:11,840 --> 00:00:15,440
+crucially they have been running in
+
+8
+00:00:13,800 --> 00:00:17,160
+parallel. So, I've had lots of them
+
+9
+00:00:15,440 --> 00:00:19,320
+running at the same time. However, in
+
+10
+00:00:17,160 --> 00:00:21,120
+order to get them to run properly, you
+
+11
+00:00:19,320 --> 00:00:22,480
+need to handle the permissions requests
+
+12
+00:00:21,120 --> 00:00:24,320
+that they make. And a question that you
+
+13
+00:00:22,480 --> 00:00:27,040
+probably have right now is how do I get
+
+14
+00:00:24,320 --> 00:00:29,120
+my agent to run without it constantly
+
+15
+00:00:27,040 --> 00:00:31,160
+battering me with requests for
+
+16
+00:00:29,120 --> 00:00:33,160
+permissions. course you could just go
+
+17
+00:00:31,160 --> 00:00:35,080
+into Yolo mode and have it totally
+
+18
+00:00:33,160 --> 00:00:37,640
+bypass any permissions requests. But, if
+
+19
+00:00:35,080 --> 00:00:39,120
+you do that, Claude will do mad things
+
+20
+00:00:37,640 --> 00:00:40,200
+on your system like delete your home
+
+21
+00:00:39,120 --> 00:00:41,720
+directory. Or, if you're in an
+
+22
+00:00:40,200 --> 00:00:43,120
+enterprise setup, then it might be
+
+23
+00:00:41,720 --> 00:00:45,680
+concerned about, you know, it
+
+24
+00:00:43,120 --> 00:00:47,320
+exfiltrating data or sending your code
+
+25
+00:00:45,680 --> 00:00:49,680
+off to a random third party. So, in
+
+26
+00:00:47,320 --> 00:00:51,840
+order to get agents to run properly AFK,
+
+27
+00:00:49,680 --> 00:00:54,120
+you need them to be sandboxed. And there
+
+28
+00:00:51,840 --> 00:00:56,480
+are a bunch of solutions for this.
+
+29
+00:00:54,120 --> 00:00:59,120
+However, I was not particularly happy
+
+30
+00:00:56,480 --> 00:01:01,840
+with any of them. The one I really tried
+
+31
+00:00:59,120 --> 00:01:03,720
+to use and try to make work was Docker
+
+32
+00:01:01,840 --> 00:01:05,800
+sandboxes. However, there were just so
+
+33
+00:01:03,720 --> 00:01:07,560
+many problems with running it AFK that I
+
+34
+00:01:05,800 --> 00:01:09,400
+won't bore you with now. What I wanted
+
+35
+00:01:07,560 --> 00:01:12,560
+was a simple TypeScript function that I
+
+36
+00:01:09,400 --> 00:01:15,400
+could run and just say, "Run this prompt
+
+37
+00:01:12,560 --> 00:01:16,800
+inside this sandbox using this agent."
+
+38
+00:01:15,400 --> 00:01:18,640
+And all the tools that I found were
+
+39
+00:01:16,800 --> 00:01:20,640
+trying to sell me some third party
+
+40
+00:01:18,640 --> 00:01:22,880
+service. So, I realized I needed to
+
+41
+00:01:20,640 --> 00:01:24,880
+build something here. And that thing is
+
+42
+00:01:22,880 --> 00:01:26,600
+Sandcastle, a TypeScript library for
+
+43
+00:01:24,880 --> 00:01:28,560
+orchestrating AI coding agents in
+
+44
+00:01:26,600 --> 00:01:31,280
+isolated sandboxes. You can use this to
+
+45
+00:01:28,560 --> 00:01:34,080
+build TypeScript scripts here where you
+
+46
+00:01:31,280 --> 00:01:35,840
+simply say run, passing in the agent,
+
+47
+00:01:34,080 --> 00:01:38,160
+passing in the sandbox, and passing in
+
+48
+00:01:35,840 --> 00:01:39,760
+the prompt. If you look in any one of my
+
+49
+00:01:38,160 --> 00:01:41,840
+open source repos, you'll see this
+
+50
+00:01:39,760 --> 00:01:44,760
+little Sandcastle or dot Sandcastle
+
+51
+00:01:41,840 --> 00:01:46,640
+directory here, which has a main.ts
+
+52
+00:01:44,760 --> 00:01:48,240
+file. And this is full of these
+
+53
+00:01:46,640 --> 00:01:50,080
+Sandcastle.run
+
+54
+00:01:48,240 --> 00:01:52,400
+little functions here. With this simple
+
+55
+00:01:50,080 --> 00:01:54,280
+function, you can build really, really
+
+56
+00:01:52,400 --> 00:01:56,760
+complex systems. You can build systems
+
+57
+00:01:54,280 --> 00:01:59,600
+that parallelize agents running side by
+
+58
+00:01:56,760 --> 00:02:01,880
+side. You can have systems that review
+
+59
+00:01:59,600 --> 00:02:04,440
+their own code and then merge it in.
+
+60
+00:02:01,880 --> 00:02:06,400
+I've been really, really enjoying using
+
+61
+00:02:04,440 --> 00:02:07,640
+this and now I think it's time to make a
+
+62
+00:02:06,400 --> 00:02:09,800
+video on it. Let me show you how to get
+
+63
+00:02:07,640 --> 00:02:12,080
+this set up inside a repo. We first run
+
+64
+00:02:09,800 --> 00:02:14,440
+npm install AI hero Sandcastle. Once
+
+65
+00:02:12,080 --> 00:02:15,959
+that's done, we can run npx Sandcastle
+
+66
+00:02:14,440 --> 00:02:17,640
+in it and you'll first be asked to
+
+67
+00:02:15,959 --> 00:02:19,120
+select an agent. Let's select Claude
+
+68
+00:02:17,640 --> 00:02:20,560
+code, why not? You can then select
+
+69
+00:02:19,120 --> 00:02:22,480
+between one of the first class sandbox
+
+70
+00:02:20,560 --> 00:02:24,760
+providers that we provide. My plan in
+
+71
+00:02:22,480 --> 00:02:26,600
+the future is to add many, many more of
+
+72
+00:02:24,760 --> 00:02:28,400
+these but and you can also implement
+
+73
+00:02:26,600 --> 00:02:30,760
+your own if you like. For now, let's
+
+74
+00:02:28,400 --> 00:02:32,959
+just choose Docker. Sandcastle also uses
+
+75
+00:02:30,760 --> 00:02:35,280
+a backlog manager because AFK agents
+
+76
+00:02:32,959 --> 00:02:37,240
+need some way of picking up tickets and
+
+77
+00:02:35,280 --> 00:02:39,320
+knowing what to do next. My preferred
+
+78
+00:02:37,240 --> 00:02:41,440
+way of doing this is GitHub issues. We
+
+79
+00:02:39,320 --> 00:02:42,840
+also ship with five templates here
+
+80
+00:02:41,440 --> 00:02:44,520
+currently. I mean, there may be many
+
+81
+00:02:42,840 --> 00:02:46,440
+more by the time you run this. Let's
+
+82
+00:02:44,520 --> 00:02:49,320
+actually max out here. Let's go for a
+
+83
+00:02:46,440 --> 00:02:50,880
+parallel planner with a review step. And
+
+84
+00:02:49,320 --> 00:02:52,720
+since we've chosen GitHub issues, we're
+
+85
+00:02:50,880 --> 00:02:54,600
+going to create a Sandcastle GitHub
+
+86
+00:02:52,720 --> 00:02:56,360
+label. The issues will be filtered by
+
+87
+00:02:54,600 --> 00:02:58,720
+this label and it means that only things
+
+88
+00:02:56,360 --> 00:03:00,480
+with the Sandcastle label on our GitHub
+
+89
+00:02:58,720 --> 00:03:02,400
+issue list will be picked up by the
+
+90
+00:03:00,480 --> 00:03:04,040
+agents. We can see at this stage that a
+
+91
+00:03:02,400 --> 00:03:07,400
+bunch of stuff has been thrown into a
+
+92
+00:03:04,040 --> 00:03:08,920
+dot Sandcastle directory just up here.
+
+93
+00:03:07,400 --> 00:03:11,320
+The thing to know about now is this
+
+94
+00:03:08,920 --> 00:03:13,519
+Dockerfile here, which is essentially
+
+95
+00:03:11,320 --> 00:03:15,400
+the Docker container or the instructions
+
+96
+00:03:13,519 --> 00:03:17,160
+for setting up the Docker container that
+
+97
+00:03:15,400 --> 00:03:19,080
+we're going to be using. Sandcastle runs
+
+98
+00:03:17,160 --> 00:03:20,920
+inside this Docker container and it
+
+99
+00:03:19,080 --> 00:03:22,400
+means that you can just install anything
+
+100
+00:03:20,920 --> 00:03:23,880
+you like inside here. We're installing
+
+101
+00:03:22,400 --> 00:03:25,959
+some important system dependencies.
+
+102
+00:03:23,880 --> 00:03:28,280
+We're installing the GitHub CLI. We're
+
+103
+00:03:25,959 --> 00:03:30,720
+doing a little bit of setup to rename
+
+104
+00:03:28,280 --> 00:03:32,800
+the um home directory to agent. We're
+
+105
+00:03:30,720 --> 00:03:34,600
+installing Claude code and then we're
+
+106
+00:03:32,800 --> 00:03:36,800
+just ready to go. So, let's go ahead and
+
+107
+00:03:34,600 --> 00:03:38,640
+build this default Docker image now.
+
+108
+00:03:36,800 --> 00:03:40,360
+That was really fast and it has now
+
+109
+00:03:38,640 --> 00:03:42,360
+completed. Our next steps are we need to
+
+110
+00:03:40,360 --> 00:03:44,080
+set the required environment variables
+
+111
+00:03:42,360 --> 00:03:45,640
+in dot Sandcastle {forward slash} dot
+
+112
+00:03:44,080 --> 00:03:48,720
+env. If we have a look in dot
+
+113
+00:03:45,640 --> 00:03:50,680
+Sandcastle, where it is dot Sandcastle
+
+114
+00:03:48,720 --> 00:03:52,680
+{forward slash} dot env dot example, we
+
+115
+00:03:50,680 --> 00:03:54,800
+can see that we have an Anthropic API
+
+116
+00:03:52,680 --> 00:03:55,960
+key and a GitHub token required. If you
+
+117
+00:03:54,800 --> 00:03:57,800
+want to use your Claude subscription
+
+118
+00:03:55,960 --> 00:03:59,600
+instead of an API key, then you can head
+
+119
+00:03:57,800 --> 00:04:01,240
+to this issue here that will tell you
+
+120
+00:03:59,600 --> 00:04:03,560
+more about it. If you don't know,
+
+121
+00:04:01,240 --> 00:04:05,040
+Anthropic is a little bit funny about
+
+122
+00:04:03,560 --> 00:04:06,400
+people using their subscription for
+
+123
+00:04:05,040 --> 00:04:08,280
+these kind of things, and so there's
+
+124
+00:04:06,400 --> 00:04:09,720
+some up-to-date advice there. For me,
+
+125
+00:04:08,280 --> 00:04:11,440
+I'm going to copy over some environment
+
+126
+00:04:09,720 --> 00:04:13,360
+variables that I've had already. Once
+
+127
+00:04:11,440 --> 00:04:15,000
+that's done, I'm going to go into my
+
+128
+00:04:13,360 --> 00:04:16,720
+source control, I'm going to commit this
+
+129
+00:04:15,000 --> 00:04:18,720
+code, and I'm going to push it up
+
+130
+00:04:16,720 --> 00:04:21,920
+because I'm going to show you how we can
+
+131
+00:04:18,720 --> 00:04:23,440
+use GitHub issues to schedule some work
+
+132
+00:04:21,920 --> 00:04:25,560
+for this agent that we've created. So,
+
+133
+00:04:23,440 --> 00:04:28,160
+let's go to our repo and create a new
+
+134
+00:04:25,560 --> 00:04:29,800
+issue. Let's say, "Scaffold me a basic
+
+135
+00:04:28,160 --> 00:04:32,400
+TypeScript template in the repo. Give me
+
+136
+00:04:29,800 --> 00:04:35,160
+a basic TypeScript application that uses
+
+137
+00:04:32,400 --> 00:04:38,000
+Vitest, that uses type checking, that
+
+138
+00:04:35,160 --> 00:04:40,120
+has a very very simple CLI that I can
+
+139
+00:04:38,000 --> 00:04:42,040
+call. Use Commander for the CLI. Add a
+
+140
+00:04:40,120 --> 00:04:43,520
+CI script that does type checking and
+
+141
+00:04:42,040 --> 00:04:46,400
+runs the tests." So, now I'm going to
+
+142
+00:04:43,520 --> 00:04:48,000
+create that issue, and we can now run
+
+143
+00:04:46,400 --> 00:04:49,600
+our agent to see what happens. So, after
+
+144
+00:04:48,000 --> 00:04:51,600
+that, it should be ready to be picked
+
+145
+00:04:49,600 --> 00:04:54,400
+up. First, I'm going to add this little
+
+146
+00:04:51,600 --> 00:04:56,280
+piece of code to my package.json here,
+
+147
+00:04:54,400 --> 00:04:58,880
+which is just going to allow me to run a
+
+148
+00:04:56,280 --> 00:05:00,960
+script here. So, let's say scripts, and
+
+149
+00:04:58,880 --> 00:05:03,560
+then add this sandcastle script here.
+
+150
+00:05:00,960 --> 00:05:05,560
+This is just going to run NPX TSX, and
+
+151
+00:05:03,560 --> 00:05:07,320
+TSX is just a way that you can run
+
+152
+00:05:05,560 --> 00:05:09,360
+TypeScript as a script, and it's going
+
+153
+00:05:07,320 --> 00:05:11,240
+to run this file dot sandcastle
+
+154
+00:05:09,360 --> 00:05:13,360
+{forward-slash} main.mts. So, let's
+
+155
+00:05:11,240 --> 00:05:14,960
+actually go ahead and run this and see
+
+156
+00:05:13,360 --> 00:05:16,800
+what happens. We can see immediately
+
+157
+00:05:14,960 --> 00:05:18,440
+that it's kicked off a planner agent
+
+158
+00:05:16,800 --> 00:05:20,440
+here, and we can control-click these
+
+159
+00:05:18,440 --> 00:05:22,000
+logs to see what it's up to. We can see
+
+160
+00:05:20,440 --> 00:05:24,640
+that it's successfully set up the
+
+161
+00:05:22,000 --> 00:05:26,640
+sandbox. It's the planner agent running
+
+162
+00:05:24,640 --> 00:05:28,120
+on Docker, and it's looking at the open
+
+163
+00:05:26,640 --> 00:05:30,280
+issues here, and it sees that there's
+
+164
+00:05:28,120 --> 00:05:33,320
+only one open issue. It then spits out
+
+165
+00:05:30,280 --> 00:05:34,400
+this plan here, which is a set of issues
+
+166
+00:05:33,320 --> 00:05:35,640
+which are going to be worked on.
+
+167
+00:05:34,400 --> 00:05:37,240
+Finally, at the bottom here, it shows
+
+168
+00:05:35,640 --> 00:05:39,120
+the amount of context window that it
+
+169
+00:05:37,240 --> 00:05:40,720
+used. If we zoom back to our terminal
+
+170
+00:05:39,120 --> 00:05:42,360
+here, we can see that an implementer
+
+171
+00:05:40,720 --> 00:05:44,640
+agent was kicked off, too. Let's
+
+172
+00:05:42,360 --> 00:05:46,200
+control-click these logs and take a look
+
+173
+00:05:44,640 --> 00:05:48,960
+at them, and we can see that it called
+
+174
+00:05:46,200 --> 00:05:51,040
+GitHub issue view one. It has a clear
+
+175
+00:05:48,960 --> 00:05:52,440
+picture and it asked for a basic
+
+176
+00:05:51,040 --> 00:05:54,560
+TypeScript script out V test for
+
+177
+00:05:52,440 --> 00:05:56,120
+testing, type checking, simple CLI using
+
+178
+00:05:54,560 --> 00:05:58,560
+commander. Great. We can see that it's
+
+179
+00:05:56,120 --> 00:06:00,360
+running bash commands inside here. It's
+
+180
+00:05:58,560 --> 00:06:02,040
+uh doing Okay, good dependencies
+
+181
+00:06:00,360 --> 00:06:03,720
+installed. And I've even got it prompted
+
+182
+00:06:02,040 --> 00:06:05,360
+so it's doing a little bit of red green
+
+183
+00:06:03,720 --> 00:06:08,240
+refactor here where it's writing the
+
+184
+00:06:05,360 --> 00:06:09,680
+test first, V test run, etc. We can see
+
+185
+00:06:08,240 --> 00:06:11,240
+it all happening. It's now moved on a
+
+186
+00:06:09,680 --> 00:06:12,960
+little bit further and we can sit and
+
+187
+00:06:11,240 --> 00:06:14,520
+watch this if we want to or, you know,
+
+188
+00:06:12,960 --> 00:06:17,080
+we can go and have a cup of tea, we can
+
+189
+00:06:14,520 --> 00:06:18,200
+relax and uh this will just do its work
+
+190
+00:06:17,080 --> 00:06:19,520
+without us.
+
+191
+00:06:18,200 --> 00:06:21,960
+So while this is running, why don't we
+
+192
+00:06:19,520 --> 00:06:23,760
+go and have a look at the main.mts file
+
+193
+00:06:21,960 --> 00:06:25,680
+here? We can see the planner that we saw
+
+194
+00:06:23,760 --> 00:06:28,520
+earlier is just down here where we have
+
+195
+00:06:25,680 --> 00:06:30,760
+a sandcastle.run command that takes in a
+
+196
+00:06:28,520 --> 00:06:32,640
+name of planner. It takes in an agent
+
+197
+00:06:30,760 --> 00:06:34,320
+here so we can just change this if we
+
+198
+00:06:32,640 --> 00:06:36,600
+want to. If we want to do planning with
+
+199
+00:06:34,320 --> 00:06:38,320
+Codex, let's say, instead of Claude
+
+200
+00:06:36,600 --> 00:06:41,000
+code, we totally can. And it's also
+
+201
+00:06:38,320 --> 00:06:42,800
+using this prompt file here. So plan
+
+202
+00:06:41,000 --> 00:06:44,560
+prompt in here. This is scaffolded by
+
+203
+00:06:42,800 --> 00:06:46,680
+the template and you can totally edit
+
+204
+00:06:44,560 --> 00:06:49,080
+this as much as you want to to run
+
+205
+00:06:46,680 --> 00:06:51,080
+anything inside a sandbox. This one is
+
+206
+00:06:49,080 --> 00:06:53,280
+taking all of the open issues from the
+
+207
+00:06:51,080 --> 00:06:54,760
+repo that have the label sandcastle.
+
+208
+00:06:53,280 --> 00:06:56,320
+It's grabbing all of the labels, all the
+
+209
+00:06:54,760 --> 00:06:57,919
+comments, grabbing all of the comments
+
+210
+00:06:56,320 --> 00:07:00,480
+body as well. And then it's working out
+
+211
+00:06:57,919 --> 00:07:02,960
+which ones can be done right now. So
+
+212
+00:07:00,480 --> 00:07:04,600
+it's only looking for unblocked issues
+
+213
+00:07:02,960 --> 00:07:06,520
+here. And finally we tell it to output
+
+214
+00:07:04,600 --> 00:07:08,919
+its plan in a JSON object wrapped in
+
+215
+00:07:06,520 --> 00:07:10,840
+plan tags. If we go back to main.mts, we
+
+216
+00:07:08,919 --> 00:07:12,880
+can see that this then gets picked up
+
+217
+00:07:10,840 --> 00:07:14,919
+here. We then grab the JSON out of the
+
+218
+00:07:12,880 --> 00:07:18,560
+plan here and figure out the issues. And
+
+219
+00:07:14,919 --> 00:07:20,080
+then for each of the issues we run a a
+
+220
+00:07:18,560 --> 00:07:21,560
+separate sandbox here. We run an
+
+221
+00:07:20,080 --> 00:07:23,240
+implementer. And this one has an
+
+222
+00:07:21,560 --> 00:07:25,560
+implement prompt that's just inside
+
+223
+00:07:23,240 --> 00:07:27,480
+here. So implement prompt. This one
+
+224
+00:07:25,560 --> 00:07:29,600
+takes in some prompt arguments here. So
+
+225
+00:07:27,480 --> 00:07:31,720
+it takes in an issue title. It takes in
+
+226
+00:07:29,600 --> 00:07:33,360
+the task ID, which is the issue ID. Then
+
+227
+00:07:31,720 --> 00:07:35,840
+it says you're going to be working on a
+
+228
+00:07:33,360 --> 00:07:38,600
+specific branch. Again, all of this is
+
+229
+00:07:35,840 --> 00:07:40,760
+just a setup that I cooked up, really.
+
+230
+00:07:38,600 --> 00:07:42,720
+This is not Sandcastle giving you any
+
+231
+00:07:40,760 --> 00:07:44,520
+kind of prescription on how you want to
+
+232
+00:07:42,720 --> 00:07:46,920
+run it. This is just a really cool
+
+233
+00:07:44,520 --> 00:07:48,360
+workflow that I tend to use in my repos,
+
+234
+00:07:46,920 --> 00:07:50,600
+so I figured it belonged in a template.
+
+235
+00:07:48,360 --> 00:07:52,440
+If we zoom back to main.mts, we can see
+
+236
+00:07:50,600 --> 00:07:54,880
+that the result here is captured in a
+
+237
+00:07:52,440 --> 00:07:57,360
+variable, and if there are more than one
+
+238
+00:07:54,880 --> 00:07:59,760
+commits here, we then run a reviewer.
+
+239
+00:07:57,360 --> 00:08:01,280
+This pattern has been incredibly
+
+240
+00:07:59,760 --> 00:08:02,560
+powerful because the implementer can
+
+241
+00:08:01,280 --> 00:08:04,280
+make mistakes, but the reviewer
+
+242
+00:08:02,560 --> 00:08:06,000
+generally picks it up. And of course, if
+
+243
+00:08:04,280 --> 00:08:09,200
+you want to do an adversarial review
+
+244
+00:08:06,000 --> 00:08:10,920
+where you have one agent run another or
+
+245
+00:08:09,200 --> 00:08:13,240
+review another agent's code, then you
+
+246
+00:08:10,920 --> 00:08:15,360
+can just do suncastle.codex. If you want
+
+247
+00:08:13,240 --> 00:08:16,919
+to have multiple different agents spawn
+
+248
+00:08:15,360 --> 00:08:18,440
+at the same time, come up with an
+
+249
+00:08:16,919 --> 00:08:20,360
+implementation, and then some other
+
+250
+00:08:18,440 --> 00:08:22,240
+reviewer takes all of those branches,
+
+251
+00:08:20,360 --> 00:08:24,000
+chooses the best one, or makes a like a
+
+252
+00:08:22,240 --> 00:08:26,440
+mix of them, you can. That's the power
+
+253
+00:08:24,000 --> 00:08:27,640
+of having a totally agnostic setup to
+
+254
+00:08:26,440 --> 00:08:30,200
+what agent you're running. That's the
+
+255
+00:08:27,640 --> 00:08:31,800
+power of using your owning your own
+
+256
+00:08:30,200 --> 00:08:33,800
+process. Anyway, let's take a look at
+
+257
+00:08:31,800 --> 00:08:35,479
+the review prompt here. It's worth
+
+258
+00:08:33,800 --> 00:08:36,919
+noting this little syntax here because
+
+259
+00:08:35,479 --> 00:08:39,680
+this is really nice. This is something I
+
+260
+00:08:36,919 --> 00:08:41,840
+copied from Claude Skills, where if you
+
+261
+00:08:39,680 --> 00:08:44,240
+specify an exclamation mark before a
+
+262
+00:08:41,840 --> 00:08:46,560
+bunch of backticks here, it will run
+
+263
+00:08:44,240 --> 00:08:48,280
+this when it's resolving the prompt. And
+
+264
+00:08:46,560 --> 00:08:50,280
+so it will actually execute git diff
+
+265
+00:08:48,280 --> 00:08:52,160
+source branch branch here. This review
+
+266
+00:08:50,280 --> 00:08:53,720
+prompt just uses a very basic process,
+
+267
+00:08:52,160 --> 00:08:55,720
+understands the change, analyze it for
+
+268
+00:08:53,720 --> 00:08:57,520
+improvements, check correctness,
+
+269
+00:08:55,720 --> 00:08:59,920
+maintain balance, and crucially it's a
+
+270
+00:08:57,520 --> 00:09:01,320
+great step for like adding your own
+
+271
+00:08:59,920 --> 00:09:03,600
+project standards. So for instance, I've
+
+272
+00:09:01,320 --> 00:09:04,960
+added this coding standards in here that
+
+273
+00:09:03,600 --> 00:09:06,520
+you can fill in with any project
+
+274
+00:09:04,960 --> 00:09:08,960
+standards that you want to be added.
+
+275
+00:09:06,520 --> 00:09:11,080
+Let's look back at main.mts, can see
+
+276
+00:09:08,960 --> 00:09:12,880
+what happens after all of these branches
+
+277
+00:09:11,080 --> 00:09:15,600
+get created. We can see that they then
+
+278
+00:09:12,880 --> 00:09:16,920
+get passed into a merger agent down the
+
+279
+00:09:15,600 --> 00:09:18,480
+bottom. And this one takes all of the
+
+280
+00:09:16,920 --> 00:09:20,040
+branches, takes all of the resulting
+
+281
+00:09:18,480 --> 00:09:21,800
+issues, so it understands the changes
+
+282
+00:09:20,040 --> 00:09:23,560
+that were made, and then merges them
+
+283
+00:09:21,800 --> 00:09:24,880
+back to the main branch. The reason we
+
+284
+00:09:23,560 --> 00:09:26,920
+use an agent for this is that there
+
+285
+00:09:24,880 --> 00:09:28,360
+might be merge conflicts between them.
+
+286
+00:09:26,920 --> 00:09:30,160
+And I usually like to have a really
+
+287
+00:09:28,360 --> 00:09:31,440
+powerful agent handling those merge
+
+288
+00:09:30,160 --> 00:09:33,040
+conflicts for me because they can
+
+289
+00:09:31,440 --> 00:09:34,760
+sometimes be pretty gnarly. And so at
+
+290
+00:09:33,040 --> 00:09:36,960
+the end of this, we have had multiple
+
+291
+00:09:34,760 --> 00:09:38,840
+agents running at the same time, all
+
+292
+00:09:36,960 --> 00:09:41,600
+committing to their branches, and then
+
+293
+00:09:38,840 --> 00:09:43,040
+we get a like a senior merger developer
+
+294
+00:09:41,600 --> 00:09:44,720
+to pull them back into main. Just this
+
+295
+00:09:43,040 --> 00:09:46,720
+setup has massively increased my
+
+296
+00:09:44,720 --> 00:09:48,520
+velocity, and it works super duper well.
+
+297
+00:09:46,720 --> 00:09:50,400
+And again, Sandcastle is not opinionated
+
+298
+00:09:48,520 --> 00:09:52,400
+here. If you wanted to make these into
+
+299
+00:09:50,400 --> 00:09:53,960
+PR branches, you totally could. Okay,
+
+300
+00:09:52,400 --> 00:09:55,440
+let's go and check in with our running
+
+301
+00:09:53,960 --> 00:09:57,920
+process, and let's see what happened.
+
+302
+00:09:55,440 --> 00:09:59,800
+All right, we can see that we had an
+
+303
+00:09:57,920 --> 00:10:01,440
+implementer kick off here, then a
+
+304
+00:09:59,800 --> 00:10:03,000
+reviewer. Let's check the logs for the
+
+305
+00:10:01,440 --> 00:10:04,480
+reviewer. We can see that it found that
+
+306
+00:10:03,000 --> 00:10:06,640
+the code was already clean and
+
+307
+00:10:04,480 --> 00:10:08,440
+well-structured. Minimal scaffold naming
+
+308
+00:10:06,640 --> 00:10:10,560
+is clear. Then, let's see what happened
+
+309
+00:10:08,440 --> 00:10:13,120
+in the merge. So, we can just pull up
+
+310
+00:10:10,560 --> 00:10:16,120
+the merger here, and the merger ran the
+
+311
+00:10:13,120 --> 00:10:18,040
+type checks, it merged in the branch,
+
+312
+00:10:16,120 --> 00:10:19,920
+and it also closed the issue with a
+
+313
+00:10:18,040 --> 00:10:21,320
+comment. Beautiful. We can see too that
+
+314
+00:10:19,920 --> 00:10:23,600
+if we go and have a look at the rest of
+
+315
+00:10:21,320 --> 00:10:25,280
+our code base here, whoa, we now have a
+
+316
+00:10:23,600 --> 00:10:26,720
+bit more code going on. We have a
+
+317
+00:10:25,280 --> 00:10:28,240
+tsconfig.json, we have a
+
+318
+00:10:26,720 --> 00:10:29,920
+vitest.config.ts,
+
+319
+00:10:28,240 --> 00:10:31,760
+and we have a few files knocking about
+
+320
+00:10:29,920 --> 00:10:34,080
+inside the CLI here. So, you can start
+
+321
+00:10:31,760 --> 00:10:35,200
+to see how Sandcastle is working here.
+
+322
+00:10:34,080 --> 00:10:37,840
+You can build these relatively
+
+323
+00:10:35,200 --> 00:10:40,240
+complicated flows using
+
+324
+00:10:37,840 --> 00:10:41,600
+really nice ergonomic markdown prompts.
+
+325
+00:10:40,240 --> 00:10:43,640
+You can get it to run on different
+
+326
+00:10:41,600 --> 00:10:45,320
+branches, and just merge that back into
+
+327
+00:10:43,640 --> 00:10:47,480
+main, or you can get it to do really
+
+328
+00:10:45,320 --> 00:10:50,520
+nice PR flows as well. You know, it's
+
+329
+00:10:47,480 --> 00:10:52,880
+just code. It is a programmatic way to
+
+330
+00:10:50,520 --> 00:10:55,120
+run Claude code, to run Codex, and to
+
+331
+00:10:52,880 --> 00:10:57,240
+build these workflows that turn into
+
+332
+00:10:55,120 --> 00:10:59,360
+these mini software factories. I've been
+
+333
+00:10:57,240 --> 00:11:00,800
+incredibly happy with it, and I'm really
+
+334
+00:10:59,360 --> 00:11:02,320
+excited to see what you build with it,
+
+335
+00:11:00,800 --> 00:11:03,720
+too. If you're thinking about these hard
+
+336
+00:11:02,320 --> 00:11:05,720
+problems, too, then you should check out
+
+337
+00:11:03,720 --> 00:11:07,640
+my newsletter for AI skills for real
+
+338
+00:11:05,720 --> 00:11:09,680
+engineers. These follow the skills repo
+
+339
+00:11:07,640 --> 00:11:11,160
+that went absolutely viral a few days
+
+340
+00:11:09,680 --> 00:11:13,560
+ago, and I also post tips and tricks
+
+341
+00:11:11,160 --> 00:11:15,240
+there for getting the most out of agents
+
+342
+00:11:13,560 --> 00:11:16,360
+using good old software fundamentals.
+
+343
+00:11:15,240 --> 00:11:17,920
+So, thanks for watching, folks. I'm
+
+344
+00:11:16,360 --> 00:11:19,200
+really excited about this tool. I think
+
+345
+00:11:17,920 --> 00:11:21,080
+it's going to be a really nice
+
+346
+00:11:19,200 --> 00:11:23,240
+contribution to the ecosystem, and I've
+
+347
+00:11:21,080 --> 00:11:26,400
+been loving using it. So, nice work, and
+
+348
+00:11:23,240 --> 00:11:26,400
+I'll see you in the next one.
+

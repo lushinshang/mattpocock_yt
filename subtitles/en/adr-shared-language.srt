@@ -1,0 +1,1820 @@
+1
+00:00:00,000 --> 00:00:04,760
+A few months ago, I wrote a few
+
+2
+00:00:02,240 --> 00:00:06,120
+sentences, about four sentences, that
+
+3
+00:00:04,760 --> 00:00:09,040
+have turned out to be the most
+
+4
+00:00:06,120 --> 00:00:10,760
+influential four sentences I've ever
+
+5
+00:00:09,040 --> 00:00:13,120
+written. I packaged these four sentences
+
+6
+00:00:10,760 --> 00:00:15,800
+up into the Grill Me skill, which is a
+
+7
+00:00:13,120 --> 00:00:17,560
+skill that you can use to get the LLM to
+
+8
+00:00:15,800 --> 00:00:19,560
+interview you relentlessly. It
+
+9
+00:00:17,560 --> 00:00:21,480
+interviews you until you reach a shared
+
+10
+00:00:19,560 --> 00:00:22,920
+understanding, walking down each branch
+
+11
+00:00:21,480 --> 00:00:24,400
+of the design tree, resolving
+
+12
+00:00:22,920 --> 00:00:25,880
+dependencies between decisions one by
+
+13
+00:00:24,400 --> 00:00:28,200
+one. I know this skill is influential
+
+14
+00:00:25,880 --> 00:00:30,000
+because every single day I receive about
+
+15
+00:00:28,200 --> 00:00:31,760
+five messages of people saying they've
+
+16
+00:00:30,000 --> 00:00:33,600
+tried it and they love it. This skill is
+
+17
+00:00:31,760 --> 00:00:35,880
+an absolute game-changer. What are your
+
+18
+00:00:33,600 --> 00:00:37,160
+favorite skills? Grill Me is great. I'm
+
+19
+00:00:35,880 --> 00:00:38,680
+working on a project, blah blah blah.
+
+20
+00:00:37,160 --> 00:00:41,080
+The Grill Me skill asks me about
+
+21
+00:00:38,680 --> 00:00:42,840
+ambiguities. Fantastic. Grill Me skill
+
+22
+00:00:41,080 --> 00:00:44,480
+is goated. At first, I felt like it
+
+23
+00:00:42,840 --> 00:00:45,920
+slowed me down with all the questions,
+
+24
+00:00:44,480 --> 00:00:47,800
+but after using it a bit, I honestly
+
+25
+00:00:45,920 --> 00:00:50,080
+think it might save time. You just
+
+26
+00:00:47,800 --> 00:00:51,720
+one-shot everything after you've kind of
+
+27
+00:00:50,080 --> 00:00:53,640
+gathered all the context. Have you
+
+28
+00:00:51,720 --> 00:00:54,720
+tested the skill called Grill Me? And
+
+29
+00:00:53,640 --> 00:00:55,760
+blah blah blah blah blah. It's
+
+30
+00:00:54,720 --> 00:00:57,640
+wonderful, wonderful, wonderful,
+
+31
+00:00:55,760 --> 00:00:59,200
+wonderful. And after all that praise,
+
+32
+00:00:57,640 --> 00:01:00,280
+you might think, well, you should
+
+33
+00:00:59,200 --> 00:01:01,520
+probably stick with that skill,
+
+34
+00:01:00,280 --> 00:01:03,600
+shouldn't you? That skill sounds pretty
+
+35
+00:01:01,520 --> 00:01:05,519
+good. And it turns out I've actually
+
+36
+00:01:03,600 --> 00:01:07,400
+built a better one. I'm never very happy
+
+37
+00:01:05,519 --> 00:01:09,080
+when I'm resting on my laurels. I always
+
+38
+00:01:07,400 --> 00:01:11,560
+feel like there's improvements to be
+
+39
+00:01:09,080 --> 00:01:14,080
+made at every single part of my process.
+
+40
+00:01:11,560 --> 00:01:15,840
+And now, Grill Me has been replaced with
+
+41
+00:01:14,080 --> 00:01:17,200
+a new skill. Let's open up a session so
+
+42
+00:01:15,840 --> 00:01:19,080
+that I can explain a little bit more
+
+43
+00:01:17,200 --> 00:01:20,320
+about where Grill Me goes wrong. I'm
+
+44
+00:01:19,080 --> 00:01:22,120
+going to paste in a prompt that I've
+
+45
+00:01:20,320 --> 00:01:24,840
+already added here. And this prompt is
+
+46
+00:01:22,120 --> 00:01:26,840
+an idea for a new feature. I've just
+
+47
+00:01:24,840 --> 00:01:28,840
+dictated this out, so you just sort of
+
+48
+00:01:26,840 --> 00:01:30,760
+be spared the details of it. But
+
+49
+00:01:28,840 --> 00:01:32,960
+essentially, I want to create a new
+
+50
+00:01:30,760 --> 00:01:34,600
+entity in my database, and a new entity
+
+51
+00:01:32,960 --> 00:01:36,160
+that my app is going to deal with.
+
+52
+00:01:34,600 --> 00:01:38,320
+Currently, this application deals in
+
+53
+00:01:36,160 --> 00:01:40,720
+courses, deals in lessons, deals in
+
+54
+00:01:38,320 --> 00:01:42,320
+videos, and you know, sections and a few
+
+55
+00:01:40,720 --> 00:01:44,760
+other things. And I want to add a
+
+56
+00:01:42,320 --> 00:01:46,960
+concept of pitches. There's this kind of
+
+57
+00:01:44,760 --> 00:01:48,720
+Mr. Beast style axiom where you should
+
+58
+00:01:46,960 --> 00:01:50,840
+be thinking about the packaging for your
+
+59
+00:01:48,720 --> 00:01:52,880
+video before you actually work out
+
+60
+00:01:50,840 --> 00:01:55,640
+what's going in the video. And that's
+
+61
+00:01:52,880 --> 00:01:57,240
+what a pitch is in this kind of setup. A
+
+62
+00:01:55,640 --> 00:01:59,360
+pitch is really just the packaging for
+
+63
+00:01:57,240 --> 00:02:00,960
+the video, the title, the description,
+
+64
+00:01:59,360 --> 00:02:02,480
+how I'm going to frame it to people, and
+
+65
+00:02:00,960 --> 00:02:04,600
+I create a bunch of these pitches and
+
+66
+00:02:02,480 --> 00:02:06,040
+then pick the best ones and then turn
+
+67
+00:02:04,600 --> 00:02:07,720
+those into videos. Now, what you notice
+
+68
+00:02:06,040 --> 00:02:10,039
+here is as I'm communicating with the
+
+69
+00:02:07,720 --> 00:02:11,560
+agent, I we're really focusing on
+
+70
+00:02:10,039 --> 00:02:13,760
+language, right? We're really focusing
+
+71
+00:02:11,560 --> 00:02:15,080
+on what is a pitch. I just had to
+
+72
+00:02:13,760 --> 00:02:16,800
+communicate that to you so that you
+
+73
+00:02:15,080 --> 00:02:18,240
+could follow along, and the agent will
+
+74
+00:02:16,800 --> 00:02:20,520
+need to extract that information from
+
+75
+00:02:18,240 --> 00:02:22,400
+me, too. But, there's also some extra
+
+76
+00:02:20,520 --> 00:02:24,160
+jargon in here that the agent doesn't
+
+77
+00:02:22,400 --> 00:02:26,440
+know about yet. For instance, I'm
+
+78
+00:02:24,160 --> 00:02:29,040
+talking about stand-alone videos. What
+
+79
+00:02:26,440 --> 00:02:30,760
+does a stand-alone video mean? Oh, of
+
+80
+00:02:29,040 --> 00:02:33,000
+course, it means a video that's not
+
+81
+00:02:30,760 --> 00:02:34,600
+connected to a lesson or a course. Now,
+
+82
+00:02:33,000 --> 00:02:36,720
+of course, I know that. That's kind of
+
+83
+00:02:34,600 --> 00:02:38,959
+like a term of art for using this whole
+
+84
+00:02:36,720 --> 00:02:40,680
+set up, but the agent doesn't know that
+
+85
+00:02:38,959 --> 00:02:42,320
+yet. It doesn't have any concept of what
+
+86
+00:02:40,680 --> 00:02:43,840
+that is. So, during the grilling
+
+87
+00:02:42,320 --> 00:02:45,840
+session, it's going to have to ask me
+
+88
+00:02:43,840 --> 00:02:47,840
+what a stand-alone video is or try to
+
+89
+00:02:45,840 --> 00:02:49,480
+figure it out from the code. So, as I
+
+90
+00:02:47,840 --> 00:02:51,840
+used Grill me more and more and more, I
+
+91
+00:02:49,480 --> 00:02:53,600
+would start to notice these times where
+
+92
+00:02:51,840 --> 00:02:55,520
+the agent was being really, really
+
+93
+00:02:53,600 --> 00:02:57,680
+verbose and I would have to remind it,
+
+94
+00:02:55,520 --> 00:03:00,320
+"No, there's already a term for that."
+
+95
+00:02:57,680 --> 00:03:02,040
+And often though, there wasn't a term or
+
+96
+00:03:00,320 --> 00:03:04,680
+I was kind of thinking about things in a
+
+97
+00:03:02,040 --> 00:03:07,040
+very verbose way myself and that wasn't
+
+98
+00:03:04,680 --> 00:03:08,920
+being challenged by the agent. Or, we
+
+99
+00:03:07,040 --> 00:03:10,760
+would actually land on some really good
+
+100
+00:03:08,920 --> 00:03:12,280
+shared language and then that wasn't
+
+101
+00:03:10,760 --> 00:03:14,800
+documented anywhere. So, I started to
+
+102
+00:03:12,280 --> 00:03:16,880
+feel dissatisfied with Grill me because
+
+103
+00:03:14,800 --> 00:03:18,480
+there was this piece missing from the
+
+104
+00:03:16,880 --> 00:03:19,760
+puzzle, which is we were able to
+
+105
+00:03:18,480 --> 00:03:21,280
+communicate about the code pretty
+
+106
+00:03:19,760 --> 00:03:24,400
+effectively, but I would have to
+
+107
+00:03:21,280 --> 00:03:25,959
+re-explain all of the non-obvious things
+
+108
+00:03:24,400 --> 00:03:28,040
+about the code base and about the
+
+109
+00:03:25,959 --> 00:03:30,040
+domain, the problem that we were solving
+
+110
+00:03:28,040 --> 00:03:32,320
+before we could do anything productive.
+
+111
+00:03:30,040 --> 00:03:35,280
+So, I started to think to myself, what
+
+112
+00:03:32,320 --> 00:03:38,160
+is the thinnest layer of documentation I
+
+113
+00:03:35,280 --> 00:03:40,360
+could use to just give the AI a bit more
+
+114
+00:03:38,160 --> 00:03:42,760
+of a leg up. So, I came up with this
+
+115
+00:03:40,360 --> 00:03:44,120
+skill, the ubiquitous language skill.
+
+116
+00:03:42,760 --> 00:03:46,239
+Ubiquitous language is an idea that
+
+117
+00:03:44,120 --> 00:03:48,040
+comes from domain-driven design. This is
+
+118
+00:03:46,239 --> 00:03:49,959
+the big blue book by Eric Evans that
+
+119
+00:03:48,040 --> 00:03:51,840
+everyone goes on about. And what it
+
+120
+00:03:49,959 --> 00:03:54,280
+does, it's it's essentially you're
+
+121
+00:03:51,840 --> 00:03:56,760
+trying to create a document, which is
+
+122
+00:03:54,280 --> 00:03:59,520
+the language that's used by the code
+
+123
+00:03:56,760 --> 00:04:01,360
+base, that's used by developers, and
+
+124
+00:03:59,520 --> 00:04:02,840
+that's used by domain experts. In other
+
+125
+00:04:01,360 --> 00:04:04,440
+words, people that know about what
+
+126
+00:04:02,840 --> 00:04:06,520
+you're building, but not how you're
+
+127
+00:04:04,440 --> 00:04:08,360
+building it. All of those three groups
+
+128
+00:04:06,520 --> 00:04:09,560
+should be using a shared language,
+
+129
+00:04:08,360 --> 00:04:11,120
+because that means that the domain
+
+130
+00:04:09,560 --> 00:04:12,720
+expert can go, "Okay, there's something
+
+131
+00:04:11,120 --> 00:04:14,400
+wrong with this particular section of
+
+132
+00:04:12,720 --> 00:04:16,440
+the app." The developer knows what
+
+133
+00:04:14,400 --> 00:04:18,280
+they're talking about, and the code also
+
+134
+00:04:16,440 --> 00:04:20,280
+reflects that. So, what I would do is in
+
+135
+00:04:18,280 --> 00:04:22,000
+the middle of a grilling session, when I
+
+136
+00:04:20,280 --> 00:04:24,000
+noticed that we were needed to sharpen
+
+137
+00:04:22,000 --> 00:04:26,040
+some language, I would use the
+
+138
+00:04:24,000 --> 00:04:28,200
+ubiquitous language skill and call it
+
+139
+00:04:26,040 --> 00:04:31,480
+with, you know, ubiquitous language, and
+
+140
+00:04:28,200 --> 00:04:33,680
+try to create a ubiquitous language.md
+
+141
+00:04:31,480 --> 00:04:35,320
+as we were going. So, I had grill me and
+
+142
+00:04:33,680 --> 00:04:37,640
+I had ubiquitous language, and I was
+
+143
+00:04:35,320 --> 00:04:39,240
+using them both at the same time, and I
+
+144
+00:04:37,640 --> 00:04:41,760
+realized, "Wouldn't it be great if I
+
+145
+00:04:39,240 --> 00:04:44,480
+just combine the two into a new skill?"
+
+146
+00:04:41,760 --> 00:04:47,080
+And here is that new skill. It is grill
+
+147
+00:04:44,480 --> 00:04:49,560
+with docs. It has exactly the same text
+
+148
+00:04:47,080 --> 00:04:51,080
+as grill me at the top here, but it has
+
+149
+00:04:49,560 --> 00:04:52,760
+a couple of extra pieces. The first
+
+150
+00:04:51,080 --> 00:04:56,160
+thing it has is the ability to look for
+
+151
+00:04:52,760 --> 00:04:58,280
+a context.md file. This context.md file
+
+152
+00:04:56,160 --> 00:05:01,240
+will have document all of the shared
+
+153
+00:04:58,280 --> 00:05:03,240
+language that's inside that context.
+
+154
+00:05:01,240 --> 00:05:06,080
+Now, context is like super overloaded,
+
+155
+00:05:03,240 --> 00:05:08,640
+so I'm sort of uncomfortable, but maybe
+
+156
+00:05:06,080 --> 00:05:11,520
+okay with it. It's essentially a bounded
+
+157
+00:05:08,640 --> 00:05:13,880
+context in DDD is a part of the app in
+
+158
+00:05:11,520 --> 00:05:15,840
+which you speak a shared language. So,
+
+159
+00:05:13,880 --> 00:05:18,440
+if you have a massive mono repo, you can
+
+160
+00:05:15,840 --> 00:05:20,640
+have a context map here and have many
+
+161
+00:05:18,440 --> 00:05:22,240
+different contexts inside. So, that's
+
+162
+00:05:20,640 --> 00:05:25,240
+how you would scale this to an enormous
+
+163
+00:05:22,240 --> 00:05:27,200
+repo. But still, if you just have one
+
+164
+00:05:25,240 --> 00:05:28,440
+pretty big repo where all the
+
+165
+00:05:27,200 --> 00:05:30,200
+application is speaking the same
+
+166
+00:05:28,440 --> 00:05:31,880
+language and the domain expert speak the
+
+167
+00:05:30,200 --> 00:05:33,800
+same language, then you can just use a
+
+168
+00:05:31,880 --> 00:05:35,440
+single context.md here. So, it's
+
+169
+00:05:33,800 --> 00:05:37,600
+instructed to look for this existing
+
+170
+00:05:35,440 --> 00:05:39,960
+documentation to pull in this shared
+
+171
+00:05:37,600 --> 00:05:42,600
+language, and then during the session
+
+172
+00:05:39,960 --> 00:05:45,160
+it's got some extra additions here to
+
+173
+00:05:42,600 --> 00:05:47,840
+challenge uh language usage against the
+
+174
+00:05:45,160 --> 00:05:50,360
+existing glossary, to sharpen fuzzy
+
+175
+00:05:47,840 --> 00:05:52,880
+language, discuss concrete scenarios,
+
+176
+00:05:50,360 --> 00:05:55,000
+cross-reference with code, and update it
+
+177
+00:05:52,880 --> 00:05:57,720
+as you go. So, this essentially helps
+
+178
+00:05:55,000 --> 00:05:59,880
+you really sharpen your language as
+
+179
+00:05:57,720 --> 00:06:02,040
+you're using the Grill with Docs skill.
+
+180
+00:05:59,880 --> 00:06:03,920
+And this pays off as you go. I was
+
+181
+00:06:02,040 --> 00:06:06,280
+asking some folks for feedback on this,
+
+182
+00:06:03,920 --> 00:06:07,360
+and I got some really nice quotes here.
+
+183
+00:06:06,280 --> 00:06:09,680
+So, this guy used it for the whole of
+
+184
+00:06:07,360 --> 00:06:11,440
+today, and at the start it asked him to
+
+185
+00:06:09,680 --> 00:06:13,800
+define a lot of terms. Some terms were
+
+186
+00:06:11,440 --> 00:06:15,920
+hard to agree on, and ones he would most
+
+187
+00:06:13,800 --> 00:06:17,360
+definitely forget. But four or five
+
+188
+00:06:15,920 --> 00:06:19,120
+sessions in, he started noticing that
+
+189
+00:06:17,360 --> 00:06:21,080
+Claude was picking up the context during
+
+190
+00:06:19,120 --> 00:06:23,160
+the Grill session, and it magically
+
+191
+00:06:21,080 --> 00:06:24,760
+aligned with the thoughts I had before
+
+192
+00:06:23,160 --> 00:06:26,080
+the words came out of that brain. So,
+
+193
+00:06:24,760 --> 00:06:28,320
+that's what you get out of this. By
+
+194
+00:06:26,080 --> 00:06:30,400
+documenting the non-obvious stuff, by
+
+195
+00:06:28,320 --> 00:06:33,120
+agreeing on a shared language, you
+
+196
+00:06:30,400 --> 00:06:35,240
+really can nail down and get a magical
+
+197
+00:06:33,120 --> 00:06:37,160
+alignment between you and the AI, where
+
+198
+00:06:35,240 --> 00:06:38,840
+you just have to use far fewer words to
+
+199
+00:06:37,160 --> 00:06:40,680
+communicate what you mean. For instance,
+
+200
+00:06:38,840 --> 00:06:42,520
+here's the one that I have in my repo
+
+201
+00:06:40,680 --> 00:06:45,040
+here. We essentially just have a little
+
+202
+00:06:42,520 --> 00:06:47,520
+description about what the um, you know,
+
+203
+00:06:45,040 --> 00:06:49,160
+what the repo is. Then we have a course
+
+204
+00:06:47,520 --> 00:06:51,480
+and a course repo, and we have all of
+
+205
+00:06:49,160 --> 00:06:52,800
+the entities inside here, course
+
+206
+00:06:51,480 --> 00:06:54,520
+versions as well, because I have
+
+207
+00:06:52,800 --> 00:06:55,680
+multiple versions. And if we look for
+
+208
+00:06:54,520 --> 00:06:57,560
+the one that we were looking at before,
+
+209
+00:06:55,680 --> 00:07:00,280
+which is standalone
+
+210
+00:06:57,560 --> 00:07:02,360
+video, it is just down here. So, we have
+
+211
+00:07:00,280 --> 00:07:04,720
+an exact specification for what
+
+212
+00:07:02,360 --> 00:07:06,560
+standalone video means now. Now, the
+
+213
+00:07:04,720 --> 00:07:08,760
+Grill with Docs skill knows to look for
+
+214
+00:07:06,560 --> 00:07:11,440
+this, but I also add a context pointer
+
+215
+00:07:08,760 --> 00:07:15,080
+into, not inside that claw.md, but
+
+216
+00:07:11,440 --> 00:07:17,560
+inside the local claw.md here. So, we
+
+217
+00:07:15,080 --> 00:07:19,680
+have just this domain docs, a single
+
+218
+00:07:17,560 --> 00:07:22,560
+context layout, context.md at the repo
+
+219
+00:07:19,680 --> 00:07:25,440
+root, and you see this extra little bit
+
+220
+00:07:22,560 --> 00:07:27,280
+of uh, documentation for more
+
+221
+00:07:25,440 --> 00:07:28,800
+information about where this stuff is.
+
+222
+00:07:27,280 --> 00:07:31,560
+One final thing that Grill with Docs
+
+223
+00:07:28,800 --> 00:07:33,720
+does is that there are some things that
+
+224
+00:07:31,560 --> 00:07:35,480
+sharpening the fuzzy language will help
+
+225
+00:07:33,720 --> 00:07:38,040
+with, but there are some things that it
+
+226
+00:07:35,480 --> 00:07:40,160
+won't. And so, I wanted a layer that
+
+227
+00:07:38,040 --> 00:07:42,120
+would explain all the non-obvious
+
+228
+00:07:40,160 --> 00:07:44,600
+decisions that weren't able to be
+
+229
+00:07:42,120 --> 00:07:46,440
+captured inside context.md. And so for
+
+230
+00:07:44,600 --> 00:07:48,960
+that, I've gone with an architectural
+
+231
+00:07:46,440 --> 00:07:51,400
+decision record. These ADRs here are
+
+232
+00:07:48,960 --> 00:07:53,640
+really like simple markdown files that
+
+233
+00:07:51,400 --> 00:07:55,680
+sit in your repo that essentially
+
+234
+00:07:53,640 --> 00:07:57,680
+document all of the non-obvious
+
+235
+00:07:55,680 --> 00:08:00,320
+decisions. You only want to create an
+
+236
+00:07:57,680 --> 00:08:01,760
+ADR when the decision is hard to reverse
+
+237
+00:08:00,320 --> 00:08:03,240
+because if it's just like oh we'll use
+
+238
+00:08:01,760 --> 00:08:04,760
+this library instead of this library and
+
+239
+00:08:03,240 --> 00:08:06,720
+they're kind of interchangeable, then
+
+240
+00:08:04,760 --> 00:08:09,560
+you can always just swap later.
+
+241
+00:08:06,720 --> 00:08:11,720
+It would be surprising without context.
+
+242
+00:08:09,560 --> 00:08:13,280
+And plenty of decisions in a repo are
+
+243
+00:08:11,720 --> 00:08:15,560
+surprising without context, especially
+
+244
+00:08:13,280 --> 00:08:17,440
+more complex ones, and the result of a
+
+245
+00:08:15,560 --> 00:08:19,320
+real trade-off. In other words, that
+
+246
+00:08:17,440 --> 00:08:21,840
+this decision has consequences down the
+
+247
+00:08:19,320 --> 00:08:24,840
+line. And I've got an ADR format inside
+
+248
+00:08:21,840 --> 00:08:26,880
+here that um the LLM uses when it
+
+249
+00:08:24,840 --> 00:08:28,960
+creates these ADRs. So now we understand
+
+250
+00:08:26,880 --> 00:08:31,240
+all the pieces, let's go back up to
+
+251
+00:08:28,960 --> 00:08:33,200
+here. Let's replace grill me with grill
+
+252
+00:08:31,240 --> 00:08:35,760
+with docs, and let's actually start this
+
+253
+00:08:33,200 --> 00:08:36,840
+grilling session to see it in action.
+
+254
+00:08:35,760 --> 00:08:38,880
+All right, so the first thing it has
+
+255
+00:08:36,840 --> 00:08:40,599
+done is it said "Ooh, context.md is
+
+256
+00:08:38,880 --> 00:08:42,200
+rich. Standalone video is already
+
+257
+00:08:40,599 --> 00:08:44,360
+defined as a lessier
+
+258
+00:08:42,200 --> 00:08:46,160
+a video with lesson ID equals null." And
+
+259
+00:08:44,360 --> 00:08:48,200
+it says before going further, I want to
+
+260
+00:08:46,160 --> 00:08:49,480
+surface attention with the glossary.
+
+261
+00:08:48,200 --> 00:08:51,440
+This is what you'll often find with
+
+262
+00:08:49,480 --> 00:08:53,480
+grill with docs is that it really
+
+263
+00:08:51,440 --> 00:08:54,760
+focuses on the language before you then
+
+264
+00:08:53,480 --> 00:08:56,760
+actually go and talk about
+
+265
+00:08:54,760 --> 00:08:58,800
+implementation details. It says there's
+
+266
+00:08:56,760 --> 00:09:00,800
+cardinality between pitch and standalone
+
+267
+00:08:58,800 --> 00:09:02,800
+video. It's asking whether one pitch
+
+268
+00:09:00,800 --> 00:09:04,440
+holds many standalone videos or one
+
+269
+00:09:02,800 --> 00:09:06,600
+pitch corresponds to exactly one
+
+270
+00:09:04,440 --> 00:09:08,440
+standalone video. I think it might make
+
+271
+00:09:06,600 --> 00:09:10,880
+sense to follow its recommendation here
+
+272
+00:09:08,440 --> 00:09:12,320
+and go with okay, we have one to many
+
+273
+00:09:10,880 --> 00:09:15,040
+relationship here. So I'm just going to
+
+274
+00:09:12,320 --> 00:09:16,480
+say correct. Very nice. Next up, it's
+
+275
+00:09:15,040 --> 00:09:19,400
+noticing that there's a terminology
+
+276
+00:09:16,480 --> 00:09:21,720
+collision with the standalone video. So
+
+277
+00:09:19,400 --> 00:09:23,440
+it's saying that you have a standalone
+
+278
+00:09:21,720 --> 00:09:26,440
+video that are either totally standalone
+
+279
+00:09:23,440 --> 00:09:28,480
+or they can be related to pitches. So I
+
+280
+00:09:26,440 --> 00:09:31,480
+think it's basically asking whether we
+
+281
+00:09:28,480 --> 00:09:33,080
+keep standalone video as any pitched or
+
+282
+00:09:31,480 --> 00:09:34,839
+unpitched lesson
+
+283
+00:09:33,080 --> 00:09:37,040
+or we redefine it to mean specifically
+
+284
+00:09:34,839 --> 00:09:38,400
+unpitched unlessoned video. Now the way
+
+285
+00:09:37,040 --> 00:09:39,840
+we answer this question is going to
+
+286
+00:09:38,400 --> 00:09:41,240
+influence everything afterwards. It's
+
+287
+00:09:39,840 --> 00:09:44,080
+going to influence whether standalone
+
+288
+00:09:41,240 --> 00:09:47,080
+videos get their own section in the UI
+
+289
+00:09:44,080 --> 00:09:49,280
+or whether we have standalone videos and
+
+290
+00:09:47,080 --> 00:09:50,800
+videos with pitches kind of mixed in.
+
+291
+00:09:49,280 --> 00:09:52,560
+Because the language that we're defining
+
+292
+00:09:50,800 --> 00:09:54,400
+here is also the language that the user
+
+293
+00:09:52,560 --> 00:09:56,440
+is going to be seeing on the page when
+
+294
+00:09:54,400 --> 00:09:58,080
+they navigate around this. And I think
+
+295
+00:09:56,440 --> 00:09:59,360
+I'm agreeing with it. Actually, I was
+
+296
+00:09:58,080 --> 00:10:00,680
+actually going into this thinking we
+
+297
+00:09:59,360 --> 00:10:03,480
+would probably have a separate section
+
+298
+00:10:00,680 --> 00:10:05,680
+for pitched videos, but I think yes, I
+
+299
+00:10:03,480 --> 00:10:07,720
+agree. It makes sense to keep pitching
+
+300
+00:10:05,680 --> 00:10:09,200
+as just metadata on the standalone video
+
+301
+00:10:07,720 --> 00:10:11,480
+itself. This, by the way, is Whisper
+
+302
+00:10:09,200 --> 00:10:13,800
+Flow, what I'm using for dictation. It
+
+303
+00:10:11,480 --> 00:10:15,560
+works okay. I'm not sure I'd recommend
+
+304
+00:10:13,800 --> 00:10:17,320
+it, but it's fine. It's now saying,
+
+305
+00:10:15,560 --> 00:10:20,400
+"Okay, we need some status semantics
+
+306
+00:10:17,320 --> 00:10:23,840
+here." So, each pitch can be idle or
+
+307
+00:10:20,400 --> 00:10:26,080
+scheduled or shipped here. I think I
+
+308
+00:10:23,840 --> 00:10:28,560
+want just to allow I think I want to
+
+309
+00:10:26,080 --> 00:10:30,880
+allow just free-form transitions. So, I
+
+310
+00:10:28,560 --> 00:10:32,520
+don't really care about this being
+
+311
+00:10:30,880 --> 00:10:34,600
+automated. We can always layer on
+
+312
+00:10:32,520 --> 00:10:36,360
+automation later, you know, like when
+
+313
+00:10:34,600 --> 00:10:38,240
+you press uh send to YouTube or
+
+314
+00:10:36,360 --> 00:10:39,800
+something, it goes into a new status.
+
+315
+00:10:38,240 --> 00:10:41,320
+But for now, I'm okay just like toggling
+
+316
+00:10:39,800 --> 00:10:43,880
+it myself. That's fine. It's now asking,
+
+317
+00:10:41,320 --> 00:10:45,600
+"Can a pitch exist with zero videos?"
+
+318
+00:10:43,880 --> 00:10:47,040
+Absolutely, a pitch can exist with zero
+
+319
+00:10:45,600 --> 00:10:49,800
+videos. The point here is that we're
+
+320
+00:10:47,040 --> 00:10:51,720
+kind of generating um pitches, ideas for
+
+321
+00:10:49,800 --> 00:10:53,680
+videos, you know? This is the Mr. Beast
+
+322
+00:10:51,720 --> 00:10:55,440
+thing. We're trying to uh
+
+323
+00:10:53,680 --> 00:10:57,520
+get the packaging ready first. And this
+
+324
+00:10:55,440 --> 00:10:59,680
+relationship, this language also goes
+
+325
+00:10:57,520 --> 00:11:03,040
+into things as concrete as deletion
+
+326
+00:10:59,680 --> 00:11:05,960
+cascades. So, I think I'm going to say
+
+327
+00:11:03,040 --> 00:11:08,960
+on delete restrict here. This is mostly
+
+328
+00:11:05,960 --> 00:11:11,040
+because I just uh like um restrictive
+
+329
+00:11:08,960 --> 00:11:12,760
+deletions. And mostly what I do is I
+
+330
+00:11:11,040 --> 00:11:14,120
+tend to archive instead of delete when I
+
+331
+00:11:12,760 --> 00:11:16,800
+actually do these. We're now getting
+
+332
+00:11:14,120 --> 00:11:18,600
+into more implementation details here.
+
+333
+00:11:16,800 --> 00:11:20,200
+So, I think um instead of just boring
+
+334
+00:11:18,600 --> 00:11:21,720
+you with actually like implementing the
+
+335
+00:11:20,200 --> 00:11:23,640
+grilling session here, I'm just going to
+
+336
+00:11:21,720 --> 00:11:25,440
+say, "Could you save what we have into
+
+337
+00:11:23,640 --> 00:11:26,839
+context.md so far?" If there's anything
+
+338
+00:11:25,440 --> 00:11:28,560
+we haven't figured out, grill me about
+
+339
+00:11:26,839 --> 00:11:30,960
+that before you make the adjustments.
+
+340
+00:11:28,560 --> 00:11:33,000
+And let's see what it goes for here. And
+
+341
+00:11:30,960 --> 00:11:35,000
+okay, it has made a bunch of updates
+
+342
+00:11:33,000 --> 00:11:37,360
+into context.md. Specifically, it's
+
+343
+00:11:35,000 --> 00:11:38,920
+added a bunch of pitch information here.
+
+344
+00:11:37,360 --> 00:11:41,120
+So, we've got pitch, the actual entity
+
+345
+00:11:38,920 --> 00:11:43,160
+itself. We've got pitch status, the
+
+346
+00:11:41,120 --> 00:11:45,600
+status the pitch can be in. Pitched
+
+347
+00:11:43,160 --> 00:11:47,240
+standalone video is a little bit
+
+348
+00:11:45,600 --> 00:11:50,280
+awkward. I might want to grill it about
+
+349
+00:11:47,240 --> 00:11:52,760
+that. And then unattached standalone
+
+350
+00:11:50,280 --> 00:11:54,400
+video. That's also like So, it's
+
+351
+00:11:52,760 --> 00:11:56,240
+basically saying standalone standalone
+
+352
+00:11:54,400 --> 00:11:57,880
+video. Now, bear in mind, I'm like I
+
+353
+00:11:56,240 --> 00:11:59,600
+might seem like pretty, you know,
+
+354
+00:11:57,880 --> 00:12:01,000
+anal-retentive about this language. This
+
+355
+00:11:59,600 --> 00:12:02,880
+might just feel like bike-shedding to
+
+356
+00:12:01,000 --> 00:12:05,000
+you. But, this is going to affect every
+
+357
+00:12:02,880 --> 00:12:07,000
+part of the code that's generated. All
+
+358
+00:12:05,000 --> 00:12:09,840
+variable names, all file names are going
+
+359
+00:12:07,000 --> 00:12:11,560
+to be based on these uh context.md
+
+360
+00:12:09,840 --> 00:12:13,440
+documents here. And so, getting this
+
+361
+00:12:11,560 --> 00:12:15,640
+right is absolutely crucial for feeling
+
+362
+00:12:13,440 --> 00:12:17,960
+aligned with the AI. Now, of course, we
+
+363
+00:12:15,640 --> 00:12:19,400
+don't want to just endlessly bike-shed.
+
+364
+00:12:17,960 --> 00:12:21,080
+So, I'm going to call this now. I'm
+
+365
+00:12:19,400 --> 00:12:22,920
+going to say that's good enough. Let's
+
+366
+00:12:21,080 --> 00:12:25,240
+ship with this. We can always change and
+
+367
+00:12:22,920 --> 00:12:26,920
+refactor to new language later. So,
+
+368
+00:12:25,240 --> 00:12:28,840
+let's quickly talk about the benefits
+
+369
+00:12:26,920 --> 00:12:30,280
+here. What you actually get from going
+
+370
+00:12:28,840 --> 00:12:32,760
+through this ceremony. thing that you
+
+371
+00:12:30,280 --> 00:12:35,160
+get is concise replies. The AI is able
+
+372
+00:12:32,760 --> 00:12:36,920
+to use fewer tokens to speak to you
+
+373
+00:12:35,160 --> 00:12:39,200
+because you have this shared language
+
+374
+00:12:36,920 --> 00:12:41,560
+and it doesn't need to verbosely repeat
+
+375
+00:12:39,200 --> 00:12:43,200
+everything or re-describe everything. It
+
+376
+00:12:41,560 --> 00:12:45,360
+just says, "Okay, standalone videos are
+
+377
+00:12:43,200 --> 00:12:46,560
+changing. We needed to make a change to
+
+378
+00:12:45,360 --> 00:12:48,000
+the pitches and how the pitches
+
+379
+00:12:46,560 --> 00:12:50,720
+display." This concision is also
+
+380
+00:12:48,000 --> 00:12:52,839
+reflected in its own thinking traces as
+
+381
+00:12:50,720 --> 00:12:55,240
+well. Because, of course, AI uses
+
+382
+00:12:52,839 --> 00:12:57,160
+language to think to itself. And so,
+
+383
+00:12:55,240 --> 00:12:59,360
+it's able to be much more aligned with
+
+384
+00:12:57,160 --> 00:13:01,040
+your intention and actually use fewer
+
+385
+00:12:59,360 --> 00:13:03,720
+tokens thinking. This is something I've
+
+386
+00:13:01,040 --> 00:13:05,560
+observed and it feels pretty nice. And
+
+387
+00:13:03,720 --> 00:13:07,080
+finally, because the planning documents,
+
+388
+00:13:05,560 --> 00:13:09,720
+because the way that you're speaking
+
+389
+00:13:07,080 --> 00:13:12,000
+with the AI is also aligned with the way
+
+390
+00:13:09,720 --> 00:13:13,520
+the code looks as well, then you end up
+
+391
+00:13:12,000 --> 00:13:15,040
+with easier to navigate code. Because
+
+392
+00:13:13,520 --> 00:13:16,680
+it's able to just, "Okay, I need to find
+
+393
+00:13:15,040 --> 00:13:18,200
+all the information about pitches. Let
+
+394
+00:13:16,680 --> 00:13:19,560
+me just search for it." And of course,
+
+395
+00:13:18,200 --> 00:13:21,080
+this makes sense because these are all
+
+396
+00:13:19,560 --> 00:13:23,280
+the same benefits described in
+
+397
+00:13:21,080 --> 00:13:24,920
+domain-driven design itself. So, the
+
+398
+00:13:23,280 --> 00:13:27,400
+same techniques that work with humans
+
+399
+00:13:24,920 --> 00:13:30,080
+also, it turns out, work with AI. You're
+
+400
+00:13:27,400 --> 00:13:32,160
+thinking though, is Grill me dead? Did I
+
+401
+00:13:30,080 --> 00:13:33,320
+just kill Grill me? Did its creator come
+
+402
+00:13:32,160 --> 00:13:35,840
+along and stab it in the back?
+
+403
+00:13:33,320 --> 00:13:38,200
+Absolutely not. I think Grill me is an
+
+404
+00:13:35,840 --> 00:13:40,800
+excellent excellent skill, but Grill
+
+405
+00:13:38,200 --> 00:13:43,240
+with Docs is better when you have a code
+
+406
+00:13:40,800 --> 00:13:46,200
+base. In my skills, I have moved Grill
+
+407
+00:13:43,240 --> 00:13:48,480
+me into the productivity area here. So,
+
+408
+00:13:46,200 --> 00:13:50,480
+this is for general use cases, for use
+
+409
+00:13:48,480 --> 00:13:52,320
+cases where you don't have a code base.
+
+410
+00:13:50,480 --> 00:13:54,280
+I had someone, this is the most amazing
+
+411
+00:13:52,320 --> 00:13:56,320
+story, who said that they were writing a
+
+412
+00:13:54,280 --> 00:13:58,880
+eulogy for their mom, and they used
+
+413
+00:13:56,320 --> 00:14:00,720
+Grill me to get the AI to grill them
+
+414
+00:13:58,880 --> 00:14:03,080
+about their mom and surface all these
+
+415
+00:14:00,720 --> 00:14:05,400
+amazing stories. And so, Grill me has
+
+416
+00:14:03,080 --> 00:14:07,840
+incredible use cases outside of
+
+417
+00:14:05,400 --> 00:14:09,960
+engineering. And of course, if you are
+
+418
+00:14:07,840 --> 00:14:11,400
+really early on in a project, actually
+
+419
+00:14:09,960 --> 00:14:13,440
+really early on a project, I'd still
+
+420
+00:14:11,400 --> 00:14:15,440
+probably recommend using Grill with Docs
+
+421
+00:14:13,440 --> 00:14:17,280
+because you just get so much more out of
+
+422
+00:14:15,440 --> 00:14:18,760
+that shared language, and often at the
+
+423
+00:14:17,280 --> 00:14:20,200
+start of a project is where you're
+
+424
+00:14:18,760 --> 00:14:22,440
+trying to establish that shared
+
+425
+00:14:20,200 --> 00:14:23,880
+language. So, essentially, the rule is
+
+426
+00:14:22,440 --> 00:14:25,720
+when you have a code base, use Grill
+
+427
+00:14:23,880 --> 00:14:27,280
+with Docs. When you don't have a code
+
+428
+00:14:25,720 --> 00:14:29,400
+base, use Grill me. I update these
+
+429
+00:14:27,280 --> 00:14:31,640
+skills super duper regularly, and I'm
+
+430
+00:14:29,400 --> 00:14:33,520
+often thinking new thoughts about the
+
+431
+00:14:31,640 --> 00:14:35,640
+skills or even how best to use them
+
+432
+00:14:33,520 --> 00:14:37,520
+without changing the skills themselves.
+
+433
+00:14:35,640 --> 00:14:39,440
+So, I keep everyone up to date on this
+
+434
+00:14:37,520 --> 00:14:40,960
+with my AI skills for real engineers
+
+435
+00:14:39,440 --> 00:14:43,640
+newsletter. This is just an addition to
+
+436
+00:14:40,960 --> 00:14:45,560
+the already good newsletter that I have
+
+437
+00:14:43,640 --> 00:14:47,760
+that just gives you a few extra skills
+
+438
+00:14:45,560 --> 00:14:49,280
+updates, or maybe one a week when they
+
+439
+00:14:47,760 --> 00:14:51,120
+happen. I really freaking hate email
+
+440
+00:14:49,280 --> 00:14:53,200
+spam, and so I'm not going to spam you,
+
+441
+00:14:51,120 --> 00:14:54,440
+but this little page will help you
+
+442
+00:14:53,200 --> 00:14:56,600
+basically keep up to date with all the
+
+443
+00:14:54,440 --> 00:14:59,000
+skill change logs and have some nice
+
+444
+00:14:56,600 --> 00:15:00,360
+extra additions here that you can just
+
+445
+00:14:59,000 --> 00:15:01,920
+take a look at and learn how to use the
+
+446
+00:15:00,360 --> 00:15:03,400
+skills better. Otherwise, thanks for
+
+447
+00:15:01,920 --> 00:15:04,360
+watching, and I'll see you in the next
+
+448
+00:15:03,400 --> 00:15:06,800
+one. Thank you so much for following
+
+449
+00:15:04,360 --> 00:15:08,600
+along. I really really appreciate it.
+
+450
+00:15:06,800 --> 00:15:09,880
+And if you enjoy this skill, then do let
+
+451
+00:15:08,600 --> 00:15:11,960
+me know in the comments how you got on
+
+452
+00:15:09,880 --> 00:15:14,160
+with it, what you noticed, and do raise
+
+453
+00:15:11,960 --> 00:15:15,480
+an issue on the skills repo itself if
+
+454
+00:15:14,160 --> 00:15:18,040
+you think there's something that I can
+
+455
+00:15:15,480 --> 00:15:18,040
+improve.
+

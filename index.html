@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Pocock AI 輔助程式開發工作流 - 深度導讀合集</title>
+    <style>
+        :root {
+            --bg-primary: #f9f7f4;
+            --bg-card: #fffdfb;
+            --bg-card-hover: #ffffff;
+            --text-primary: #171310;
+            --text-secondary: #7a7266;
+            --accent: #a8763e;
+            --accent-soft: rgba(168, 118, 62, 0.12);
+            --border-color: rgba(0, 0, 0, 0.08);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #181614;
+                --bg-card: #201d1a;
+                --bg-card-hover: #262220;
+                --text-primary: #f3efe8;
+                --text-secondary: #a39c8f;
+                --accent: #d9a566;
+                --accent-soft: rgba(217, 165, 102, 0.16);
+                --border-color: rgba(255, 255, 255, 0.08);
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            letter-spacing: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.68;
+            padding-bottom: 80px;
+        }
+        header {
+            padding: 56px 24px 32px;
+            text-align: center;
+        }
+        .header-title {
+            font-size: clamp(2.1rem, 4vw, 2.8rem);
+            font-weight: 800;
+            text-wrap: balance;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin: 0 auto 24px;
+        }
+        .stats-bar {
+            display: inline-flex;
+            gap: 24px;
+            background: var(--bg-card);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 24px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            background: var(--bg-card-hover);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .card-tag {
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--accent-soft);
+        }
+        .card-num {
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .card-desc {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+        }
+        .btn-primary:hover {
+            opacity: 0.88;
+            box-shadow: 0 4px 12px rgba(168, 118, 62, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+        .btn-outline:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="header-title">Matt Pocock AI 工作流精選導讀</h1>
+        <p class="header-subtitle">近三個月 13 部 AI 輔助程式開發關鍵影片 —— 深度導讀，台灣 IT/AI 習慣用語繁體中文改寫</p>
+        <div class="stats-bar">
+            <span>🎬 總計 13 部影片</span>
+            <span>📖 13 篇獨立深度導讀 HTML</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">大型專案規劃</span>
+            <span class="card-num">#01</span>
+        </div>
+        <h3 class="card-title">不是把大專案切小就好：Wayfinder 真正管理的是「現在還不能決定的事」</h3>
+        <p class="card-desc">用決策票、Frontier 與 Fog，讓研究、原型和人的取捨跨多次 agent session 持續推進。</p>
+        <p class="card-meta">📺 80K views • 2026-07-30</p>
+        <div class="card-actions">
+            <a href="guides/wayfinder-project-planning.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=F3lL98Pj90o" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">原型設計</span>
+            <span class="card-num">#02</span>
+        </div>
+        <h3 class="card-title">別再把時間耗在規格書上：先動手做一個能丟掉的版本</h3>
+        <p class="card-desc">別再把時間耗在規格書上，跟 AI 合作時先做一個能丟掉的原型。</p>
+        <p class="card-meta">📺 76K views • 2026-07-23</p>
+        <div class="card-actions">
+            <a href="guides/prototype-not-specs.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=n0VhIVtviC0" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">端到端工作流</span>
+            <span class="card-num">#03</span>
+        </div>
+        <h3 class="card-title">十六萬顆星星，卻沒有一份使用說明書</h3>
+        <p class="card-desc">十六萬顆星星的 skills 專案，一條從未被講清楚的標準作業流程。</p>
+        <p class="card-meta">📺 186K views • 2026-07-16</p>
+        <div class="card-actions">
+            <a href="guides/ai-coding-workflow-end-to-end.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=M6mYodf0dJM" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">Skills 工具箱</span>
+            <span class="card-num">#04</span>
+        </div>
+        <h3 class="card-title">當一個工具的名字錯了，整套流程都會跟著歪掉</h3>
+        <p class="card-desc">skills 專案 1.1 版更新：改名的代價、Grill 的 bug、以及 Wayfinder 的誕生。</p>
+        <p class="card-meta">📺 202K views • 2026-07-08</p>
+        <div class="card-actions">
+            <a href="guides/skills-v1-1-wayfinder.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=A8mokin_YOs" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">學習與 Onboarding</span>
+            <span class="card-num">#05</span>
+        </div>
+        <h3 class="card-title">魔術方塊教學的背後，其實在談新人怎麼快速上手陌生程式碼庫</h3>
+        <p class="card-desc">用魔術方塊教學做實驗，其實在談如何讓新人快速上手陌生程式碼庫。</p>
+        <p class="card-meta">📺 134K views • 2026-06-08</p>
+        <div class="card-actions">
+            <a href="guides/teach-skill-onboarding.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=s5T5oQJcJ6U" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">程式碼品質 Review</span>
+            <span class="card-num">#06</span>
+        </div>
+        <h3 class="card-title">把 AI 審查員逼到龜毛，才是治好「能跑就好」的解方</h3>
+        <p class="card-desc">把 thermonuclear code review 的量化規則，翻譯成 agent 看得懂的白話文。</p>
+        <p class="card-meta">📺 69K views • 2026-05-28</p>
+        <div class="card-actions">
+            <a href="guides/cursor-review-skill-deslop.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=mh5XZ-L5SFQ" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">盤問與對齊</span>
+            <span class="card-num">#07</span>
+        </div>
+        <h3 class="card-title">當 AI 開始「盤問」你：為什麼多數人用錯了這套對齊技巧</h3>
+        <p class="card-desc">為什麼多數人用錯了 Grill Me 這套盤問對齊技巧。</p>
+        <p class="card-meta">📺 87K views • 2026-05-25</p>
+        <div class="card-actions">
+            <a href="guides/grill-skills-alignment.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=UzMNBN6xLLA" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">任務交接 Handoff</span>
+            <span class="card-num">#08</span>
+        </div>
+        <h3 class="card-title">一百萬 token 的合約，只有十二萬能用：AI 編碼裡最被低估的一招——交接</h3>
+        <p class="card-desc">一百萬 token 的合約只有十二萬能用，交接才是被低估的一招。</p>
+        <p class="card-meta">📺 421K views • 2026-05-21</p>
+        <div class="card-actions">
+            <a href="guides/context-handoff-skill.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=dtAJ2dOd3ko" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">架構決策 ADR</span>
+            <span class="card-num">#09</span>
+        </div>
+        <h3 class="card-title">讓 AI 記住你的行話：從「拷問式訪談」到「共享語言」的工程升級</h3>
+        <p class="card-desc">從 Grill Me 到 Grill with Docs，讓 AI 記住你的行話與共享語言。</p>
+        <p class="card-meta">📺 293K views • 2026-05-14</p>
+        <div class="card-actions">
+            <a href="guides/adr-shared-language.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=6BB6exR8Zd8" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">Skills Changelog</span>
+            <span class="card-num">#10</span>
+        </div>
+        <h3 class="card-title">當 AI 助手也需要交班：從 handoff 到 review，一套正在長出關節的技能系統</h3>
+        <p class="card-desc">handoff 與 prototype：正在長出關節的 Claude Code 技能系統。</p>
+        <p class="card-meta">📺 78K views • 2026-05-12</p>
+        <div class="card-actions">
+            <a href="guides/skills-changelog-handoff-review.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=DNqsMXH6Eog" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">Issue 消化 Triage</span>
+            <span class="card-num">#11</span>
+        </div>
+        <h3 class="card-title">當 AI agent 開始能幹活，誰來決定它該做什麼？</h3>
+        <p class="card-desc">當 AI agent 能獨立完工，triage 分類本身變成新的稀缺資源。</p>
+        <p class="card-meta">📺 38K views • 2026-05-07</p>
+        <div class="card-actions">
+            <a href="guides/triage-backlog-agent.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=MzWIIlx0Gpc" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">AFK 軟體工廠</span>
+            <span class="card-num">#12</span>
+        </div>
+        <h3 class="card-title">當 AI 開始自己排班：把自己的角色改寫成「總編輯」</h3>
+        <p class="card-desc">Sandcastle：把自己的角色改寫成總編輯，讓 coding agent 徹底 AFK。</p>
+        <p class="card-meta">📺 153K views • 2026-04-30</p>
+        <div class="card-actions">
+            <a href="guides/afk-software-factory.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=E5-QK3CDVQM" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-tag">De-slop 程式碼重構</span>
+            <span class="card-num">#13</span>
+        </div>
+        <h3 class="card-title">AI 沒有讓程式碼變爛，它只是把爛的速度調快了</h3>
+        <p class="card-desc">AI 加速了程式碼腐爛的速度，深模組與淺模組的區分，如何用 skill 對抗熵增。</p>
+        <p class="card-meta">📺 171K views • 2026-04-29</p>
+        <div class="card-actions">
+            <a href="guides/ai-deslop-codebase.html" class="btn btn-primary">📖 深度導讀</a>
+            <a href="https://www.youtube.com/watch?v=3MP8D-mdheA" target="_blank" class="btn btn-outline">▶ YouTube</a>
+        </div>
+    </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Matt Pocock AI-Driven Development Knowledge Base | Created with Antigravity AI Agent</p>
+    </footer>
+
+</body>
+</html>
